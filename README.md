@@ -1,6 +1,6 @@
 # math-thesis
 <h1> Senior Math Thesis at Pomona College </h1>
-<h2> Timeline <h2> 
+<h2> Timeline </h2> 
 <b>Sep 1 - October 1</b>. Browse texts and papers. Develop a problem that is novel and can be interesting (hierarchical community detection, graph theoretic/viz etc) with possible data sets in mind. Starting crafting the algorithm. Bibliography/literature review completed: With the help of your advisor and by browsing texts and papers, you will clarify the scope of your thesis, the main sources that you will use, and the background material that you need to learn. Sometimes all of this will be pretty obvious and other times it will continue to be a work in progress throughout the semester.
 
 <b>October  - November 1.</b> Settle on a dataset that fits the problem/algorithm and clean it. Finish the implementation of the algorithm.
