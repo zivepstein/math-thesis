@@ -17,9 +17,9 @@ text {
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
-var width = 960,
-    height = 700,
-    radius = Math.min(width, height) / 2.5;
+var width = 1260,
+    height = 1060,
+    radius = Math.min(width, height) / 2;
 
 var x = d3.scale.linear()
     .range([0, 2 * Math.PI]);
@@ -42,7 +42,7 @@ var arc = d3.svg.arc()
     .startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x))); })
     .endAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))); })
     .innerRadius(function(d) { return Math.max(0, y(d.y)); })
-    .outerRadius(function(d) { return Math.max(0, y(d.y + d.dy)); });
+    .outerRadius(function(d) { return Math.max(0, 20+y(d.y + d.dy)); });
 
 d3.json("demo.json", function(error, root) {
   var g = svg.selectAll("g")
@@ -54,14 +54,22 @@ d3.json("demo.json", function(error, root) {
     .style("fill", function(d) { return color((d.children ? d : d.parent).community); })
     .on("click", click);
 
-    var text = []
+  var text = []
   for (i = 0; i < 10; i++) { 
   var localText = g.append("text")
-    .attr("transform", function(d) { return "rotate(" + computeTextRotation(d,2.5*i) + ")"; })
+    .attr("transform", function(d) { 
+       var theta = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x))) 
+      var scale_factor = theta * Math.sqrt(Math.max(0, y(d.y + d.dy)))
+      var offset = 2.4*scale_factor / 10 
+      return "rotate(" + computeTextRotation(d,offset*i,scale_factor ) + ")"; 
+    })
     .attr("x", function(d) { return y(d.y); })
     .attr("dx", "6") // margin
     .attr("dy", ".35em") // vertical-align
-    .text(function(d) {return d.name.split(" ")[i]});
+    .attr("class", "topicText".concat(i))
+    .text(function(d) {
+      return d.name.split(" ")[i]
+    });
     text.push(localText)
   }
 
@@ -78,12 +86,20 @@ d3.json("demo.json", function(error, root) {
           // check if the animated element's data e lies within the visible angle span given in d
           if (e.x >= d.x && e.x < (d.x + d.dx)) {
             // get a selection of the associated text element
-            var arcText = d3.select(this.parentNode).select("text");
-            // fade in the text element and recalculate positions
-            arcText.transition().duration(750)
-              .attr("opacity", 1)
-              .attr("transform", function() { return "rotate(" + computeTextRotation(e) + ")" })
-              .attr("x", function(d) { return y(d.y); });
+             for (j = 0; j < 10; j++) { 
+              var arcText = d3.select(this.parentNode).select(".topicText".concat(j));
+              console.log(arcText);
+              // fade in the text element and recalculate positions
+              arcText.transition().duration(750)
+                .attr("opacity", 1)
+                .attr("transform", function() { 
+                   var theta = Math.max(0, Math.min(2 * Math.PI, x(e.x + e.dx))) - Math.max(0, Math.min(2 * Math.PI, x(e.x))) 
+                  var scale_factor = theta * Math.sqrt(Math.max(0, y(e.y + e.dy)))
+                  var offset = 2.4*scale_factor / 10 
+                  return "rotate(" + computeTextRotation(e,j*offset,scale_factor ) + ")" 
+                })
+                .attr("x", function(d) { return y(d.y); });
+              }
           }
       });
   }
@@ -103,8 +119,12 @@ function arcTween(d) {
   };
 }
 
-function computeTextRotation(d,inc) {
-  return inc-12+(x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
+function computeTextRotation(d,inc, sf) {
+  return inc-sf-2+(x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
+}
+
+function computeTextRotationUpdate(d) {
+  return (x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
 }
 
 </script>
