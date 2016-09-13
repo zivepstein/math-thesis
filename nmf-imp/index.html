@@ -18,8 +18,8 @@ text {
 <script>
 
 var width = 1260,
-    height = 1060,
-    radius = Math.min(width, height) / 2;
+    height = 1100,
+    radius = Math.min(width, height) / 2.1;
 
 var x = d3.scale.linear()
     .range([0, 2 * Math.PI]);
@@ -51,7 +51,7 @@ d3.json("demo.json", function(error, root) {
 
   var path = g.append("path")
     .attr("d", arc)
-    .style("fill", function(d) { return color((d.children ? d : d.parent).community); })
+    .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
     .on("click", click);
 
   var text = []

@@ -1,69 +1,48 @@
 
 # coding: utf-8
 
-# In[19]:
+# In[211]:
 
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.decomposition import NMF
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.metrics.pairwise import cosine_similarity as cosine
+from scipy.sparse.csgraph import connected_components
 import itertools
 import json
 import numpy as np
-
-
-# In[3]:
-
-
+import glob
 n_topics = 10
 n_top_words = 20
-dataset = fetch_20newsgroups(shuffle=True, random_state=1,
-                             remove=('headers', 'footers', 'quotes'))
-data_samples = dataset.data
+###fake data
+# dataset = fetch_20newsgroups(shuffle=True, random_state=1,
+#                              remove=('headers', 'footers', 'quotes'))
+# data_samples = dataset.data
 
 
-# In[4]:
+# In[212]:
 
-print("Extracting tf-idf features for NMF...")
+##generate data as array of strings from local .txt files
+local_data = []
+philes =  glob.glob("/Users/ziv/GDrive/school/thesis/math-thesis/nmf-imp/data/*.txt")
+for phile in philes:
+    with open(phile, 'r') as myfile:
+        data=myfile.read().replace('\n', '')
+        local_data.append(unicode(data, errors='ignore'))
+
+
+# In[213]:
+
+#tfdif and nmf model building
 tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
                                    stop_words='english')
 
-tfidf = tfidf_vectorizer.fit_transform(data_samples)
-
-
+tfidf = tfidf_vectorizer.fit_transform(local_data)
+tfidf_feature_names = tfidf_vectorizer.get_feature_names()
 nmf = NMF(n_components=n_topics).fit(tfidf)
 
 
-# In[62]:
-
-local_data = []
-philes =  glob.glob("/Users/ziv/GDrive/school/thesis/nmf-imp/data/*.txt")
-for phile in philes:
-    print phile
-    with open(phile, 'r') as myfile:
-        data=myfile.read().replace('\n', '')
-        local_data.append(data)
-
-
-# In[5]:
-
-def print_top_words(model, feature_names, n_top_words):
-    for topic_idx, topic in enumerate(model.components_):
-        print("Topic #%d:" % topic_idx)
-        print(" ".join([feature_names[i]
-                        for i in topic.argsort()[:-n_top_words - 1:-1]]))
-    print()
-print("\nTopics in NMF model:")
-tfidf_feature_names = tfidf_vectorizer.get_feature_names()
-print_top_words(nmf, tfidf_feature_names, n_top_words)
-
-
-# In[ ]:
-
-
-
-
-# In[6]:
+# In[214]:
 
 H = nmf.components_
 def build_wgraph(alpha=2):
@@ -71,10 +50,6 @@ def build_wgraph(alpha=2):
         return [[int(cosine(H[i],H[j])[0][0] > alpha) for i in range(0, len(H))] for j in range(0, len(H))]
     else:
         return [[cosine(H[i],H[j])[0][0] for i in range(0, len(H))] for j in range(0, len(H))]
-
-
-# In[7]:
-
 def thresh_vals(numbin):
     binz = []
     w = build_wgraph(2)
@@ -86,42 +61,7 @@ def thresh_vals(numbin):
     return binz
 
 
-# In[8]:
-
-def compare_graphs(graphA, graphB):
-    return 47
-
-
-# In[9]:
-
-seed = build_wgraph(0)
-
-
-# In[10]:
-
-for t in thresh_vals(10):
-    graphB = build_wgraph(t)
-    compare_graphs(seed, graphB)
-    seed = graphB
-
-
-# In[11]:
-
-from scipy.sparse.csgraph import connected_components
-
-
-# In[12]:
-
-
-size = 10
-tv = thresh_vals(size)
-ccA = connected_components(build_wgraph(tv[0]))
-ccB = connected_components(build_wgraph(tv[1]))
-
-
-# In[111]:
-
-
+# In[218]:
 
 def array_distance(A,B):
     count = 0
@@ -149,37 +89,7 @@ def greedy_TV_build(to_consume,bins):
         return to_consume
     else:
         return []
-        
-
-
-# In[108]:
-
-greedy_TV_build(thresh_vals(100),2)
-
-
-# In[97]:
-
-tv
-
-
-# In[112]:
-
-tv = greedy_TV_build(thresh_vals(100),2)
-for i in tv:
-    ccB = connected_components(build_wgraph(i))[1]
-    print ccB
-
-
-# In[77]:
-
-print array_distance([0, 0, 0, 0 ,0 ,0 ,0 ,0 ,0 ,0],[0 ,0,0 ,0, 0, 0, 0 ,0 ,0, 0])
-
-
-# In[183]:
-
-cc1 = connected_components(build_wgraph(tv[0]))[1]
-cc2 = connected_components(build_wgraph(tv[1]))[1]
-
+  
 
 def populateTree(row_level, valid_community):
     if row_level > size-2 :
@@ -210,24 +120,10 @@ def populateTree(row_level, valid_community):
             try: 
                 return children[0]['children']
             except:
-                return children
+                return []
         else:
             return children
-    
-flare = {"name" : "" , "children" : populateTree(0, 0)}
-for child in flare['children']:
-    recursiveNaming(child)
-with open('demo.json', 'w') as outfile:
-    json.dump(flare, outfile)
-
-
-# In[131]:
-
-" ".join([tfidf_feature_names[j] for j in (nmf.components_[1]+nmf.components_[5]).argsort()[:-n_top_words - 1:-1]])
-
-
-# In[181]:
-
+        
 def recursiveNaming(tree):
         i = tree['indices']
         base = nmf.components_[i[0]]
@@ -240,29 +136,22 @@ def recursiveNaming(tree):
                     recursiveNaming(child)
 
 
-# In[180]:
+# In[216]:
+
+tv = greedy_TV_build(thresh_vals(100),2)
+# visualize topic tree
+# for i in tv:
+#     ccB = connected_components(build_wgraph(i))[1]
+#     print ccB
 
 
+# In[219]:
 
-
-# In[182]:
-
-flare
-
-
-# In[176]:
-
-nmf.components_[1] 
-
-
-# In[67]:
-
-[a + i*(b-a)/bins for i in range(0,1)]
-
-
-# In[ ]:
-
-
+flare = {"name" : "" , "children" : populateTree(0, 0)}
+for child in flare['children']:
+    recursiveNaming(child)
+with open('demo.json', 'w') as outfile:
+    json.dump(flare, outfile)
 
 
 # In[ ]:
