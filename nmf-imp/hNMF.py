@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[211]:
+# In[1]:
 
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.decomposition import NMF
@@ -20,7 +20,7 @@ n_top_words = 20
 # data_samples = dataset.data
 
 
-# In[212]:
+# In[2]:
 
 ##generate data as array of strings from local .txt files
 local_data = []
@@ -31,7 +31,7 @@ for phile in philes:
         local_data.append(unicode(data, errors='ignore'))
 
 
-# In[213]:
+# In[3]:
 
 #tfdif and nmf model building
 tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
@@ -42,9 +42,11 @@ tfidf_feature_names = tfidf_vectorizer.get_feature_names()
 nmf = NMF(n_components=n_topics).fit(tfidf)
 
 
-# In[214]:
+# In[28]:
 
 H = nmf.components_
+W = nmf.fit_transform(tfidf)
+weights = (5000/W.sum())*W.sum(axis=0)
 def build_wgraph(alpha=2):
     if alpha != 2:
         return [[int(cosine(H[i],H[j])[0][0] > alpha) for i in range(0, len(H))] for j in range(0, len(H))]
@@ -61,7 +63,7 @@ def thresh_vals(numbin):
     return binz
 
 
-# In[218]:
+# In[36]:
 
 def array_distance(A,B):
     count = 0
@@ -114,7 +116,7 @@ def populateTree(row_level, valid_community):
                             children.append({"community":str(child_community[i]),"indices":[i],"name" : name , "children":grow_my_children, "hasChildren": True})
                         else:
                             name = " ".join([tfidf_feature_names[j] for j in nmf.components_[i].argsort()[:-n_top_words - 1:-1]])
-                            children.append({"community":str(child_community[i]),"indices":[i],"size":500,"name":name, "hasChildren": False})
+                            children.append({"community":str(child_community[i]),"indices":[i],"size":weights[i],"name":name, "hasChildren": False})
                         seen_communities.append(child_community[i])
         if len(children) == 1:
             try: 
@@ -136,22 +138,33 @@ def recursiveNaming(tree):
                     recursiveNaming(child)
 
 
-# In[216]:
+# In[ ]:
+
+
+
+
+# In[37]:
 
 tv = greedy_TV_build(thresh_vals(100),2)
 # visualize topic tree
 # for i in tv:
 #     ccB = connected_components(build_wgraph(i))[1]
 #     print ccB
+size = len(tv)
 
 
-# In[219]:
+# In[38]:
 
 flare = {"name" : "" , "children" : populateTree(0, 0)}
 for child in flare['children']:
     recursiveNaming(child)
 with open('demo.json', 'w') as outfile:
     json.dump(flare, outfile)
+
+
+# In[33]:
+
+tv
 
 
 # In[ ]:
