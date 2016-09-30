@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{fortunato2010community}
+Santo Fortunato.
+\newblock Community detection in graphs.
+\newblock {\em Physics reports}, 486(3):75--174, 2010.
+
+\bibitem{griffiths2004hierarchical}
+DMBTL Griffiths and MIJJB Tenenbaum.
+\newblock Hierarchical topic models and the nested chinese restaurant process.
+\newblock {\em Advances in neural information processing systems}, 16:17, 2004.
+
+\bibitem{ho2008nonnegative}
+Ngoc-Diep Ho.
+\newblock {\em Nonnegative matrix factorization algorithms and applications}.
+\newblock PhD thesis, {\'E}COLE POLYTECHNIQUE, 2008.
+
+\bibitem{lancichinetti2009detecting}
+Andrea Lancichinetti, Santo Fortunato, and J{\'a}nos Kert{\'e}sz.
+\newblock Detecting the overlapping and hierarchical community structure in
+  complex networks.
+\newblock {\em New Journal of Physics}, 11(3):033015, 2009.
+
+\bibitem{lee1999learning}
+Daniel~D Lee and H~Sebastian Seung.
+\newblock Learning the parts of objects by non-negative matrix factorization.
+\newblock {\em Nature}, 401(6755):788--791, 1999.
+
+\end{thebibliography}

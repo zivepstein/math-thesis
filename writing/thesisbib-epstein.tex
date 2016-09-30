@@ -1,0 +1,70 @@
+	\documentclass[12pt]{article}
+\usepackage{color}
+
+% This first part of the file is called the PREAMBLE. It includes
+% customizations and command definitions. The preamble is everything
+% between \documentclass and \begin{document}.
+
+\usepackage[margin=1in]{geometry}  % set the margins to 1in on all sides
+\usepackage{graphicx}              % to include figures
+\usepackage{amsmath}               % great math stuff
+\usepackage{amsfonts}              % for blackboard bold, etc
+\usepackage{amsthm}                % better theorem environments
+\usepackage{changepage}
+\usepackage{lipsum}                     % Dummytext
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+\usepackage[pdftex,dvipsnames]{xcolor}  % Coloured text etc.
+% 
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+
+% various theorems, numbered by section
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+
+\DeclareMathOperator{\id}{id}
+
+\newcommand{\bd}[1]{\mathbf{#1}}  % for bolding symbols
+\newcommand{\RR}{\mathbb{R}}      % for Real numbers
+\newcommand{\ZZ}{\mathbb{Z}}      % for Integers
+\newcommand{\col}[1]{\left[\begin{matrix} #1 \end{matrix} \right]}
+\newcommand{\comb}[2]{\binom{#1^2 + #2^2}{#1+#2}}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{lipsum}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+
+
+\nocite{*}
+
+\title{Annotated Bibliography for Senior Thesis}
+
+
+\author{Ziv Epstein \\ 
+	\texttt{ziv.epstein@pomona.edu}}
+
+\maketitle
+%patterns. human. Drone logic creates a new form of divide between those with access to network and those two dont. and those allow for access of knowledge. different ways of thinking about information and causality.  ``too big to know." knowledge as actional information is post narrative, post casual and post exlanatory. How do you respond? return to narrative. 
+
+
+\section{The sources}
+We begin with the two foundation papers introducing the NNMF concept and standard algorithms. Lee and Seung \cite{lee1999learning} were the first to introduce this idea, and to propose that topic modelling could be thought of as a matrix factorization problem. Ho \cite{ho2008nonnegative} expands on this notion by elaborating on optimization schemas and corresponding algorithms that we will be taking advantage of. We then consider the work of Griffiths and Tenenbaum \cite{griffiths2004hierarchical}, who extened the notion of topic models to a hierarchical domain. We aim to replicate this structure but using an NNMF implementation instead of Latent Dirlichet Allocation (LDA). 
+
+Our method to do is construct a distance matrix from the topic repersentations generated from NNMF. With this graph, we will employ community detection algorithms \cite{fortunato2010community} to build the hierarchy. In particular, there already exist methods for generating a hierarchical community structure within complex networks \cite{lancichinetti2009detecting} that we will take advange of to build our topic model.
+
+\bibliographystyle{plain}
+
+\bibliography{myBib}
+
+
+\end{document}
