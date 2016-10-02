@@ -75,22 +75,31 @@ A^{(k)}_{i,j} =
 \end{cases}
 \]
 Observe that $A^{(1)}$ is the fully connected graph and $A^{(N^2)}$ is the completely disconnnected graph.
+By looking at the connected components  of a given graph,
+$$c(A^{(j)})=\{c^j_1, c^j_2,\cdots,c^j_i,\cdots,c^j_N\}$$
+where $c_i =k$ means that the $i$th vertex is in the $k$th order component, we can formulate a tree structure (see Figure 1).
 \begin{figure}
-	\includegraphics[width=.5\textwidth]{img}
+	\centering
+	\includegraphics[width=.5\textwidth]{tree}
+	\caption{How the tree structure is formed for the connected componenet vectors}
+\end{figure}
+For example, say $N=8$ and we have
+\begin{align*}
+	c(A^{(j)})=\{0, 0, 0 ,0, 1 ,1 ,1, 1\}\\
+	c(A^{(j+1)})=\{0, 0, 0 ,0, 1 ,1 ,2, 2\}
+\end{align*}
+This means that $A^{(j)}$ has two connected components, ordered 0 (with vertices 1,2,3,4) and 1 (with vertices 5,6,7,8) and that $A^{(j+1)}$ has three connected components, ordered 0 (with vertices 1,2,3,4), 1 (with vertices 5 and 6) and 2 (with vertices 7 and 8).  Thus there is a branch from the connect component 1 in $A^{(j)}$ to the connected componenets 1 and 2 in $A^{(j+1)}$. By greedily repeating this iterative algorithm starting with $A^{(1)}$ \footnote{which has by definition only a single connected component and so $c(A^{(1)})=\{0, \cdots, 0\}$} as the root, we produce the tree of topics. Observe that at this stage, all the leaf nodes correspond to actual topics $t_n$. We formulate the topic vectors for the parent nodes by additive percolating up the tree. That is, for a given parent topic $\tau$ with children $\tau_1, \cdots, \tau_k$ we simply have 
+$$\tau =\sum_i \tau_i $$
+\begin{figure}
+	\centering
+	\includegraphics[width=.99\textwidth]{img}
 	\caption{Screen shot of hierarhical topic model application for sample data set}
 \end{figure}
-\section{Related Work}
+
 
 \bibliographystyle{plain}
 
-\begin{thebibliography}{9}
-	
-	\bibitem{lamport94}
-	S. Pinker. \emph{The Sense of Style: The Thinking Person's Guide to Writing in the 21st Century.} Viking, 2014. ISBN 0670025852
-	
-	\bibitem{lamport94}
-	J. M. Williams and J. Bizup. Style: Lessons in Clarity and Grace. Pearson, 2013. ISBN 0321898680
-\end{thebibliography}
+\bibliography{myBib.bib}
 
 
 \end{document}

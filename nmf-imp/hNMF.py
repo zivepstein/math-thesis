@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[11]:
+# In[1]:
 
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.decomposition import NMF
@@ -20,23 +20,23 @@ n_top_words = 20
 # data_samples = dataset.data
 
 
-# In[2]:
+# In[8]:
 
 ##generate data as array of strings from local .txt files
 local_data = []
-philes =  glob.glob("/Users/ziv/GDrive/school/thesis/math-thesis/nmf-imp/txt_data/*.txt")
+philes =  glob.glob("/Users/ziv/GDrive/school/math-thesis/nmf-imp/txt_data_bypage/*.txt")
 for phile in philes:
     with open(phile, 'r') as myfile:
         data=myfile.read().replace('\n', '')
         local_data.append(unicode(data, errors='ignore'))
 
 
-# In[4]:
+# In[10]:
+
+len(local_data)
 
 
-
-
-# In[12]:
+# In[11]:
 
 #tfdif and nmf model building
 tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
@@ -47,7 +47,7 @@ tfidf_feature_names = tfidf_vectorizer.get_feature_names()
 nmf = NMF(n_components=n_topics).fit(tfidf)
 
 
-# In[13]:
+# In[12]:
 
 H = nmf.components_
 W = nmf.fit_transform(tfidf)
@@ -68,7 +68,7 @@ def thresh_vals(numbin):
     return binz
 
 
-# In[14]:
+# In[13]:
 
 def array_distance(A,B):
     count = 0
@@ -148,7 +148,7 @@ def recursiveNaming(tree):
 
 
 
-# In[15]:
+# In[14]:
 
 tv = greedy_TV_build(thresh_vals(100),2)
 # visualize topic tree
@@ -158,7 +158,7 @@ tv = greedy_TV_build(thresh_vals(100),2)
 size = len(tv)
 
 
-# In[16]:
+# In[15]:
 
 flare = {"name" : "" , "children" : populateTree(0, 0)}
 for child in flare['children']:

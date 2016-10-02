@@ -1,0 +1,29 @@
+﻿
+KUNAR ELECTION RESULTS
+Description of the graph abbreviations
+Abbreviation	Party leader
+HIA	Eng. G. Hekmatyar
+AH	Maulana J. Rahman
+JIA	Prof. B. Rabbani
+NIFA	PirS. A. GaJIani
+SY	Prof. A. R. R. Sayyaf
+KH	Maulawi M.Y. KhaJes
+MJ	Prof. S. Mujaddidi
+AF	Maulana Afzal
+NM	Maulawi N. Mansoor
+QA	Qadhl M.A. Waqqad
+NB	M. M. N. Muhammad!
+SZ	Maulana S. Zaman
+AH
+HIA (28.2%)
+NIFA
+NB (2.4%)
+MJ (4.0%)
+KH (4.0%) SY (4.0%) (8.1%)
+SZ (0.8%)
+QA (2.4%)
+NM (2.4%)
+AF (3.2%)
+JIA (12.1%)
+
+For detail see page 20

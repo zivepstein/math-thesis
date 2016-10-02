@@ -1,0 +1,25 @@
+﻿vicinity of troops.
+Battlefield Air Interdiction
+The Soviet armed forces have embraced the attack helicopter with tremendous enthusiasm and it is this vehicle, rather than the SU—25, which is rather effective. But helicopters cannot penetrate more than a few tens of kilometers beyond the forward line of troops. Between the helicopter zone and the area of the fixed targets, such as airfields and critical junctions, lies a region full of high-value mobile targets mainly comprising new forces joining the battle. The SU—25 mission to locate and attack these targets, isolating the battlefield from reinforcement.
+To carry out this mission, the aircraft must penetrate emplaced enemy defences and operate in the enemy-dominated airspace. In the SU—25 specifications, the Soviet military command clearly demanded that as little speed as possible be sacrificed in the interests of manoeuvrability and endurance.
+This is evident in the design of SU—25's wing. Although it has a long span, it has the thinnest practical section and about 15° of sweep and is probably good for combat. The large slab tailplane and other wing features indicate that the aircraft has been designed to operate at speeds where manoeuvring can induce buffet. The long span and moderate sweep probably rule out sustained highspeed for the SU—25 than an aircraft intended for deep penetration strike mission.
+Protection:
+Survivability is basic to the SU-25; the most obvious example is the fact that the SU—25 is the first and only operational Soviet combat aircaraft to have two eigines when one engine could have provided enough thrust. The
+basic configuration also protects the fuel system, the most important part of a combat aircraft. • Most of the fuel is in the centre of the fuselage where it is protected from fragments by the engines and inlet ducts. Also the surrounding structure will detonate an explosive shell before it enters the tank. The fuel tanks have a relatively small surface area in relation to their vulume and can be more easily protected with self-sealing skins and foam, than it is possible with integral wing tanks or saddle tanks wrapped around an inlet duct.
+Armour is visible on the sides of cockpit and is probably used in other critical areas.
+STOL Operation:
+Short takeoff and landing (STOL) performance is achieved by a combination of respectable thrust/weight ratio, effective control for low-speed flight, long wing-span and powerful double-slotted flaps which extended over 2/3 of the trailing edge. The short, robust levered-suspension landing gear is designed for operations from rough pavement or uneven grass, and the fat low-pressure tyres can be used on soft surfaces. All in all, the SU—25 should be able to operate quite normally from 1000m of grass, sod sor roadway. All the basic systems are readily accessible from ground level, facilitating operations away from the main base.
+The importance of STOL capability is that it allows the SU—25 to be despersed to road and feild bases close to the target Because of this and because the aircraft is not intended for deep penetration, it has been possible to optimise the design for a mission radius of only 200—250km, reducing internal fuel capacity, aircraft size and cost. Longer mission can be flown with
+.auxiliary tanks. Forward basing also shortens the response time and increases the sortie rate for the force.
+The SU—25 is a heavily armed aircraft with a superior all-up weapons capability to that of MIG—27. Its fixed armament comprises a single internal gun, mounted in the lower port side of the nose.
+Electronics:
+In the nose of the aircraft is a large glass panel that almost certainly covers a laser rangefinder, probably with a designator function for guided weapons. There could be room for a fixed forward-looking infrared sensor, giving the SU—25 a limited night-attack capability. The SU—25 has the twin nose booms of the SU—17, one carrying prominent mechanical yaw and	pitch	sensors.	The aircraft
+has a large	Doppler	antenna,	simi-
+lar to that of the MIG—27, beneath the forward fuselage. There is space available for other equipment in the engine nacelles beneath the inlet ducts.
+Antenna and other installations on the	rear	fuselage	suggest	that
+the defensive systems are concentrated in this area. This fact that	the	SU—25	has far	more
+volume for such equipment — which has proved to be extremely important in all recent air battle— than the fast — jet types is an important advantage. Systems currently installed include a radarwarning receiver and probably an active ECM suite.
+A Functional Aircraft:
+The SU—25 can be summarised as a typical Soviet warplane. It is cheap with a simple airframe, weapons and some systems common to the existing aircraft, and two low-cost engines.
+The Mujahideen Monthly
+Jan - Feb 1987
