@@ -1,5 +1,9 @@
 \begin{thebibliography}{1}
 
+\bibitem{deepNonNeg}
+Jennifer Flenner and Blake Hunter.
+\newblock A deep nonnegative matrix factorization.
+
 \bibitem{fortunato2010community}
 Santo Fortunato.
 \newblock Community detection in graphs.
@@ -25,5 +29,11 @@ Andrea Lancichinetti, Santo Fortunato, and J{\'a}nos Kert{\'e}sz.
 Daniel~D Lee and H~Sebastian Seung.
 \newblock Learning the parts of objects by non-negative matrix factorization.
 \newblock {\em Nature}, 401(6755):788--791, 1999.
+
+\bibitem{trigeorgis2014deep}
+George Trigeorgis, Konstantinos Bousmalis, Stefanos Zafeiriou, and Bjoern
+  Schuller.
+\newblock A deep semi-nmf model for learning hidden representations.
+\newblock In {\em ICML}, pages 1692--1700, 2014.
 
 \end{thebibliography}

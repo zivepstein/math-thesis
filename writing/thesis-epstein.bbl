@@ -30,6 +30,11 @@ Daniel~D Lee and H~Sebastian Seung.
 \newblock Learning the parts of objects by non-negative matrix factorization.
 \newblock {\em Nature}, 401(6755):788--791, 1999.
 
+\bibitem{lee2010semi}
+Hyekyoung Lee, Jiho Yoo, and Seungjin Choi.
+\newblock Semi-supervised nonnegative matrix factorization.
+\newblock {\em IEEE Signal Processing Letters}, 17(1):4--7, 2010.
+
 \bibitem{paatero1994positive}
 Pentti Paatero and Unto Tapper.
 \newblock Positive matrix factorization: A non-negative factor model with

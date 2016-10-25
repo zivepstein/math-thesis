@@ -47,20 +47,46 @@
 
 \nocite{*}
 
-\title{Annotated Bibliography for Senior Thesis}
+\title{Outline for Senior Thesis}
 
 
 \author{Ziv Epstein \\ 
 	\texttt{ziv.epstein@pomona.edu}}
 
 \maketitle
-%patterns. human. Drone logic creates a new form of divide between those with access to network and those two dont. and those allow for access of knowledge. different ways of thinking about information and causality.  ``too big to know." knowledge as actional information is post narrative, post casual and post exlanatory. How do you respond? return to narrative. 
 
 
-\section{The sources}
-We begin with the two foundation papers introducing the NNMF concept and standard algorithms. Lee and Seung \cite{lee1999learning} were the first to introduce this idea, and to propose that topic modelling could be thought of as a matrix factorization problem. Ho \cite{ho2008nonnegative} expands on this notion by elaborating on optimization schemas and corresponding algorithms that we will be taking advantage of. We then consider the work of Griffiths and Tenenbaum \cite{griffiths2004hierarchical}, who extened the notion of topic models to a hierarchical domain. We aim to replicate this structure but using an NNMF implementation instead of Latent Dirlichet Allocation (LDA). 
+\section{Introduction to Topic Modeling}
+This section provides a overview of topic modelling as a field. 
 
+\section{Non Negative Matrix Factorization}
+\subsection{How NNMF solves Topic Modeling}
+We begin with the two foundation papers introducing the NNMF concept and standard algorithms. Lee and Seung \cite{lee1999learning} were the first to introduce this idea, and to propose that topic modelling could be thought of as a matrix factorization problem. Ho \cite{ho2008nonnegative} expands on this notion by elaborating on optimization schemas and corresponding algorithms that we will be taking advantage of. 
+\subsection{Hierarchical Topic Modelling }
+We then consider the work of Griffiths and Tenenbaum \cite{griffiths2004hierarchical}, who extened the notion of topic models to a hierarchical domain. We aim to replicate this structure but using an NNMF implementation instead of Latent Dirlichet Allocation (LDA). 
+
+\section{Algorithms}
+We then discuss methods for using NNMF to generate a hierarchical topic model.
+\subsection{Single Linkage Graph Construction}
 Our method to do is construct a distance matrix from the topic repersentations generated from NNMF. With this graph, we will employ community detection algorithms \cite{fortunato2010community} to build the hierarchy. In particular, there already exist methods for generating a hierarchical community structure within complex networks \cite{lancichinetti2009detecting} that we will take advange of to build our topic model.
+\subsection{Deep Semi NMF}
+We then consider the algorithms and notions in the domain of Deep Semi NMF as a model for Hierarchical NMF \cite{ deepNonNeg, trigeorgis2014deep} 
+\section{Visualization}
+In this brief section, I will motivate the visualization of hierarchical topic modeling.
+\section{Hierarchical Topic Model}
+We will then construct our own model for learning a hierarchy of topics within the model itself. This will be a blend of the Single Linkage graph construction model and the Deep Semi NMF.
+
+\section{Results}
+We will then apply the method of our Hierarchical Topic Model to several datasets, and compare our results with previous work.
+\subsection{Synthetic Data}
+We will generate synthetic data with hierarchical topics and verify that our algorithm succesfully extracts them
+\subsection{Standard Data}
+We will run our algorithm on data cannonically associated with this task. For our purposes, the 20 News Group Data set will probably be sufficient.
+\subsection{Afghan Data}
+A collaborator at NYU Abu-Dhabi has hand-curated a dataset of Afghani magazines, which is notable for sociologists. We will run our algorithm on this data set and see what happens
+
+\section{Discussion/Conlusion}
+Here we will conclude by situating this work within the field, compare its results with similar methods and propose future work.
 
 \bibliographystyle{plain}
 

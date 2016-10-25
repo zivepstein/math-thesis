@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesisoutline-epstein.aux
+The style file: plain.bst
+Database file #1: myBib.bib
+Warning--empty journal in deepNonNeg
+Warning--empty year in deepNonNeg
+You've used 7 entries,
+            2118 wiz_defined-function locations,
+            545 strings with 5109 characters,
+and the built_in function-call counts, 2240 in all, are:
+= -- 221
+> -- 94
+< -- 1
++ -- 39
+- -- 30
+* -- 154
+:= -- 378
+add.period$ -- 20
+call.type$ -- 7
+change.case$ -- 35
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 88
+empty$ -- 176
+format.name$ -- 30
+if$ -- 461
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 6
+newline$ -- 37
+num.names$ -- 14
+pop$ -- 34
+preamble$ -- 1
+purify$ -- 29
+quote$ -- 0
+skip$ -- 66
+stack$ -- 0
+substring$ -- 148
+swap$ -- 18
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 28
+warning$ -- 2
+while$ -- 23
+width$ -- 8
+write$ -- 75
+(There were 2 warnings)

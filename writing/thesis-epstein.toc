@@ -1,0 +1,15 @@
+\contentsline {section}{\numberline {1}Introduction to Topic Modeling}{3}
+\contentsline {section}{\numberline {2}Non Negative Matrix Factorization}{3}
+\contentsline {subsection}{\numberline {2.1}How NNMF solves Topic Modeling}{3}
+\contentsline {subsection}{\numberline {2.2}Hierarchical Topic Modelling }{4}
+\contentsline {section}{\numberline {3}Algorithms}{4}
+\contentsline {subsection}{\numberline {3.1}Single Linkage Graph Construction}{5}
+\contentsline {subsection}{\numberline {3.2}Semi-Supervised NNMF}{6}
+\contentsline {subsection}{\numberline {3.3}Deep Semi NMF}{7}
+\contentsline {section}{\numberline {4}Visualization}{7}
+\contentsline {section}{\numberline {5}Hierarchical Topic Model}{7}
+\contentsline {section}{\numberline {6}Results}{9}
+\contentsline {subsection}{\numberline {6.1}Synthetic Data}{9}
+\contentsline {subsection}{\numberline {6.2}Standard Data}{9}
+\contentsline {subsection}{\numberline {6.3}Afghan Data}{9}
+\contentsline {section}{\numberline {7}Discussion/Conlusion}{9}
