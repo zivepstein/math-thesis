@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[4]:
 
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.decomposition import NMF
@@ -12,6 +12,7 @@ import itertools
 import json
 import numpy as np
 import glob
+from dsnmf import DSNMF, appr_seminmf
 n_topics = 20
 n_top_words = 20
 ###fake data
@@ -20,34 +21,61 @@ n_top_words = 20
 # data_samples = dataset.data
 
 
-# In[2]:
+# In[5]:
 
-##generate data as array of strings from local .txt files
 local_data = []
+classes = ['afghannationalliberationfront', 'hezbislami', 'jamiatislami']
 philes =  glob.glob("/Users/ziv/GDrive/school/math-thesis/nmf-imp/txt_data_bypage/*.txt")
-for phile in philes:
+Y = np.zeros((len(classes),len(philes)))
+for (i,phile) in enumerate(philes):
+    c = phile.split('/')[-1].split('_')[0]
+    cls = classes.index(c)
+    Y[cls,i]= 1
     with open(phile, 'r') as myfile:
         data=myfile.read().replace('\n', '')
         local_data.append(unicode(data, errors='ignore'))
 
 
-# In[3]:
+# In[6]:
 
-len(local_data)
-
-
-# In[4]:
-
-#tfdif and nmf model building
 tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
                                    stop_words='english')
 
-tfidf = tfidf_vectorizer.fit_transform(local_data)
+X = tfidf_vectorizer.fit_transform(local_data)
+
+
+# In[7]:
+
 tfidf_feature_names = tfidf_vectorizer.get_feature_names()
-nmf = NMF(n_components=n_topics).fit(tfidf)
+dsnmf = DSNMF(X.toarray(), layers=(400, 100))
+for epoch in range(100):
+    residual = float(dsnmf.train_fun())
+    
+    print("Epoch {}. Residual [{:.2f}]".format(epoch, residual))
+fea = dsnmf.get_features().T # this is the last layers features i.e. h_2
 
 
-# In[5]:
+# In[16]:
+
+a1 = dsnmf.get_param_values()[0]
+a2 = dsnmf.get_param_values()[1]
+s = dsnmf.get_param_values()[2]
+
+
+# In[19]:
+
+print X.shape
+print a1.shape
+print a2.shape
+print s.shape
+
+
+# In[ ]:
+
+
+
+
+# In[8]:
 
 H = nmf.components_
 W = nmf.fit_transform(tfidf)
@@ -172,16 +200,6 @@ with open('demo.json', 'w') as outfile:
 # In[33]:
 
 tv
-
-
-# In[9]:
-
-nmf.components_.shape
-
-
-# In[10]:
-
-from dsnmf import DSNMF, appr_seminmf
 
 
 # In[ ]:

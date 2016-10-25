@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[4]:
 
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.decomposition import NMF
@@ -20,37 +20,64 @@ n_top_words = 20
 # data_samples = dataset.data
 
 
-# In[2]:
+# In[10]:
 
-##generate data as array of strings from local .txt files
+from semi_supervised_nnmf import ssnmf, t
+
+
+# In[7]:
+
 local_data = []
+classes = ['afghannationalliberationfront', 'hezbislami', 'jamiatislami']
 philes =  glob.glob("/Users/ziv/GDrive/school/math-thesis/nmf-imp/txt_data_bypage/*.txt")
-for phile in philes:
+Y = np.zeros((len(classes),len(philes)))
+for (i,phile) in enumerate(philes):
+    c = phile.split('/')[-1].split('_')[0]
+    cls = classes.index(c)
+    Y[cls,i]= 1
     with open(phile, 'r') as myfile:
         data=myfile.read().replace('\n', '')
         local_data.append(unicode(data, errors='ignore'))
 
 
-# In[3]:
+# In[34]:
 
-len(local_data)
-
-
-# In[4]:
-
-#tfdif and nmf model building
 tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
                                    stop_words='english')
 
-tfidf = tfidf_vectorizer.fit_transform(local_data)
+X = tfidf_vectorizer.fit_transform(local_data)
 tfidf_feature_names = tfidf_vectorizer.get_feature_names()
-nmf = NMF(n_components=n_topics).fit(tfidf)
+k = len(classes)
+r = 20
+lamb = 1
+L = np.ones((k,X.shape[0]))
 
 
-# In[5]:
+# In[35]:
 
-H = nmf.components_
-W = nmf.fit_transform(tfidf)
+(A,S,B) = ssnmf(t(X.toarray()),L,Y,lamb,r,k)
+
+
+# In[36]:
+
+print X.shape
+print A.shape
+print S.shape
+
+H = t(A)
+W = t(S)
+
+print X.shape
+print W.shape
+print H.shape
+
+
+
+# In[37]:
+
+H = t(A)
+W = t(S)
+
 #x = WH
 weights = (5000/W.sum())*W.sum(axis=0)
 
@@ -70,7 +97,7 @@ def thresh_vals(numbin):
     return binz
 
 
-# In[13]:
+# In[92]:
 
 def array_distance(A,B):
     count = 0
@@ -120,10 +147,14 @@ def populateTree(row_level, valid_community):
                         grow_my_children = populateTree(row_level+1, community_to_find)
                         if grow_my_children:
                             name = ""
-                            children.append({"community":str(child_community[i]),"indices":[i],"name" : name , "children":grow_my_children, "hasChildren": True})
+                            color = sum(B)[i]
+                            print (color,i)
+                            children.append({"community":str(child_community[i]),"indices":[i],"name" : name,"color":color, "children":grow_my_children, "hasChildren": True})
                         else:
-                            name = " ".join([tfidf_feature_names[j] for j in nmf.components_[i].argsort()[:-n_top_words - 1:-1]])
-                            children.append({"community":str(child_community[i]),"indices":[i],"size":weights[i],"name":name, "hasChildren": False})
+                            color = sum(B)[i]
+                            print (color,i)
+                            name = " ".join([tfidf_feature_names[j] for j in H[i].argsort()[:-n_top_words - 1:-1]])
+                            children.append({"community":str(child_community[i]),"indices":[i],"size":weights[i],"name":name,"color":color, "hasChildren": False})
                         seen_communities.append(child_community[i])
         if len(children) == 1:
             try: 
@@ -135,22 +166,21 @@ def populateTree(row_level, valid_community):
         
 def recursiveNaming(tree):
         i = tree['indices']
-        base = nmf.components_[i[0]]
+        base = H[i[0]]
+        color = sum(B)[i[0]]
         if len(i) > 1:
             for ind in i[1:]:
-                base = np.add(nmf.components_[ind], base)
+                base = np.add(H[ind], base)
+                color = color + sum(B)[ind]
+        print color
+        tree['color'] = color
         tree['name'] = " ".join([tfidf_feature_names[j] for j in base.argsort()[:-n_top_words - 1:-1]])
         if tree['hasChildren']:
             for child in tree['children']:
                     recursiveNaming(child)
 
 
-# In[ ]:
-
-
-
-
-# In[14]:
+# In[74]:
 
 tv = greedy_TV_build(thresh_vals(100),2)
 # visualize topic tree
@@ -160,28 +190,27 @@ tv = greedy_TV_build(thresh_vals(100),2)
 size = len(tv)
 
 
-# In[15]:
+# In[93]:
 
-flare = {"name" : "" , "children" : populateTree(0, 0)}
+flare = {"color" : sum(sum(B)), "name" : "" , "children" : populateTree(0, 0)}
 for child in flare['children']:
     recursiveNaming(child)
-with open('demo.json', 'w') as outfile:
+
+
+# In[94]:
+
+with open('ss-demo.json', 'w') as outfile:
     json.dump(flare, outfile)
 
 
-# In[33]:
+# In[86]:
 
-tv
-
-
-# In[9]:
-
-nmf.components_.shape
+sum(sum(B))
 
 
-# In[10]:
+# In[87]:
 
-from dsnmf import DSNMF, appr_seminmf
+255/1.754900012045385
 
 
 # In[ ]:

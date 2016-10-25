@@ -38,20 +38,24 @@ var svg = d3.select("body").append("svg")
 var partition = d3.layout.partition()
     .value(function(d) { return d.size; });
 
+var color = d3.scale.linear().domain([0,1.8])
+      .interpolate(d3.interpolateHcl)
+      .range([d3.rgb("#007AFF"), d3.rgb('#FFF500')]);
+
 var arc = d3.svg.arc()
     .startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x))); })
     .endAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))); })
     .innerRadius(function(d) { return Math.max(0, y(d.y)); })
     .outerRadius(function(d) { return Math.max(0, 20+y(d.y + d.dy)); });
 
-d3.json("afghanPageLevel.json", function(error, root) {
+d3.json("ss-demo.json", function(error, root) {
   var g = svg.selectAll("g")
       .data(partition.nodes(root))
     .enter().append("g");
 
   var path = g.append("path")
     .attr("d", arc)
-    .style("fill", function(d) { return color((d.children ? d : d.parent).name); })
+    .style("fill", function(d) { return color(d.color); })
     .on("click", click);
 
   var text = []
