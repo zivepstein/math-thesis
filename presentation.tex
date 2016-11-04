@@ -71,13 +71,21 @@
 	
 	Can be thought of as a matrix equation
 	\begin{equation*}
-	output = \sigma_2 (w'(\sigma_1(w(input)))) 
+	\overrightarrow{output} = \sigma_2 (W'(\sigma_1(W(\overrightarrow{input})))) 
 	\end{equation*}
 						\end{frame}
 							\begin{frame}
 								\frametitle{Deep Semi Supervised NNMF}
-								Instead of only factoring $X \approx S \times A$, we instead recursively factor $S$ into $S_1$ and $S_2$.
+								Instead of only factoring $X \approx S \times A$, we instead recursively factor $A_i$ into $S_{i+1}$ and $A_{i+1}$.
 								
+								For example, 
+								
+\begin{align*}
+X = S_1A_1\\X = S_1S_2A_2\\ \vdots \\X = S_1S_2 \cdots S_n A_n
+\end{align*}
+Key insight : We could already do this, but neural network optimization scheme gives us a robust way to learn $S_i$ 
+									\end{frame}
+									\begin{frame}
 								Example: Let $X$ be a matrix of faces. Decompose $X$ into $Z_1 \times Z_2 \times Z_3 \times H_3$. Learns hierarchy of features.
 								\begin{figure}
 									\centering

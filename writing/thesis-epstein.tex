@@ -293,12 +293,20 @@ We then consider the algorithms and notions in the domain of Deep Semi NMF as a 
 
 
 \section{Visualization}
-In this brief section, I will motivate the visualization of hierarchical topic modeling.
+I use the d3.js Sunburst implementation to visualize the hierarchical topic model. Arcs at the same level represent discrete topics. A topic on an inner layer that encompasses multiple outer topics represent a super-topic. For example, in Figure 3, the two outer green topics that represent European banking and Chinese banking representatively (with top words$$ \{\text{banks, loans, collateral, abs, ecb bank, lending, small, european, asset}\} $$and $$\{\text{china, economic, reforms, growth, beijing, economy, said, li, year, urged}\}) $$merge into the inner super topic with top words$$ \{\text{banks, china, economic, abs, reforms, growth, loans, collateral, said, beijing}\}.$$
+
+The visualization is responsive, dynamic and available at \\ \texttt{http://www1.cmc.edu/pages/faculty/BHunter/ziv.html}
+
+Next, I extended this visualization to the Semi-Supervised domain using the Afghan Dataset. Here each document has associated with it a class $C\in \{1,\cdots,k\}$ which in this case $k=3$. Recall that the matrix $B \in \mathbb{R}^{k \times r}$ in the semi-supervised NMF model is multiplied by $S$ to obtain an approximation for $Y$, the label matrix. Thus the $i,j$th entry of $B$ can be interpreted in the weighted importance of topic $i$ in predicting class $j$. Thus I sum over the columns of $B$ to capture how important topic $i$ is predicting classes in general. After normalizing, we get a color value $c_i$ for topic $i$, such that
+$$c_i = \sum_j B_{i,j} /  \sum_{i,j} B_{i,j}$$
+where $c_i=1$ corresponds to yellow and $c_i=0$ corresponds to blue (see Figure 3 right)
 \begin{figure}
 	\centering
-	\includegraphics[width=.99\textwidth]{img}
-	\caption{Screen shot of hierarhical topic model application for sample data set}
+	\includegraphics[width=.48\textwidth]{img}
+	\includegraphics[width=.48\textwidth]{img2}
+	\caption{Left: Visualization of hierarchical topics in standard NMF; Right: Visualization of hierarchical topics in  SSNMF; }
 \end{figure}
+
 \section{Hierarchical Topic Model}
 We will then construct our own model for learning a hierarchy of topics within the model itself. This will be a blend of the Single Linkage graph construction model and the Deep Semi NMF.
 

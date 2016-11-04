@@ -52,6 +52,24 @@ nmf = NMF(n_components=n_topics).fit(tfidf)
 H = nmf.components_
 W = nmf.fit_transform(tfidf)
 #x = WH
+
+
+# In[18]:
+
+
+
+
+# In[22]:
+
+import csv
+with open("vocab.csv", "w") as output:
+    writer = csv.writer(output, lineterminator='\n')
+    writer.writerows(tfidf_feature_names)
+
+
+# In[5]:
+
+
 weights = (5000/W.sum())*W.sum(axis=0)
 
 def build_wgraph(alpha=2):
