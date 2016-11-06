@@ -1,0 +1,230 @@
+\documentclass[12pt]{article}
+\usepackage[]{algorithm2e}
+\usepackage{tikz}
+\usepackage{ifthen}
+% This first part of the file is called the PREAMBLE. It includes
+% customizations and command definitions. The preamble is everything
+% between \documentclass and \begin{document}.
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage[margin=1in]{geometry}  % set the margins to 1in on all sides
+\usepackage{graphicx}              % to include figures
+\usepackage{amsmath}               % great math stuff
+\usepackage{amsfonts}              % for blackboard bold, etc
+\usepackage{amsthm}                % better theorem environments
+\usepackage{changepage}
+\usepackage{lipsum}                     % Dummytext
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+ % Coloured text etc.
+% 
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+\newcommand{\blockmatrix}[9]{
+	\draw[draw=#4,fill=#5] (0,0) rectangle( #1,#2);
+	\ifthenelse{\equal{#6}{true}}
+	{
+		\draw[draw=#7,fill=#8] (0,#2) -- (#9,#2) -- ( #1,#9) -- ( #1,0) -- ( #1 - #9,0) -- (0,#2 -#9) -- cycle;
+	}
+	{}
+	\draw ( #1/2, #2/2) node { #3};
+}
+
+% Quick implementation of a tikz right parenthesis
+% \rightparen{width}
+\newcommand{\rightparen}[1]{
+	\begin{tikzpicture} 
+	\draw (0,#1/2) arc (0:30:#1);
+	\draw (0,#1/2) arc (0:-30:#1);
+	\end{tikzpicture}%this comment is necessary
+}
+
+% Quick implementation of a tikz left parenthesis
+% \leftparen{width}
+\newcommand{\leftparen}[1]{
+	\begin{tikzpicture} 
+	\draw (0,#1/2) arc (180:150:#1);
+	\draw (0,#1/2) arc (180:210:#1);
+	\end{tikzpicture}%this comment is necessary
+}
+
+% Unframed block matrix, "m" prefix to match fbox, mbox
+% \blockmatrix[r,g,b]{width}{height}{text}
+\newcommand{\mblockmatrix}[4][none]{
+	\begin{tikzpicture} 
+	\ifthenelse{\equal{#1}{none}}
+	{
+		\blockmatrix{#2}{#3}{#4}{none}{none}{false}{none}{none}{0.0}
+	}
+	{
+		\definecolor{fillcolor}{rgb}{#1}
+		\blockmatrix{#2}{#3}{#4}{none}{fillcolor}{false}{none}{none}{0.0}
+	}
+	\end{tikzpicture}%this comment is necessary
+}
+
+% Framed block matrix
+% \fblockmatrix[r,g,b]{width}{height}{text}
+\newcommand{\fblockmatrix}[4][none]{
+	\begin{tikzpicture} 
+	\ifthenelse{\equal{#1}{none}}
+	{
+		\blockmatrix{#2}{#3}{#4}{black}{none}{false}{none}{none}{0.0}
+	}
+	{
+		\definecolor{fillcolor}{rgb}{#1}
+		\blockmatrix{#2}{#3}{#4}{black}{fillcolor}{false}{none}{none}{0.0}
+	}
+	\end{tikzpicture}%this comment is necessary
+}
+
+% Diagonal block matrix
+% \dblockmatrix[r,g,b]{width}{height}{text}
+\newcommand{\dblockmatrix}[4][none]{
+	\begin{tikzpicture} 
+	\ifthenelse{\equal{#1}{none}}
+	{
+		\blockmatrix{#2}{#3}{#4}{black}{none}{true}{black}{none}{0.35cm}
+	}
+	{
+		\definecolor{fillcolor}{rgb}{#1}
+		\blockmatrix{#2}{#3}{#4}{black}{none}{true}{black}{fillcolor}{0.35cm}
+	}
+	\end{tikzpicture}%this comment is necessary
+}
+
+
+% Diagonal block matrix, but exposes diagonal offset
+% \diagonalblockmatrix[r,g,b]{width}{height}{text}
+\newcommand{\diagonalblockmatrix}[5][none]{
+	\begin{tikzpicture} 
+	
+	\ifthenelse{\equal{#1}{none}}
+	{
+		\blockmatrix{#2}{#3}{#4}{black}{none}{true}{black}{none}{#5}
+	}
+	{
+		\definecolor{fillcolor}{rgb}{#1}
+		\blockmatrix{#2}{#3}{#4}{black}{none}{true}{black}{fillcolor}{#5}
+	}
+	
+	\end{tikzpicture}%necessary comment
+}
+
+\newcommand{\valignbox}[1]{
+	\vtop{\null\hbox{#1}}% necessary comment
+}
+
+% a hack so that I don't have to worry about the number of columns or
+% spaces between columns in the tabular environment
+\newenvironment{blockmatrixtabular}
+{% necessary comment
+	\begin{tabular}{
+			@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l
+			@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l
+			@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l
+			@{}
+		}
+	}
+	{
+	\end{tabular}%necessary comment
+}
+% various theorems, numbered by section
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+
+\DeclareMathOperator{\id}{id}
+
+\newcommand{\bd}[1]{\mathbf{#1}}  % for bolding symbols
+\newcommand{\RR}{\mathbb{R}}      % for Real numbers
+\newcommand{\ZZ}{\mathbb{Z}}      % for Integers
+\newcommand{\col}[1]{\left[\begin{matrix} #1 \end{matrix} \right]}
+\newcommand{\comb}[2]{\binom{#1^2 + #2^2}{#1+#2}}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{lipsum}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+
+
+\nocite{*}
+
+\title{Revised Topic and Bibliography, second draft}
+
+
+\author{Ziv Epstein \\ 
+	\texttt{ziv.epstein@pomona.edu}}
+
+\maketitle
+\section{Introduction to Topic Modeling}
+With the vast amount of digital text being generated across the internet, methods for understanding and processing corpora of human language become necessary. Across mathematics and computer science, many techniques have been put forward that allow one to understand a body of text far too large to read herself. A successful method in this domain is \emph{topic modelling}, whereby semantically cohesive subgroups of words can be identified. In particular, let $\mathcal{C} = \{d_1,d_2,\cdots, d_n\}$ be a collection of documents with a vocabulary $\mathcal{V}$. A \emph{topic}  $t_i$ is a vector over the words in the vocabulary that represents a coherent high level notion in the corpus:
+$$t_i = \{v^i_1, v^i_2, \cdots, v_m^i\}$$
+where $m$ is the size of the vocabulary. Topic modelling offers a powerful tool for understanding large amounts of text because they can discover latent semantic structure within text. 
+
+There are two primary techniques for learning these topics $t_i$. The first is LDA, a generative Bayesian statistical model which views each document $d_j$ as a mixture of various topics.
+The second is non-negative matrix factorization, which aims to factor the document/word matrix into a document/topic and a topic/word matrix \cite{lee1999learning}. The focus of this thesis will be NNMF, because of its relation to linear algebra, and its deep visual and conceptual intuition. 
+
+Non-negative matrix factorization was first employed by Paatero and Tapper \cite{paatero1994positive} but was made popular by Lee and Seung \cite{lee1999learning} who suggested the importance of non-negative in human percetion and first linked it to topic modeling.
+
+Given our $n$ documents with vocabulary $\mathcal{V}$ of size $m$, we construct a matrix $X \in \mathbb{R}^{n\times m}$ where $X_{i,j}$ is the number of occurences of word $j$ in document $i$. For a given inner dimension $k$, we seek to factor $X$ into two matrices $A$ and $S$ such that
+$$X \approx AS$$
+where $A \in \mathbb{R}^{n\times k}$ is the document/topic matrix and  $S \in \mathbb{R}^{k\times m}$ is the topic/word matrix. When we impose that $A$ and $S$ must be non-negative, a strong intuition emerges. In particular, the $(i,j)$th entry of $A$ corresponds to the proportion of topic $j$ in document $i$ and the $(i,j)$th entry of $S$ corresponds to the relevance of word $j$ in topic $i$.
+\begin{figure}
+\centering
+	\begin{blockmatrixtabular}
+		\valignbox{\fblockmatrix[1.0,0.8,0.8]{1.2in}{0.8in}{$X$}}&
+		\valignbox{\mblockmatrix                    {0.15in}{0.8in}{$\approx$}}&
+		\valignbox{\fblockmatrix       [0.8,1.0,0.8]{0.6in}{0.8in}{$A$}}&
+		\valignbox{\mblockmatrix                    {0.15in}{0.6in}{$\times$}}&
+		\valignbox{\fblockmatrix       [0.8,0.8,1.0]{1.2in}{0.6in}{$S$}}&
+	\end{blockmatrixtabular}
+\caption{Figure 1: A visual representation of the non-negative matrix factorization}
+\end{figure}
+The problem of finding such a factorization can be formulated as finding a non-negative $A$ and $S$ that minimize the error 
+\begin{align}F = ||X-AS||^2
+\end{align}
+While this optization problem is not convex in both $A$ and $S$, it is convex in one of them. So for a given, fixed $S$, we can find the optimal $A$ by setting the gradient equal to zero. Since $||X-AS||^2 = \langle X-AS, X-AS \rangle= X^TX - 2X^TAS + (AS)^T(AS)$ we have
+\begin{align*}
+\frac{\partial F }{\partial A} ( X^TX - 2X^TAS + (AS)^T(AS)) = 0\\
+\text{implies }S^TAS = 2X^TS
+\end{align*}
+which is to say $\frac{X^TS}{S^TAS}=1$ at the optimal $A$. This equality gives us the below multiplicative update algorithm. 
+
+\begin{algorithm}[H]
+	\KwIn{k=0; Initialize $A^0, S^0$}
+	\Repeat{Stopping condition}{
+		\begin{align*}
+		A^{k+1} &= A^k \circ \frac{XS^k}{A^k(S^k)^TA^k}\\
+		S^{k+1} &= S^k \circ \frac{XA^{k+1}}{S^k(A^{k+1})^TA^{k+1}}\\
+		k &= k+1
+		\end{align*} 
+		}
+\caption{Multiplicative Update}
+\end{algorithm}
+
+This optimization scheme naturally leads to a convex optimization function, so the above algorithm can simply be iteratively applied (until for given $T$ we have $k>T$ or for a given $\epsilon>0$ we have $||X-AS||^2 \leq \epsilon$).
+\begin{theorem}
+	The Euclidean distance $||X-AS||^2$ is non-increasing under the updating rules of Algorithm 1.
+\end{theorem}
+
+\section{Annotated Bibliography}
+We begin with the two foundation papers introducing the NNMF concept and standard algorithms. Lee and Seung \cite{lee1999learning} were the first to introduce this idea, and to propose that topic modelling could be thought of as a matrix factorization problem. Ho \cite{ho2008nonnegative} expands on this notion by elaborating on optimization schemas and corresponding algorithms that we will be taking advantage of. We then consider the work of Griffiths and Tenenbaum \cite{griffiths2004hierarchical}, who extened the notion of topic models to a hierarchical domain. We aim to replicate this structure but using an NNMF implementation instead of Latent Dirlichet Allocation (LDA).
+
+Lee et al \cite{lee2010semi} introduces the idea of semi-supervised non negative matrix factorization, which is a key element of extending NNMF to labeled groups. The core of the thesis will be extending the work for Lee et al to hierarchical topic modeling. 
+
+Another foundational approach to hierarchical topic modelling is representing the topics not as a tree but rather as a deep matrix equation. Two papers explore this idea in the domain of NNMF \cite{trigeorgis2014deep, deepNonNeg}. Trigerogis et al. consider semi-negative matrices for the domain to images and graph clustering. They are able to learn a ``hierarchy'' of features for a dataset of faces. Flenner and Hunter treat the deep topic representation as an analogized neural network, and use backpropogation as an optimization scheme to learn appropriate weights. 
+
+\bibliographystyle{plain}
+
+\bibliography{myBib}
+
+
+\end{document}
