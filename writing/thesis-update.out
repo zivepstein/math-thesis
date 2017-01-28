@@ -1,0 +1,25 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Theories for Human Image Understanding}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Part-based recognition and visual perception}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Knowledge representation as information retrieval}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{The hierarchical structure of perception}{chapter.2}% 5
+\BOOKMARK [0][-]{chapter.3}{Techniques}{}% 6
+\BOOKMARK [1][-]{section.3.1}{Singular Value Decomposition}{chapter.3}% 7
+\BOOKMARK [1][-]{section.3.2}{Non negative matrix factorization}{chapter.3}% 8
+\BOOKMARK [1][-]{section.3.3}{Neural Network Representation}{chapter.3}% 9
+\BOOKMARK [0][-]{chapter.4}{Types of Data}{}% 10
+\BOOKMARK [1][-]{section.4.1}{Image}{chapter.4}% 11
+\BOOKMARK [1][-]{section.4.2}{Sound}{chapter.4}% 12
+\BOOKMARK [1][-]{section.4.3}{Graph}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.4}{Natural Language}{chapter.4}% 14
+\BOOKMARK [0][-]{chapter.5}{Semi-Supervised NNMF}{}% 15
+\BOOKMARK [1][-]{section.5.1}{Approach}{chapter.5}% 16
+\BOOKMARK [1][-]{section.5.2}{Visualization}{chapter.5}% 17
+\BOOKMARK [0][-]{chapter.6}{Hierarchical Representation}{}% 18
+\BOOKMARK [1][-]{section.6.1}{Approach}{chapter.6}% 19
+\BOOKMARK [1][-]{section.6.2}{Visualization}{chapter.6}% 20
+\BOOKMARK [0][-]{chapter.7}{Deep Models}{}% 21
+\BOOKMARK [1][-]{section.7.1}{Approach}{chapter.7}% 22
+\BOOKMARK [1][-]{section.7.2}{Deep Neural Models}{chapter.7}% 23
+\BOOKMARK [1][-]{section.7.3}{Visualization}{chapter.7}% 24
+\BOOKMARK [0][-]{chapter.8}{Discussion}{}% 25

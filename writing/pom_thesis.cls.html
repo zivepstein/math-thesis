@@ -1,0 +1,161 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+	    <title>CAS &#8211; Central Authentication Service</title>
+        
+		
+        <link type="text/css" rel="stylesheet" href="/cas/css/cas.css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <link rel="icon" href="/cas/favicon.ico" type="image/x-icon" />
+	</head>
+	<body id="cas" class="fl-theme-iphone">
+    <div class="flc-screenNavigator-view-container">
+        <div class="fl-screenNavigator-view">
+            <div id="header" class="flc-screenNavigator-navbar fl-navbar fl-table">
+				<h1 id="company-name">Claremont University Consortium</h1>
+                <h1 id="app-name" class="fl-table-cell">Central Authentication Service (CAS)</h1>
+            </div>		
+            <div id="content" class="fl-screenNavigator-scroll-container">
+
+
+
+
+  <div class="box fl-panel" id="login">
+			<form id="fm1" class="fm-v clearfix" action="/cas/login?service=https%3A%2F%2Fsakai.claremont.edu%2Fsakai-login-tool%2Fcontainer" method="post">
+                  
+                <!-- Congratulations on bringing CAS online!  The default authentication handler authenticates where usernames equal passwords: go ahead, try it out. -->
+                    <h2>Enter your Username and Password</h2>
+                    <div class="row fl-controls-left">
+                    	<select id="selCollege" tabindex="1">
+                    		<option value="unselected" selected="selected" disabled="disabled">Select your college</option>
+                    		<option value="cgu.edu">Claremont Graduate University</option>
+                    		<option value="cmc.edu">Claremont McKenna College</option>
+                    		<option value="cuc.claremont.edu">Claremont University Consortium</option>
+                    		<option value="hmc.edu">Harvey Mudd College</option>
+                    		<option value="kgi.edu">Keck Graduate Institute</option>
+                    		<option value="kecksci.claremont.edu">Keck Science Department</option>
+                    		<option value="pitzer.edu">Pitzer College</option>
+                    		<option value="pomona.edu">Pomona College</option>
+                    		<option value="scrippscollege.edu">Scripps College</option>
+                    	</select>
+                    	<div id="selCollege-warn" class="red"><p></p></div>
+                    </div>
+                    <div class="row fl-controls-left">
+                        <label for="username" class="fl-label"><span class="accesskey">U</span>sername:</label>
+						
+
+						
+						
+						<input id="username" name="username" class="required" type="hidden" accesskey="u" value="" size="25" autocomplete="false"/>
+						<input type="text" class="required" cssErrorClass="error" id="dispname" size="25" tabindex="2"  autocomplete="false" htmlEscape="true" />
+						
+                    </div>
+                    <div class="row fl-controls-left">
+                        <label for="password" class="fl-label"><span class="accesskey">P</span>assword:</label>
+						
+						
+						<input id="password" name="password" class="required" tabindex="3" accesskey="p" type="password" value="" size="25" autocomplete="off"/>
+                    </div>
+                    <div class="row check">
+                        <input id="warn" name="warn" value="true" tabindex="4" accesskey="w" type="checkbox" />
+                        <label for="warn"><span class="accesskey">W</span>arn me before logging me into other sites.</label><br/>
+                    </div>
+                    <div class="row btn-row">
+						<input type="hidden" name="lt" value="LT-18101865-r3tAF50ys5Nd0OICeecvCcNWxBRnSe" />
+						<input type="hidden" name="execution" value="e1s1" />
+						<input type="hidden" name="_eventId" value="submit" />
+
+                        <input class="btn-submit" name="submit" accesskey="l" value="LOGIN" tabindex="5" type="submit" />
+                        <input class="btn-reset" name="reset" accesskey="c" value="CLEAR" tabindex="6" type="reset" />
+                    </div>
+            </form>
+          </div>
+            <div id="sidebar">
+				<div class="sidebar-content">
+                <p class="fl-panel fl-note fl-bevel-white fl-font-size-80">For security reasons, please Log Out and Exit your web browser when you are done accessing services that require authentication!</p>
+		<div id="pomona-notice" class="coll-notice">
+					<h2>Pomona College Links</h2><br/>
+					<p>
+						<a href="http://its.pomona.edu/services/storage/box"
+							title="Pomona ITS Website" target="_new">Pomona ITS Website</a>
+					</p>
+					<p>
+						<a href="https://helpdesk.pomona.edu/portal/ss/"
+							title="Pomona KnowledgeBase" target="_new">Pomona KnowledgeBase</a>
+					</p>
+					<p><a
+					href="http://its.pomona.edu/services/security/passwords/"
+					title="Information about your Password" target="_new"> Information about your Password</a>
+					</p>
+					<p>
+						<a href="https://mypassword.pomona.edu/"
+							title="Change/Reset/Unlock Password" target="_new">Change/Reset/Unlock
+							Password</a>
+					</p>
+					
+					<p>
+						<a	href="http://its.pomona.edu/contact/servicedesk-contact-form/"
+					title="Contact the ITS Service Desk" target="_new">Contact the
+						ITS Service Desk</a>
+					</p>
+					
+					<p>
+						<a	href="http://its.pomona.edu/services/policies/appropriate-use-policy/"
+					title="Acceptable Use Policy" target="_new">Acceptable Use Policy</a>
+					</p>
+		</div>
+	</div>
+            </div>
+
+
+
+</div>
+                <div id="footer" class="fl-panel fl-note fl-bevel-white fl-font-size-80">
+	<section id="section-member-colleges">
+		<nav class="colleges-nav">
+			<h4>The Claremont Colleges</h4>
+			<ul>
+				<li class="college pom"><a target="_blank"
+					href="http://www.pomona.edu/">Pomona College</a></li>
+				<li class="college cgu"><a target="_blank"
+					href="http://www.cgu.edu/">Claremont Graduate University</a></li>
+				<li class="college cuc"><a target="_blank"
+					href="http://www.cuc.claremont.edu/">Claremont University
+						Consortium</a></li>
+				<li class="college scr"><a target="_blank"
+					href="http://www.scrippscollege.edu/">Scripps College</a></li>
+				<li class="college cmc"><a target="_blank"
+					href="http://www.claremontmckenna.edu/">Claremont McKenna
+						College</a></li>
+				<li class="college hmc"><a target="_blank"
+					href="http://www.hmc.edu/">Harvey Mudd College</a></li>
+				<li class="college ptz"><a target="_blank"
+					href="http://www.pitzer.edu/">Pitzer College</a></li>
+				<li class="college kgi"><a target="_blank"
+					href="http://www.kgi.edu/">Keck Graduate Institute</a></li>
+			</ul>
+		</nav>
+	</section>
+</div>
+            </div>
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="/cas/js/cas.js"></script>
+        <script type="text/javascript" src="/cas/js/jQuery.cookie.js"></script>
+        <script type="text/javascript" src="/cas/js/cuc-cas.js"></script>
+        
+    </body>
+</html>
+
+

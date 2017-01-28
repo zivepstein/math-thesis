@@ -1,0 +1,212 @@
+\documentclass[12pt]{article}
+\usepackage[]{algorithm2e}
+\usepackage{tikz}
+\usepackage{ifthen}
+% This first part of the file is called the PREAMBLE. It includes
+% customizations and command definitions. The preamble is everything
+% between \documentclass and \begin{document}.
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}
+\usepackage[margin=1in]{geometry}  % set the margins to 1in on all sides
+\usepackage{graphicx}              % to include figures
+\usepackage{amsmath}               % great math stuff
+\usepackage{amsfonts}              % for blackboard bold, etc
+\usepackage{amsthm}                % better theorem environments
+\usepackage{changepage}
+\usepackage{lipsum}                     % Dummytext
+\usepackage{xargs}                      % Use more than one optional parameter in a new commands
+ % Coloured text etc.
+% 
+\usepackage[colorinlistoftodos,prependcaption,textsize=tiny]{todonotes}
+\newcommandx{\unsure}[2][1=]{\todo[linecolor=red,backgroundcolor=red!25,bordercolor=red,#1]{#2}}
+\newcommandx{\change}[2][1=]{\todo[linecolor=blue,backgroundcolor=blue!25,bordercolor=blue,#1]{#2}}
+\newcommandx{\info}[2][1=]{\todo[linecolor=OliveGreen,backgroundcolor=OliveGreen!25,bordercolor=OliveGreen,#1]{#2}}
+\newcommandx{\improvement}[2][1=]{\todo[linecolor=Plum,backgroundcolor=Plum!25,bordercolor=Plum,#1]{#2}}
+\newcommandx{\thiswillnotshow}[2][1=]{\todo[disable,#1]{#2}}
+\newcommand{\blockmatrix}[9]{
+	\draw[draw=#4,fill=#5] (0,0) rectangle( #1,#2);
+	\ifthenelse{\equal{#6}{true}}
+	{
+		\draw[draw=#7,fill=#8] (0,#2) -- (#9,#2) -- ( #1,#9) -- ( #1,0) -- ( #1 - #9,0) -- (0,#2 -#9) -- cycle;
+	}
+	{}
+	\draw ( #1/2, #2/2) node { #3};
+}
+
+% Quick implementation of a tikz right parenthesis
+% \rightparen{width}
+\newcommand{\rightparen}[1]{
+	\begin{tikzpicture} 
+	\draw (0,#1/2) arc (0:30:#1);
+	\draw (0,#1/2) arc (0:-30:#1);
+	\end{tikzpicture}%this comment is necessary
+}
+
+% Quick implementation of a tikz left parenthesis
+% \leftparen{width}
+\newcommand{\leftparen}[1]{
+	\begin{tikzpicture} 
+	\draw (0,#1/2) arc (180:150:#1);
+	\draw (0,#1/2) arc (180:210:#1);
+	\end{tikzpicture}%this comment is necessary
+}
+
+% Unframed block matrix, "m" prefix to match fbox, mbox
+% \blockmatrix[r,g,b]{width}{height}{text}
+\newcommand{\mblockmatrix}[4][none]{
+	\begin{tikzpicture} 
+	\ifthenelse{\equal{#1}{none}}
+	{
+		\blockmatrix{#2}{#3}{#4}{none}{none}{false}{none}{none}{0.0}
+	}
+	{
+		\definecolor{fillcolor}{rgb}{#1}
+		\blockmatrix{#2}{#3}{#4}{none}{fillcolor}{false}{none}{none}{0.0}
+	}
+	\end{tikzpicture}%this comment is necessary
+}
+
+% Framed block matrix
+% \fblockmatrix[r,g,b]{width}{height}{text}
+\newcommand{\fblockmatrix}[4][none]{
+	\begin{tikzpicture} 
+	\ifthenelse{\equal{#1}{none}}
+	{
+		\blockmatrix{#2}{#3}{#4}{black}{none}{false}{none}{none}{0.0}
+	}
+	{
+		\definecolor{fillcolor}{rgb}{#1}
+		\blockmatrix{#2}{#3}{#4}{black}{fillcolor}{false}{none}{none}{0.0}
+	}
+	\end{tikzpicture}%this comment is necessary
+}
+
+% Diagonal block matrix
+% \dblockmatrix[r,g,b]{width}{height}{text}
+\newcommand{\dblockmatrix}[4][none]{
+	\begin{tikzpicture} 
+	\ifthenelse{\equal{#1}{none}}
+	{
+		\blockmatrix{#2}{#3}{#4}{black}{none}{true}{black}{none}{0.35cm}
+	}
+	{
+		\definecolor{fillcolor}{rgb}{#1}
+		\blockmatrix{#2}{#3}{#4}{black}{none}{true}{black}{fillcolor}{0.35cm}
+	}
+	\end{tikzpicture}%this comment is necessary
+}
+
+
+% Diagonal block matrix, but exposes diagonal offset
+% \diagonalblockmatrix[r,g,b]{width}{height}{text}
+\newcommand{\diagonalblockmatrix}[5][none]{
+	\begin{tikzpicture} 
+	
+	\ifthenelse{\equal{#1}{none}}
+	{
+		\blockmatrix{#2}{#3}{#4}{black}{none}{true}{black}{none}{#5}
+	}
+	{
+		\definecolor{fillcolor}{rgb}{#1}
+		\blockmatrix{#2}{#3}{#4}{black}{none}{true}{black}{fillcolor}{#5}
+	}
+	
+	\end{tikzpicture}%necessary comment
+}
+
+\newcommand{\valignbox}[1]{
+	\vtop{\null\hbox{#1}}% necessary comment
+}
+
+% a hack so that I don't have to worry about the number of columns or
+% spaces between columns in the tabular environment
+\newenvironment{blockmatrixtabular}
+{% necessary comment
+	\begin{tabular}{
+			@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l
+			@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l
+			@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l@{}l
+			@{}
+		}
+	}
+	{
+	\end{tabular}%necessary comment
+}
+% various theorems, numbered by section
+
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{conj}[thm]{Conjecture}
+
+\DeclareMathOperator{\id}{id}
+
+\newcommand{\bd}[1]{\mathbf{#1}}  % for bolding symbols
+\newcommand{\RR}{\mathbb{R}}      % for Real numbers
+\newcommand{\ZZ}{\mathbb{Z}}      % for Integers
+\newcommand{\col}[1]{\left[\begin{matrix} #1 \end{matrix} \right]}
+\newcommand{\comb}[2]{\binom{#1^2 + #2^2}{#1+#2}}
+\usepackage{graphicx}
+\usepackage{csquotes}
+\usepackage{lipsum}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+
+
+\nocite{*}
+
+\title{Hierarchical Topic Modelling \\ 
+	Mathematics Senior Thesis}
+
+
+\author{Ziv Epstein \\ 
+	\texttt{ziv.epstein@pomona.edu}}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction to Topic Modeling}
+Here we introduce the notion of topic modeling, cite previous work \cite{lee1999learning} \cite{ho2008nonnegative} and talk about its relation to society. As you can see from first draft, this is mostly done already.
+
+\section{Non Negative Matrix Factorization}
+\subsection{How NNMF solves Topic Modeling}
+Talk about the linear algrebraic intuition behind NNMF and how it solves topic modeling. This is also already done. 
+\subsection{Hierarchical Topic Modellng }
+Introduce the core idea of the thesis, which is extending the ideas of NMF to the hierarchical domain. Give some examples, in the vein of \cite{griffiths2004hierarchical}
+\section{Algorithms}
+We then discuss methods for using NNMF to generate a hierarchical topic model.
+\subsection{Single Linkage Graph Construction}
+This is the algorithm we invited. My first draft already fully explores this. 
+
+\subsection{Semi-Supervised NNMF}
+Here, I will fully describe the ideas and implementation details of SSNMF. I will talk about the intuition behind it and how it introduces notions of SVMs into NNMF.
+
+\subsection{Deep Semi NMF}
+Here I will give a brief overview of the notion of neural networks as a generalization of nested matrix factorization. I will describe backpropogation as an optimization scheme and compare it with other methods. I will this describe two works that use look at deep NMF, one of which is motivated by these neural networks, the other of which is motivated by more traditional techniques.
+\section{Visualization}
+Here I will motivate the visualization of this data, provide some heuristics, survey the field of hierarchical data visualization and propose my alterations. 
+
+\section{Hierarchical Topic Model}
+We will then construct our own model for learning a hierarchy of topics within the model itself. This will be a blend of the Single Linkage graph construction model and the Deep Semi NMF.
+
+\section{Results}
+We will then apply the method of our Hierarchical Topic Model to several datasets, and compare our results with previous work.
+\subsection{Synthetic Data}
+We will generate synthetic data with hierarchical topics and verify that our algorithm succesfully extracts them 
+\subsection{Standard Data}
+We will run our algorithm on data cannonically associated with this task. For our purposes, the 20 News Group Data set will probably be sufficient.
+\subsection{Afghan Data}
+A collaborator at NYU Abu-Dhabi has hand-curated a dataset of Afghani magazines, which is notable for sociologists. We will run our algorithm on this data set and see what happens
+
+\section{Discussion/Conclusion}
+Here we will conclude by situating this work within the field, compare its results with similar methods and propose future work.
+\bibliographystyle{plain}
+
+\bibliography{myBib}
+
+
+\end{document}

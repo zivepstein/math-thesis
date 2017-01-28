@@ -1,4 +1,9 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{biederman1987recognition}
+Irving Biederman.
+\newblock Recognition-by-components: a theory of human image understanding.
+\newblock {\em Psychological review}, 94(2):115, 1987.
 
 \bibitem{deepNonNeg}
 Jennifer Flenner and Blake Hunter.
@@ -25,6 +30,12 @@ Andrea Lancichinetti, Santo Fortunato, and J{\'a}nos Kert{\'e}sz.
   complex networks.
 \newblock {\em New Journal of Physics}, 11(3):033015, 2009.
 
+\bibitem{lee1997unsupervised}
+Daniel~D Lee and H~Sebastian Seung.
+\newblock Unsupervised learning by convex and conic coding.
+\newblock {\em Advances in neural information processing systems}, pages
+  515--521, 1997.
+
 \bibitem{lee1999learning}
 Daniel~D Lee and H~Sebastian Seung.
 \newblock Learning the parts of objects by non-negative matrix factorization.
@@ -46,5 +57,10 @@ George Trigeorgis, Konstantinos Bousmalis, Stefanos Zafeiriou, and Bjoern
   Schuller.
 \newblock A deep semi-nmf model for learning hidden representations.
 \newblock In {\em ICML}, pages 1692--1700, 2014.
+
+\bibitem{vavasis2009complexity}
+Stephen~A Vavasis.
+\newblock On the complexity of nonnegative matrix factorization.
+\newblock {\em SIAM Journal on Optimization}, 20(3):1364--1377, 2009.
 
 \end{thebibliography}

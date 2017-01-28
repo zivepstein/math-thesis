@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 NOV 2016 21:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  3 DEC 2016 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -688,11 +688,11 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 167.
+LaTeX Font Info:    Try loading font information for U+msa on input line 168.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 167.
+LaTeX Font Info:    Try loading font information for U+msb on input line 168.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -707,26 +707,26 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <tree.png, id=31, 1085.05376pt x 1053.9375pt>
 File: tree.png Graphic file (type png)
  <use tree.png>
-Package pdftex.def Info: tree.png used on input line 250.
+Package pdftex.def Info: tree.png used on input line 251.
 (pdftex.def)             Requested size: 234.8775pt x 228.136pt.
  [5] [6 <./tree.png>] [7] <img.png, id=49, 789.95125pt x 696.6025pt>
 File: img.png Graphic file (type png)
  <use img.png>
-Package pdftex.def Info: img.png used on input line 305.
+Package pdftex.def Info: img.png used on input line 306.
 (pdftex.def)             Requested size: 225.4804pt x 198.83139pt.
 
 <img2.png, id=50, 625.33624pt x 665.48625pt>
 File: img2.png Graphic file (type png)
  <use img2.png>
-Package pdftex.def Info: img2.png used on input line 306.
+Package pdftex.def Info: img2.png used on input line 307.
 (pdftex.def)             Requested size: 225.4804pt x 239.95058pt.
  [8 <./img.png> <./img2.png>] (./thesis-epstein.bbl [9]) [10] (./thesis-epstein
 .aux) ) 
 Here is how much of TeX's memory you used:
- 15725 strings out of 493089
- 295649 string characters out of 6134842
- 484499 words of memory out of 5000000
- 18897 multiletter control sequences out of 15000+600000
+ 15728 strings out of 493089
+ 295719 string characters out of 6134842
+ 483511 words of memory out of 5000000
+ 18900 multiletter control sequences out of 15000+600000
  13733 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,18n,76p,910b,731s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -748,7 +748,7 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
 015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/20
 15/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/201
 5/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis-epstein.pdf (10 pages, 1103629 bytes).
+Output written on thesis-epstein.pdf (10 pages, 1108358 bytes).
 PDF statistics:
  119 PDF objects out of 1000 (max. 8388607)
  82 compressed objects within 1 object stream

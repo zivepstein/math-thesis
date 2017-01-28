@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[4]:
+# In[1]:
 
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.decomposition import NMF
@@ -20,12 +20,12 @@ n_top_words = 20
 # data_samples = dataset.data
 
 
-# In[10]:
+# In[2]:
 
 from semi_supervised_nnmf import ssnmf, t
 
 
-# In[7]:
+# In[3]:
 
 local_data = []
 classes = ['afghannationalliberationfront', 'hezbislami', 'jamiatislami']
@@ -40,7 +40,7 @@ for (i,phile) in enumerate(philes):
         local_data.append(unicode(data, errors='ignore'))
 
 
-# In[34]:
+# In[4]:
 
 tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
                                    stop_words='english')
@@ -53,12 +53,23 @@ lamb = 1
 L = np.ones((k,X.shape[0]))
 
 
-# In[35]:
+# In[9]:
+
+print X.shape
+print Y.shape
+
+
+# In[10]:
 
 (A,S,B) = ssnmf(t(X.toarray()),L,Y,lamb,r,k)
 
 
-# In[36]:
+# In[ ]:
+
+print B.shape
+
+
+# In[6]:
 
 print X.shape
 print A.shape
@@ -73,8 +84,14 @@ print H.shape
 
 
 
-# In[37]:
+# In[14]:
 
+B[3][18]
+
+
+# In[30]:
+
+current_group = 2
 H = t(A)
 W = t(S)
 
@@ -97,7 +114,7 @@ def thresh_vals(numbin):
     return binz
 
 
-# In[92]:
+# In[31]:
 
 def array_distance(A,B):
     count = 0
@@ -147,11 +164,11 @@ def populateTree(row_level, valid_community):
                         grow_my_children = populateTree(row_level+1, community_to_find)
                         if grow_my_children:
                             name = ""
-                            color = sum(B)[i]
+                            color = B[current_group][i]
                             print (color,i)
                             children.append({"community":str(child_community[i]),"indices":[i],"name" : name,"color":color, "children":grow_my_children, "hasChildren": True})
                         else:
-                            color = sum(B)[i]
+                            color = B[current_group][i]
                             print (color,i)
                             name = " ".join([tfidf_feature_names[j] for j in H[i].argsort()[:-n_top_words - 1:-1]])
                             children.append({"community":str(child_community[i]),"indices":[i],"size":weights[i],"name":name,"color":color, "hasChildren": False})
@@ -167,11 +184,11 @@ def populateTree(row_level, valid_community):
 def recursiveNaming(tree):
         i = tree['indices']
         base = H[i[0]]
-        color = sum(B)[i[0]]
+        color = B[current_group][i[0]]
         if len(i) > 1:
             for ind in i[1:]:
                 base = np.add(H[ind], base)
-                color = color + sum(B)[ind]
+                color = color + B[current_group][ind]
         print color
         tree['color'] = color
         tree['name'] = " ".join([tfidf_feature_names[j] for j in base.argsort()[:-n_top_words - 1:-1]])
@@ -180,7 +197,7 @@ def recursiveNaming(tree):
                     recursiveNaming(child)
 
 
-# In[74]:
+# In[32]:
 
 tv = greedy_TV_build(thresh_vals(100),2)
 # visualize topic tree
@@ -190,16 +207,16 @@ tv = greedy_TV_build(thresh_vals(100),2)
 size = len(tv)
 
 
-# In[93]:
+# In[33]:
 
 flare = {"color" : sum(sum(B)), "name" : "" , "children" : populateTree(0, 0)}
 for child in flare['children']:
     recursiveNaming(child)
 
 
-# In[94]:
+# In[34]:
 
-with open('ss-demo.json', 'w') as outfile:
+with open('ss' + str(current_group)+'demo.json', 'w') as outfile:
     json.dump(flare, outfile)
 
 
@@ -211,6 +228,12 @@ sum(sum(B))
 # In[87]:
 
 255/1.754900012045385
+
+
+# In[18]:
+
+current_group = 0
+print "4" + str(current_group)
 
 
 # In[ ]:

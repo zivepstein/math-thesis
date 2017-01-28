@@ -2,7 +2,7 @@
 \contentsline {section}{\numberline {2}Non Negative Matrix Factorization}{3}
 \contentsline {subsection}{\numberline {2.1}How NNMF solves Topic Modeling}{3}
 \contentsline {subsection}{\numberline {2.2}Hierarchical Topic Modelling }{4}
-\contentsline {section}{\numberline {3}Algorithms}{4}
+\contentsline {section}{\numberline {3}Algorithms}{5}
 \contentsline {subsection}{\numberline {3.1}Single Linkage Graph Construction}{5}
 \contentsline {subsection}{\numberline {3.2}Semi-Supervised NNMF}{6}
 \contentsline {subsection}{\numberline {3.3}Deep Semi NMF}{7}
