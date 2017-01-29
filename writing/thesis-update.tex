@@ -153,7 +153,7 @@
 
 \nocite{*}
 
-\title{Data Representation with Low Rank, Real Valued Matrices}
+\title{Data Representation as Low Rank Matrix Factorization}
 
 
 \author{Ziv Epstein \\ 
@@ -173,7 +173,7 @@
 	
 	Here, I will consider the case were data is represented as a well-structured and  real-valued matrix. This approach can represent data from a large range of domains, such as sound, natural language, visual images and networks. Thus, many of the algorithms and heuristics I explore here are domain general, and can be applied with success to a range of settings. 
 	
-	My particular focus in this thesis is the notion of \textit{low-dimensional representations of data}. A real valued matrix $X$ that represents a collection of sounds, natural language documents, images or networks taken from real world settings will necessarily be noisy and not optimally structured. One canonical challenge is to find a $X' \approx X$ that well approximates the original data's structure, but with $\operatorname{rank}(X') << \operatorname{rank}(X)$. A low rank approximation of the data gives a sparse representation that in some sense captures the most important facets of the data. 
+	My particular focus in this thesis is the notion of \textit{low-dimensional representations of data}. A real valued matrix $X$ that represents a collection of sounds, natural language documents, images or networks taken from real world settings will necessarily be noisy and not optimally structured. One canonical challenge (that we will dub ``The Representation Problem'') is to find a $X' \approx X$ that well approximates the original data's structure, but with $\operatorname{rank}(X') << \operatorname{rank}(X)$. A low rank approximation of the data gives a sparse representation that in some sense captures the most important facets of the data. 
 	
 	This approach also has explanatory power. Let $r = \operatorname{rank}(X')$ and $b= (b_1,b_2,\cdots,b_r)$ be a basis for $X'$. Depending on the constraints imposed on the $b_i$'s, they can have many different interpretations. For example, when the $b_i$'s are constrained to be orthonormal to each other, the resulting algorithm is Principal Component Analysis (PCA), which ``supplies the user with a lower-dimensional projection of the object when viewed from its most informative viewpoint.'' 
 	
@@ -183,6 +183,7 @@
 \begin{chapter}{Theories for Human Image Understanding}
 	The general class of algorithms I am considering have in the common the fact that they take as input a large amount of noisy, somewhat structured data, and output some unified high-level notion of underlying pattern. 
 	\begin{figure}[h]
+		\label{cup}
 		\centering
 		\includegraphics[width=3in]{cup}
 		\caption{How does your brain take the raw retinal activations of this picture and produce a mental representation of a cup?}
@@ -196,8 +197,9 @@ A given object can project an uncountable infinitude of possible visual configur
 	\item \textbf{Topological fuzziness:} ``The information that is the basis for recognition should be relatively invariant with respect to orientation and modest degradation'.'
 	\item \textbf{Plasticity:} ``Partial matches should be computable. A theory of object interpretation should have some principled means for computing a match for occluded, partial or new exemplars of a given category.''
 \end{enumerate}
-These axioms are central to task of modeling, and will be used by the cognitive and mathematical models put forward here. A large number of explanatory theories have been proposed over the years for this phenomenon of object recognition. One extremal idea is the structuralist position which posits that ``the perception of whole figures is nothing more than the concatenation of primitive perceptual elements.'' \cite{palmer1977hierarchical}. Another extremal theory, born out of the Gestalt theory, claims that the recognition of complex objects is an indivisible process, which cannot be reconstructed by considering the nature and properties of its constituent parts.  The most performant modern theories lie within the simplex defined by these holistic and atomic extrema. One such theory, the Recognition-by-Components (RBC) theory proposed by Biederman proposes a sparse vocabulary of atoms and a schema for how these components can be conglomerated to represent in memory (see Figure 2.1) \cite{biederman1987recognition}.
+These axioms are central to task of modeling, and will be used by the cognitive and mathematical models put forward here. A large number of explanatory theories have been proposed over the years for this phenomenon of object recognition. One extremal idea is the structuralist position which posits that ``the perception of whole figures is nothing more than the concatenation of primitive perceptual elements.'' \cite{palmer1977hierarchical}. Another extremal theory, born out of the Gestalt theory, claims that the recognition of complex objects is an indivisible process, which cannot be reconstructed by considering the nature and properties of its constituent parts.  The most performant modern theories lie within the simplex defined by these holistic and atomic extrema. One such theory, the Recognition-by-Components (RBC) theory proposed by Biederman proposes a sparse vocabulary of atoms and a schema for how these components can be conglomerated to represent in memory (see Figure~\ref{fig: rbc}) \cite{biederman1987recognition}.
 \begin{figure}
+	\label{fig: rbc}
 	\centering
 	\includegraphics[width=6cm]{rbc}
 	\caption{Processing stages for object recognition proposed by the RBC Theory. Adapted from \cite{biederman1987recognition}}
@@ -211,7 +213,7 @@ RBC has two heuristics that we will primary draw upon for formalizing this theor
 \begin{equation} \label{eq:1}O = \sum_{i=1}^d \alpha_i b_i\end{equation}
 where $d$ is much smaller than the space of possible objects. Natural questions that arise from this model of human perception are 1) What is sufficient for $d$? Biederman proposes $d=36$ is sufficient of visual object recognition, but what about other domains? and 2) How are these bases, $b_i$ learned? Biederman suggests that $b_i$ is a volumetric cone, but gives no explanation for how this components emerge from the human visual system. 
 
-The second heuristic of RBC we will use the schematic for recognition (see Figure 2.1). This schema gives the roadmap for a suite of algorithms we will use to generate representational models (see seciton X). 
+The second heuristic of RBC we will use the schematic for recognition (see Figure \ref{fig: rbc}). This schema gives us a roadmap for a suite of algorithms we will use to generate representational models (see Section \ref{chapter:techniques}). 
 \section{Knowledge representation as information retrieval}
 The RBC Theory puts forward a highly structured representation of a given input $O$ as described in Equation \ref{eq:1}. It then suggests that this representation is then procedural matched with a preexisting notion in memory towards recognition. To understand how this matching occurs, we turn to Minsky's framework for representing knowledge \cite{minsky1975framework}. Minsky thinks of memory as a collection of \textbf{frames}, which is a data structure that represents a stereotyped situation, space or object \cite{minsky1975framework}. In particular, a frame is a hierarchical network of nodes and relations which correspond to that which the frame represents. In particular, the ``top levels'' of the network are fixed. They represent entities and relations that are always true about the frame's content. The lower lever has \textbf{terminals}, empty ``slots'' to be filled with raw input or data. These terminals carry with them a set of rules (which are frames themselves) which specify the necessary conditions for assignment that terminal. 
 
@@ -221,11 +223,30 @@ After the raw sensory input of a stimulus percolates through the RBC processing 
 
 This process of selecting an optimal frame for representation is parallel to the optimization component of the algorithms we will discuss.  
 \section{The hierarchical structure of perception}
-Biederman puts forward an atomic unit of visual perception \cite{biederman1987recognition}, and Minksy extends that notion with a generalized framework for representing this atomic units \cite{minsky1975framework}. However neither of these formulations describe explicitly how raw sensory data can be accumulated into something as sophisticated as the high-level recognition of an object. Palmer puts forward a structural schematic for hierarchical perceptual representation. \cite{palmer1977hierarchical}
-\todo{finish}
+Biederman puts forward an atomic unit of visual perception \cite{biederman1987recognition}, and Minksy extends that notion with a generalized framework for representing this atomic units \cite{minsky1975framework}. However neither of these formulations describe explicitly how raw sensory data can be accumulated into something as sophisticated as the high-level recognition of an object. Palmer puts forward a structural schematic for hierarchical perceptual representation involving structural units, values on global properties and structural relationships (see Figure \ref{fig:palmer}) \cite{palmer1977hierarchical}. 
+\begin{figure}[h]
+	\label{fig:palmer}
+	\centering
+	\includegraphics[width=10cm]{palmer_tree}
+	\caption{The hierarchical relationship network used to represent perceptual information. At each level of the hierarchy, a structural unit (SU) is a combination of values (V) on global properties (P) and structural relationships to other structural units.  Adapted from \cite{palmer1977hierarchical}}
+\end{figure}
+The values of the global properties at each node of the network are a real-valued vector ``along perceptual dimensions relative to some referent.'' \cite{palmer1977hierarchical}. During the process of pattern recognition, these numeric values are used to evaluate the goodness-of-fit between some raw sensory input (that is to be identified) and some pre-existing information encoded in the network. The task of matching the sensory input to the encoded information is analogous to Minsk'y frame retrieval discussed above \cite{minsky1975framework}.
+\section{Interpretations for Algorithmic Formulation}
+\label{interp}
+The theories put forward above have several key formulations of the Representation Problem that I will leverage and formalize throughout this thesis. 
+
+\textbf{Object Classification as Supervised Manifold Learning}
+
+As we have seen, the hierarchies proposed above aim to match high-order labels to a series of raw retinal activations. For example, let $(r_1,r_2,\cdots, r_n)$ be the retinal activation of observing Figure \ref{cup}. Previous to observing the image, there exists somewhere in the perceptual hierarchy of your brain the label of cup $\ell_i$. Thus the task of object classification  can be formulated as the supervised learning of a manifold $f$, whereby $f(r_1,r_2,\cdots,r_n) = \ell_i$.
+
+\textbf{Geons as Topics}
+
+\textbf{Hierarchical Organization of Topics}
+\todo{finish these and make figures}
 \end{chapter}
 
 \begin{chapter}{Techniques}
+	\label{chapter:techniques}
 \section{Singular Value Decomposition}
 The first technique to represent a matrix $X$ is to factorize it using singular value decomposition. 
 
@@ -293,14 +314,40 @@ An extension of the SVD can be used to create a low-rank approximation for the d
 	and its error is 	$$\frac{1}{2} ||X-\hat{X}||^2_f = \frac{1}{2}\sum_{i=r+1}^n \sigma_i$$
 
 \end{theorem}
-	\begin{proof}
-		content...
-	\end{proof}
-	As we saw in Section 2, optimization can be algorithmically challenging, and is often solved using local techniques, such as gradient descent. The fact that the Eckart-Young low-rank approximation guarantees a global minimum is a very nice result. 
-\section{Non negative matrix factorization}
-
-Non-negative matrix factorization is a popular method used to represent the original with a low-rank approximation. NMF was first employed by Paatero and Tapper \cite{paatero1994positive} but was made popular by Lee and Seung \cite{lee1999learning}.
+Optimization can be algorithmically challenging, and is often solved using local techniques, such as gradient descent. The fact that the Eckart-Young low-rank approximation guarantees a global minimum is a very nice result. 
+\section{Neural Network Representation}
+A data matrix $X \in \mathbb{R}^{m \times n}$ can also be considered as vectorized input to a neural network. Since there has been a growing interest in the representations that neural networks produce, we will explore some examples here.  
 \begin{figure}[h]
+	\centering
+	\includegraphics[width=.3\textwidth]{nn}
+	\includegraphics[width=.5\textwidth]{Conv_layer}
+	\caption{Left: a very simple neural network with 3-dimensional input (red),  one hidden layer with 4 hidden units (blue),  and 2-dimensional output (green). Right: A pictorial representation of a convolutional layer of a neural network.}
+\end{figure}
+A \textbf{neural network} is a network of \textbf{neurons}, which represent units of computation organized in \textbf{layers}. (see Figure 2). For example, say we have input 3-dimensional input $\vec{x} = [1,2,3] $. Each of those values would be passed to the input neurons in Figure 1. Then, the first set of black arrows moves the input layer to the hidden layers by multiplying them by some weights and summin]g them together. This is equivalent to multiplying the $3 \times 1$ vector $\vec{x}$ by a $5 \times 3$ matrix of weights, $W$. Then a nonlinear function $f$ is applied elementwise to the 5 dimensional vector $W\vec{x}$. This nonlinear function increases the complexity of the space the neural network can explore, and is usually $f(x) = \tanh(x)$. This process is repeated with the output layer to achieve a $2\times 1$ output vector. In total, the computational process of the neural network can be captured by the equation
+$$\vec{output} = f(W^2(f(W^1(\vec{input}))))$$
+where $\vec{input}$ is the $3 \times 1$ input data, $W^1$ is the $5 \times 3$ weight matrix for the first layer, $W^2$ is the $2 \times 5$ weight matrix for the second layer, $f$ is an elementwise nonlinear function, and $\vec{output}$ is the $2\times 1$ output vector. The \textbf{activation of a layer}, $F^\ell$ is the intermediary result of running a given input through the network. For example, the activation of the first layer $F^1$ is 
+$$F^1= f(W^1(\vec{input}))$$
+A \textbf{convolutional neural network} is a neural network is at least one convolutional layer. This neural architecture is inspired by the organization of the human visual cortex, which small regions of neurons are aggregated into a single value. A convolutional layer is a layer that takes a small window of the input data and computes a single value for that region. For example, a \textbf{max pooling} convolutional layer simply computes the maximum value found for a given window (see Figure 2).
+
+Through many layers and complex nonlinearities, a neural network with only a single hidden layer can approximate any function \cite{hornik1991approximation} with sufficient weights. But how are these weight matrices $W^i$ constructed?  This requires \textbf{training} the neural network to configure these weight matrices. In general, this is achieved by feeding it labeled data, $(x,y)$ (with $x_i \in \mathbb{R}^3$ and $y_i \in \mathbb{R}^2$ for our example) and initializing the weights as random. Then, for each observation $x_i$, a prediction $\hat{y}$ is computed by running $x_i$ through the network:
+$$\hat{y} = f(W^2(f(W^1(x_i))))$$
+Then the error in the network can be computed as the difference between the prediction and the actual output:
+$$E(x_i) = (\hat{y} - \hat{y})^2$$
+The weights can then be updated by descending the gradient of the error using \textbf{backpropagation}.  A review of the backpropagation algorithm is beyond the scope of this paper, but for a full overview, see \cite{rumelhart1988learning}.
+
+For the purposes of image processing, the input data is raw images $x \in \mathbb{R}^{1000 \times 1000 \times 3}$ assuming they are 1000 pixels by 1000 pixels and are colored. The output $y$ used to trained the network is often labels corresponding to what the image is of, such as: $$y \in \{\text{elephant}, \text{doughut}, \cdots, \text{child},\text{apple}  \}$$
+A well documented phenomenon of applying DCNNs to image processing is that lower level layers correspond to pixel or edge level information, and as you look at higher level layers, you get more high order structure. As information passes from the input image pixels to the output classifier, the ``scale'' of that projection increases. For example, layers towards the input correspond to local pixelated regions, edges and neighboring contours. Layers towards the output correspond to global structure, groups of aggregated edges, etc.  The work presented in this paper takes advantage of this important fact.  We will refer to this phenomenon as the visual hierarchy phenomenon (VHP).
+\section{Matrix factorization}
+
+Another famous approach for finding the low-rank approximation of a matrix $X$ is  matrix factorization, which aims to find an $A$ and $S$ such that $X \approx AS$ as shown in Figure \ref{nnmf}. Typically, for a input matrix $X \in \mathbb{R}^{n \times m}$ the size of the inner dimension, $k$, is specified ahead of time (such that $A\in \mathbb{R}^{n \times k}$ and $S\in \mathbb{R}^{k \times m})$. Since $k$ is chosen such that $k < \min(m,n)$ we have the was $\operatorname{rank}(AS) = k$, which gives us our low-rank approximation of $S$.
+
+As discussed further in Section \ref{image}, the constraints imposed upon $A$ and $S$ result in different interpretations of the result. For example, constraining the columns of $S$ to be a unary vectors, where one element is equal to one and the other elements are zero, results in the Vector Quantization. Or constraining the columns of $A$ to be orthonormal and the rows of $S$ to be orthogonal to each results in Principal Component Analysis. 
+
+In this thesis, I will focus on a third class of constraints, whereby $A$ and $S$ must be non-negative matrices. This constraint is shown to yield a parts-based approach, which is consistent with a ``topic model'' notion \cite{lee1999learning}." What results is a family of algorithms dubbed \textit{non-negative factorization} or NNMF.
+
+ NNMF was first employed by Paatero and Tapper \cite{paatero1994positive} but was made popular by Lee and Seung \cite{lee1999learning}.
+\begin{figure}[h]
+	\label{nnmf}
 	\centering
 	\begin{blockmatrixtabular}
 		\valignbox{\fblockmatrix[1.0,0.8,0.8]{1.2in}{0.8in}{$X$}}&
@@ -338,44 +385,32 @@ This optimization scheme naturally leads to a convex optimization function, so t
 \begin{theorem}
 	The Euclidean distance $||X-AS||^2$ is non-increasing under the updating rules of Algorithm 1.
 \end{theorem}
-\section{Neural Network Representation}
-A data matrix $X \in \mathbb{R}^{m \times n}$ can also be considered as vectorized input to a neural network. Since there has been a growing interest in the representations that neural networks produce, we will explore some examples here.  
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=.3\textwidth]{nn}
-	\includegraphics[width=.5\textwidth]{Conv_layer}
-	\caption{Left: a very simple neural network with 3-dimensional input (red),  one hidden layer with 4 hidden units (blue),  and 2-dimensional output (green). Right: A pictorial representation of a convolutional layer of a neural network.}
-\end{figure}
-A \textbf{neural network} is a network of \textbf{neurons}, which represent units of computation organized in \textbf{layers}. (see Figure 2). For example, say we have input 3-dimensional input $\vec{x} = [1,2,3] $. Each of those values would be passed to the input neurons in Figure 1. Then, the first set of black arrows moves the input layer to the hidden layers by multiplying them by some weights and summin]g them together. This is equivalent to multiplying the $3 \times 1$ vector $\vec{x}$ by a $5 \times 3$ matrix of weights, $W$. Then a nonlinear function $f$ is applied elementwise to the 5 dimensional vector $W\vec{x}$. This nonlinear function increases the complexity of the space the neural network can explore, and is usually $f(x) = \tanh(x)$. This process is repeated with the output layer to achieve a $2\times 1$ output vector. In total, the computational process of the neural network can be captured by the equation
-$$\vec{output} = f(W^2(f(W^1(\vec{input}))))$$
-where $\vec{input}$ is the $3 \times 1$ input data, $W^1$ is the $5 \times 3$ weight matrix for the first layer, $W^2$ is the $2 \times 5$ weight matrix for the second layer, $f$ is an elementwise nonlinear function, and $\vec{output}$ is the $2\times 1$ output vector. The \textbf{activation of a layer}, $F^\ell$ is the intermediary result of running a given input through the network. For example, the activation of the first layer $F^1$ is 
-$$F^1= f(W^1(\vec{input}))$$
-A \textbf{convolutional neural network} is a neural network is at least one convolutional layer. This neural architecture is inspired by the organization of the human visual cortex, which small regions of neurons are aggregated into a single value. A convolutional layer is a layer that takes a small window of the input data and computes a single value for that region. For example, a \textbf{max pooling} convolutional layer simply computes the maximum value found for a given window (see Figure 2).
 
-Through many layers and complex nonlinearities, a neural network with only a single hidden layer can approximate any function \cite{hornik1991approximation} with sufficient weights. But how are these weight matrices $W^i$ constructed?  This requires \textbf{training} the neural network to configure these weight matrices. In general, this is achieved by feeding it labeled data, $(x,y)$ (with $x_i \in \mathbb{R}^3$ and $y_i \in \mathbb{R}^2$ for our example) and initializing the weights as random. Then, for each observation $x_i$, a prediction $\hat{y}$ is computed by running $x_i$ through the network:
-$$\hat{y} = f(W^2(f(W^1(x_i))))$$
-Then the error in the network can be computed as the difference between the prediction and the actual output:
-$$E(x_i) = (\hat{y} - \hat{y})^2$$
-The weights can then be updated by descending the gradient of the error using \textbf{backpropagation}.  A review of the backpropagation algorithm is beyond the scope of this paper, but for a full overview, see \cite{rumelhart1988learning}.
+A key benefit of non-negative matrix factorization is that its results are very interpretatable. For a given factorization $X \approx AS$, we can think of the $k$ rows of $S$ as a basis $(b_1,b2_,\cdots,b_k)$ for the rows of $X$. Under this interpretation, the row of $A$ give us the linear combination used to form the corresponding row in $X:$
+$$X_{i,} = \sum_{j= 1}^k A_{i,j} \times S_{j,}$$
+This interpretation is directly applicable to the notion of ``geons as topics'' put forward in Section \ref{interp}. In this thesis, we will focus on NNMF as the central algorithm and we will explore how NNMF can be used to build a theory of visual perception.
 
-For the purposes of image processing, the input data is raw images $x \in \mathbb{R}^{1000 \times 1000 \times 3}$ assuming they are 1000 pixels by 1000 pixels and are colored. The output $y$ used to trained the network is often labels corresponding to what the image is of, such as: $$y \in \{\text{elephant}, \text{doughut}, \cdots, \text{child},\text{apple}  \}$$
-A well documented phenomenon of applying DCNNs to image processing is that lower level layers correspond to pixel or edge level information, and as you look at higher level layers, you get more high order structure. As information passes from the input image pixels to the output classifier, the ``scale'' of that projection increases. For example, layers towards the input correspond to local pixelated regions, edges and neighboring contours. Layers towards the output correspond to global structure, groups of aggregated edges, etc.  The work presented in this paper takes advantage of this important fact.  We will refer to this phenomenon as the visual hierarchy phenomenon (VHP).
 \end{chapter}
 \begin{chapter}{Types of Data}
+	We have defined several algorithmic approaches for the automated understanding of any real valued matrices. In this chapter, we explore how important types of media and data can be represented as real valued matrices. Each section will focus on NNMF as the lens for analysis, and will describe how NNMF can be interpreted in each domain. 
 \section{Image}
+\label{image}
 
 Because visual object recognition is the foundation of many of the cognitive theories discussed here, it makes sense to think about representing images as data. Because of how computers and digital cameras represent images, they are perhaps the most well suited for representation as data. For gray scale, an image is just a $w \times h$ matrix, where $w$ is the width of the image and $h$ is the height of the matrix. For color, an image is a triple $\{R,B,G\}$ where $R,B,G \in \mathbb{R}^{w \times h}$ correspond to red, blue and green intensities in the image, respectively.
 \begin{figure}[h]
+	\label{fig:face}
 	\centering
-	\includegraphics[width=5cm]{image}
-	\caption{foo}
+	\includegraphics[width=6.2cm]{image}
+	\caption{A comparison of the basis vectors learned for NMF, VQ and PCA. Adapted from \cite{lee1999learning}}
 \end{figure}
 The canonical demonstration of NNMF's ability to learn a parts-based representation utilizes a dataset of faces, $X$, with a row corresponding to a given image and the columns corresponding to a flattened vector representation of the matrix. Lee and Seung compare the NNMF factorization of this corpus with vector quantification (VQ) and principal component analysis (PCA). Indeed all three methods attempt to factorize $X$ into two matrices $A$ and $S$: the only difference is the constraints imposed on $A$ and $S$. As we have seen, NNMF does not allow nonnegative entries in either $A$ and $S$. For VQ, each column of $S$ is constrained to be a unary vector. And finally PCA contrains the colums of $A$ to be orthonormal and rows of $S$ to be orthogonal to each other \cite{lee1999learning}.
 
-As can be seen in Figure 4.1, NMF learns a parts-based model, where the rows of $S$ correspond to discrete components of a face. Whereas both VQ and PCA learn ``holistic'' representations of the faces. 
+As can be seen in Figure \ref{fig:face}, the bases each approach learns is radically different. VQ learns a basis of prototypes, where each basis itself is an entire face, and each row of $X$ is a linear combination (i.e. addition and subtraction) of these protofaces. Alternatively, PCA learns a basis of `eigenfaces,' which correspond to ``distored'' versions of complete faces \cite{turk1991eigenfaces}. Instead of learning a``holistic'' representation of the faces like VQ and PCA, NMF learns a parts-based model, where the rows of $S$ correspond to discrete components of a face. 
 
 \section{Sound}
-deep speech citations
+Despite not being as discrete as images or graphs, sound also can be represented in a high structured way. There have been many approaches to do so. Perhaps the most success is the Deep Speech models, which feed speech snippets into a RNN paired with a language model for real time dictation \cite{amodei2015deep,hannun2014deep}. These Deep Speech systems represent sound as follows. An utterance $x$ is a time series of length $T$	sliced into time intervals $t$. For each time interval, the utterence is represented as a vector of audio features, $\vec{x_t}$. Hannun et al, in their famous Deep Speech neural model, use spectrograms as features, such that $\vec{x_{t,p}}$ is the power of the $p$th frequency bin the the audio frame at time $t$ \cite{hannun2014deep}.
+
+Another approach is to take the modulus of a given signal's the STFT as treat that spectrogram  $X$ as a matrix to be factorized \cite{kawamoto2000estimation,krause2015non}. NNMF is particularly useful in this domain because the source components (the results of the factorization) are also interpreted as spectrograms, which must have non-negative entries. 
 \section{Graph}
 Since a network of edges and vertices $G=(V,E)$ can be represented as an \textit{adjacency matrix} $A \in \{0,1\}^{|V| \times |V|}$ with $A_{i,j} = 1$ if $(i,j) \in E$ and $A_{i,j}=0$ otherwise, graphs are another domain well suited for low dimensional representations. \footnote{For now, we will work with unweighted, undirected graphs, although these results generalize to other types of graphs as well.} Factorizing this adjacency matrix is equivalent to clustering the graph, which is a central problem to graph theory \cite{ho2008nonnegative}.
 A given clustering $C = \{C_1, C_2, \cdots, C_k\}$ of a graph is a partition of the vertices and can be evaluated based on its \textit{connectivity}:

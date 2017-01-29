@@ -36,6 +36,24 @@ Ngoc-Diep Ho.
 \newblock {\em Nonnegative matrix factorization algorithms and applications}.
 \newblock PhD thesis, {\'E}COLE POLYTECHNIQUE, 2008.
 
+\bibitem{hornik1991approximation}
+Kurt Hornik.
+\newblock Approximation capabilities of multilayer feedforward networks.
+\newblock {\em Neural networks}, 4(2):251--257, 1991.
+
+\bibitem{kawamoto2000estimation}
+T~Kawamoto, K~Hotta, T~Mishima, J~Fujiki, M~Tanaka, and T~Kurita.
+\newblock Estimation of single tones from chord sounds using non-negative
+  matrix factorization.
+\newblock {\em Neural Network World}, 10(3):429--436, 2000.
+
+\bibitem{krause2015non}
+Sara Krause-Solberg and Armin Iske.
+\newblock Non-negative dimensionality reduction for audio signal separation by
+  nnmf and ica.
+\newblock In {\em Sampling Theory and Applications (SampTA), 2015 International
+  Conference on}, pages 377--381. IEEE, 2015.
+
 \bibitem{lancichinetti2009detecting}
 Andrea Lancichinetti, Santo Fortunato, and J{\'a}nos Kert{\'e}sz.
 \newblock Detecting the overlapping and hierarchical community structure in
@@ -89,6 +107,11 @@ George Trigeorgis, Konstantinos Bousmalis, Stefanos Zafeiriou, and Bjoern
   Schuller.
 \newblock A deep semi-nmf model for learning hidden representations.
 \newblock In {\em ICML}, pages 1692--1700, 2014.
+
+\bibitem{turk1991eigenfaces}
+Matthew Turk and Alex Pentland.
+\newblock Eigenfaces for recognition.
+\newblock {\em Journal of cognitive neuroscience}, 3(1):71--86, 1991.
 
 \bibitem{ullman1996high}
 Shimon Ullman et~al.

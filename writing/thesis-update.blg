@@ -3,49 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis-update.aux
 The style file: plain.bst
 Database file #1: myBib.bib
-Warning--I didn't find a database entry for "hornik1991approximation"
 Warning--empty journal in deepNonNeg
 Warning--empty year in deepNonNeg
 Warning--empty journal in minsky1975framework
-You've used 20 entries,
+You've used 24 entries,
             2118 wiz_defined-function locations,
-            623 strings with 7367 characters,
-and the built_in function-call counts, 6677 in all, are:
-= -- 649
-> -- 344
-< -- 3
-+ -- 139
-- -- 116
-* -- 492
-:= -- 1148
-add.period$ -- 59
-call.type$ -- 20
-change.case$ -- 113
+            647 strings with 8056 characters,
+and the built_in function-call counts, 8211 in all, are:
+= -- 809
+> -- 410
+< -- 4
++ -- 165
+- -- 138
+* -- 606
+:= -- 1393
+add.period$ -- 72
+call.type$ -- 24
+change.case$ -- 136
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 238
-empty$ -- 485
-format.name$ -- 116
-if$ -- 1349
+cite$ -- 27
+duplicate$ -- 294
+empty$ -- 605
+format.name$ -- 138
+if$ -- 1673
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 20
-newline$ -- 102
-num.names$ -- 40
-pop$ -- 102
+int.to.str$ -- 24
+missing$ -- 24
+newline$ -- 122
+num.names$ -- 48
+pop$ -- 122
 preamble$ -- 1
-purify$ -- 95
+purify$ -- 114
 quote$ -- 0
-skip$ -- 175
+skip$ -- 216
 stack$ -- 0
-substring$ -- 402
-swap$ -- 40
-text.length$ -- 3
+substring$ -- 523
+swap$ -- 54
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 78
+type$ -- 94
 warning$ -- 3
-while$ -- 66
-width$ -- 22
-write$ -- 214
-(There were 4 warnings)
+while$ -- 83
+width$ -- 26
+write$ -- 259
+(There were 3 warnings)
