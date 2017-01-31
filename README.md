@@ -1,5 +1,13 @@
 # math-thesis
 <h1> Senior Math Thesis at Pomona College </h1>
+<h2> How to Nagivate This Repo  </h2> 
+<b>Writing:</b> All write-ups for the thesis. Most up to date version is ```math-thesis/writing/thesis-update.pdf```.
+
+<b>nmf-imp:</b> All the code used to generate figures, plots and algorithms.
+
+<b>Reading:</b> Papers used in the formation of the thesis
+
+
 <h2> Timeline </h2> 
 <b>Sep 1 - October 1</b>. Browse texts and papers. Develop a problem that is novel and can be interesting (hierarchical community detection, graph theoretic/viz etc) with possible data sets in mind. Starting crafting the algorithm. Bibliography/literature review completed: With the help of your advisor and by browsing texts and papers, you will clarify the scope of your thesis, the main sources that you will use, and the background material that you need to learn. Sometimes all of this will be pretty obvious and other times it will continue to be a work in progress throughout the semester.
 
