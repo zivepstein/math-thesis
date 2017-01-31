@@ -1,5 +1,5 @@
 \documentclass[12pt]{pom_thesis}
-
+\usepackage[table]{xcolor}
 \usepackage[]{algorithm2e}
 \usepackage{tikz}
 \usepackage{ifthen}
@@ -509,6 +509,11 @@ The visualization is responsive, dynamic and available at \\ \texttt{http://www1
 Next, I extended this visualization to the Semi-Supervised domain using the Afghan Dataset. Here each document has associated with it a class $C\in \{1,\cdots,k\}$ which in this case $k=3$. Recall that the matrix $B \in \mathbb{R}^{k \times r}$ in the semi-supervised NMF model is multiplied by $S$ to obtain an approximation for $Y$, the label matrix. Thus the $i,j$th entry of $B$ can be interpreted in the weighted importance of topic $i$ in predicting class $j$. Thus I sum over the columns of $B$ to capture how important topic $i$ is predicting classes in general. After normalizing, we get a color value $c_i$ for topic $i$, such that
 $$c_i = \sum_j B_{i,j} /  \sum_{i,j} B_{i,j}$$
 where $c_i=1$ corresponds to yellow and $c_i=0$ corresponds to blue (see Figure 3 right)
+\begin{figure}
+	\centering
+	\includegraphics[width=7	in]{topic}
+	\caption{Topics used in hierarchical topic model}
+\end{figure}
 \end{chapter}
 
 \begin{chapter}{Deep Models}

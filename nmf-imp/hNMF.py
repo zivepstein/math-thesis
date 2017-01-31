@@ -31,9 +31,10 @@ for phile in philes:
         local_data.append(unicode(data, errors='ignore'))
 
 
-# In[3]:
+# In[13]:
 
-len(local_data)
+with open('news24.json') as data_file:    
+    data = json.load(data_file)
 
 
 # In[4]:
@@ -54,9 +55,29 @@ W = nmf.fit_transform(tfidf)
 #x = WH
 
 
-# In[18]:
+# In[25]:
 
 
+U, s, V = np.linalg.svd(tfidf, full_matrices=True)
+
+
+# In[42]:
+
+a = np.random.randn(tfidf.shape[0], tfidf.shape[1])
+U, s, V = np.linalg.svd(tfidf_dense, full_matrices=True)
+
+
+# In[12]:
+
+
+base =nmf.components_[20]
+name =  " ".join([tfidf_feature_names[j] for j in base.argsort()[:-n_top_words - 1:-1]])
+print name
+
+
+# In[41]:
+
+tfidf_dense = tfidf.todense()
 
 
 # In[22]:
@@ -187,9 +208,9 @@ with open('demo.json', 'w') as outfile:
     json.dump(flare, outfile)
 
 
-# In[33]:
+# In[14]:
 
-tv
+data
 
 
 # In[9]:
