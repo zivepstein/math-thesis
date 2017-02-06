@@ -3,48 +3,50 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis-update.aux
 The style file: plain.bst
 Database file #1: myBib.bib
+Warning--empty journal in belkin2003problems
+Warning--can't use both volume and number fields in belkin2001laplacian
 Warning--empty journal in deepNonNeg
 Warning--empty year in deepNonNeg
 Warning--empty journal in minsky1975framework
-You've used 24 entries,
+You've used 35 entries,
             2118 wiz_defined-function locations,
-            647 strings with 8056 characters,
-and the built_in function-call counts, 8211 in all, are:
-= -- 809
-> -- 410
-< -- 4
-+ -- 165
-- -- 138
-* -- 606
-:= -- 1393
-add.period$ -- 72
-call.type$ -- 24
-change.case$ -- 136
+            709 strings with 9484 characters,
+and the built_in function-call counts, 11742 in all, are:
+= -- 1175
+> -- 526
+< -- 8
++ -- 212
+- -- 174
+* -- 850
+:= -- 1962
+add.period$ -- 106
+call.type$ -- 35
+change.case$ -- 186
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 294
-empty$ -- 605
-format.name$ -- 138
-if$ -- 1673
+cite$ -- 40
+duplicate$ -- 437
+empty$ -- 908
+format.name$ -- 174
+if$ -- 2418
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 24
-newline$ -- 122
-num.names$ -- 48
-pop$ -- 122
+int.to.str$ -- 35
+missing$ -- 36
+newline$ -- 177
+num.names$ -- 70
+pop$ -- 168
 preamble$ -- 1
-purify$ -- 114
+purify$ -- 154
 quote$ -- 0
-skip$ -- 216
+skip$ -- 317
 stack$ -- 0
-substring$ -- 523
-swap$ -- 54
-text.length$ -- 4
+substring$ -- 797
+swap$ -- 85
+text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 94
-warning$ -- 3
-while$ -- 83
-width$ -- 26
-write$ -- 259
-(There were 3 warnings)
+type$ -- 136
+warning$ -- 5
+while$ -- 125
+width$ -- 37
+write$ -- 380
+(There were 5 warnings)

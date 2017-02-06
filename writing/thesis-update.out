@@ -13,14 +13,15 @@
 \BOOKMARK [1][-]{section.4.2}{Sound}{chapter.4}% 13
 \BOOKMARK [1][-]{section.4.3}{Graph}{chapter.4}% 14
 \BOOKMARK [1][-]{section.4.4}{Natural Language}{chapter.4}% 15
-\BOOKMARK [0][-]{chapter.5}{Semi-Supervised NNMF}{}% 16
-\BOOKMARK [1][-]{section.5.1}{Approach}{chapter.5}% 17
-\BOOKMARK [1][-]{section.5.2}{Visualization}{chapter.5}% 18
-\BOOKMARK [0][-]{chapter.6}{Hierarchical Representation}{}% 19
-\BOOKMARK [1][-]{section.6.1}{Approach}{chapter.6}% 20
-\BOOKMARK [1][-]{section.6.2}{Visualization}{chapter.6}% 21
-\BOOKMARK [0][-]{chapter.7}{Deep Models}{}% 22
-\BOOKMARK [1][-]{section.7.1}{Approach}{chapter.7}% 23
-\BOOKMARK [1][-]{section.7.2}{Deep Neural Models}{chapter.7}% 24
-\BOOKMARK [1][-]{section.7.3}{Visualization}{chapter.7}% 25
-\BOOKMARK [0][-]{chapter.8}{Discussion}{}% 26
+\BOOKMARK [0][-]{chapter.5}{Manifold Learning as NNMF}{}% 16
+\BOOKMARK [1][-]{section.5.1}{Motivation}{chapter.5}% 17
+\BOOKMARK [1][-]{section.5.2}{Approach}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.3}{Visualization}{chapter.5}% 19
+\BOOKMARK [0][-]{chapter.6}{Hierarchical Representation}{}% 20
+\BOOKMARK [1][-]{section.6.1}{Approach}{chapter.6}% 21
+\BOOKMARK [1][-]{section.6.2}{Visualization}{chapter.6}% 22
+\BOOKMARK [0][-]{chapter.7}{Deep Models}{}% 23
+\BOOKMARK [1][-]{section.7.1}{Approach}{chapter.7}% 24
+\BOOKMARK [1][-]{section.7.2}{Deep Neural Models}{chapter.7}% 25
+\BOOKMARK [1][-]{section.7.3}{Visualization}{chapter.7}% 26
+\BOOKMARK [0][-]{chapter.8}{Discussion}{}% 27

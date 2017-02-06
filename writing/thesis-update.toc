@@ -4,23 +4,24 @@
 \contentsline {section}{\numberline {2.2}Knowledge representation as information retrieval}{6}{section.2.2}
 \contentsline {section}{\numberline {2.3}The hierarchical structure of perception}{7}{section.2.3}
 \contentsline {section}{\numberline {2.4}Interpretations for Algorithmic Formulation}{8}{section.2.4}
-\contentsline {chapter}{\numberline {3}Techniques}{9}{chapter.3}
-\contentsline {section}{\numberline {3.1}Singular Value Decomposition}{9}{section.3.1}
-\contentsline {section}{\numberline {3.2}Neural Network Representation}{11}{section.3.2}
-\contentsline {section}{\numberline {3.3}Matrix factorization}{12}{section.3.3}
-\contentsline {chapter}{\numberline {4}Types of Data}{15}{chapter.4}
-\contentsline {section}{\numberline {4.1}Image}{15}{section.4.1}
-\contentsline {section}{\numberline {4.2}Sound}{16}{section.4.2}
-\contentsline {section}{\numberline {4.3}Graph}{16}{section.4.3}
-\contentsline {section}{\numberline {4.4}Natural Language}{17}{section.4.4}
-\contentsline {chapter}{\numberline {5}Semi-Supervised NNMF}{19}{chapter.5}
-\contentsline {section}{\numberline {5.1}Approach}{19}{section.5.1}
-\contentsline {section}{\numberline {5.2}Visualization}{20}{section.5.2}
-\contentsline {chapter}{\numberline {6}Hierarchical Representation}{21}{chapter.6}
-\contentsline {section}{\numberline {6.1}Approach}{21}{section.6.1}
-\contentsline {section}{\numberline {6.2}Visualization}{23}{section.6.2}
-\contentsline {chapter}{\numberline {7}Deep Models}{25}{chapter.7}
-\contentsline {section}{\numberline {7.1}Approach}{25}{section.7.1}
-\contentsline {section}{\numberline {7.2}Deep Neural Models}{25}{section.7.2}
-\contentsline {section}{\numberline {7.3}Visualization}{25}{section.7.3}
-\contentsline {chapter}{\numberline {8}Discussion}{26}{chapter.8}
+\contentsline {chapter}{\numberline {3}Techniques}{10}{chapter.3}
+\contentsline {section}{\numberline {3.1}Singular Value Decomposition}{10}{section.3.1}
+\contentsline {section}{\numberline {3.2}Neural Network Representation}{12}{section.3.2}
+\contentsline {section}{\numberline {3.3}Matrix factorization}{13}{section.3.3}
+\contentsline {chapter}{\numberline {4}Types of Data}{16}{chapter.4}
+\contentsline {section}{\numberline {4.1}Image}{16}{section.4.1}
+\contentsline {section}{\numberline {4.2}Sound}{17}{section.4.2}
+\contentsline {section}{\numberline {4.3}Graph}{18}{section.4.3}
+\contentsline {section}{\numberline {4.4}Natural Language}{19}{section.4.4}
+\contentsline {chapter}{\numberline {5}Manifold Learning as NNMF}{21}{chapter.5}
+\contentsline {section}{\numberline {5.1}Motivation}{21}{section.5.1}
+\contentsline {section}{\numberline {5.2}Approach}{22}{section.5.2}
+\contentsline {section}{\numberline {5.3}Visualization}{23}{section.5.3}
+\contentsline {chapter}{\numberline {6}Hierarchical Representation}{24}{chapter.6}
+\contentsline {section}{\numberline {6.1}Approach}{24}{section.6.1}
+\contentsline {section}{\numberline {6.2}Visualization}{26}{section.6.2}
+\contentsline {chapter}{\numberline {7}Deep Models}{28}{chapter.7}
+\contentsline {section}{\numberline {7.1}Approach}{28}{section.7.1}
+\contentsline {section}{\numberline {7.2}Deep Neural Models}{28}{section.7.2}
+\contentsline {section}{\numberline {7.3}Visualization}{28}{section.7.3}
+\contentsline {chapter}{\numberline {8}Discussion}{29}{chapter.8}

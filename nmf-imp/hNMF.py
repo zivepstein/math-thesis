@@ -67,17 +67,27 @@ a = np.random.randn(tfidf.shape[0], tfidf.shape[1])
 U, s, V = np.linalg.svd(tfidf_dense, full_matrices=True)
 
 
-# In[12]:
+# In[50]:
 
+S = np.zeros(tfidf_dense.shape, dtype=complex)
+S[:tfidf_dense.shape[0], :tfidf_dense.shape[0]] = np.diag(s)
+
+
+# In[53]:
+
+np.allclose(tfidf_dense, np.dot(U, np.dot(S, V)))
+
+
+# In[12]:
 
 base =nmf.components_[20]
 name =  " ".join([tfidf_feature_names[j] for j in base.argsort()[:-n_top_words - 1:-1]])
 print name
 
 
-# In[41]:
+# In[45]:
 
-tfidf_dense = tfidf.todense()
+s
 
 
 # In[22]:

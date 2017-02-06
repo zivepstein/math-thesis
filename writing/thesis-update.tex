@@ -167,8 +167,19 @@
 
 \abstract{ 
 	A growing body of literature suggests that visual perception and representation is the result of a hierarchical relation network, whereby nodes that contain values on global properties are scaffolded with increasing levels of representational complexity. Here, we explore algorithms that represent data as low-dimensional approximations. 
+	\begin{center}
+	\includegraphics[width=18cm]{wordcloud}
+\end{center}
 	}
 \begin{chapter}{Introduction}
+	
+	todo
+	\begin{enumerate}
+		\item jen deep models
+		\item hierarchical topics
+		\item more supervised and hierarchical stuff
+		\item svd implementation details
+	\end{enumerate}
 	There is a growing interest in the computational and mathematical science in the development of algorithms that can automatically create understanding about data corresponding to some phenomenon. As an explosion of data collection and distribution systems have become the mainstream, there is now more data available than humans observers to understand it. Thus the need for automated algorithms that can infer patterns and relationships within data is self evident. 
 	
 	Here, I will consider the case were data is represented as a well-structured and  real-valued matrix. This approach can represent data from a large range of domains, such as sound, natural language, visual images and networks. Thus, many of the algorithms and heuristics I explore here are domain general, and can be applied with success to a range of settings. 
@@ -177,7 +188,7 @@
 	
 	This approach also has explanatory power. Let $r = \operatorname{rank}(X')$ and $b= (b_1,b_2,\cdots,b_r)$ be a basis for $X'$. Depending on the constraints imposed on the $b_i$'s, they can have many different interpretations. For example, when the $b_i$'s are constrained to be orthonormal to each other, the resulting algorithm is Principal Component Analysis (PCA), which ``supplies the user with a lower-dimensional projection of the object when viewed from its most informative viewpoint.'' 
 	
-	Since our mission is to emulate human understanding, a natural starting place for inspiration is the human brain. Indeed there is a long-standing tradition in computer and information science to algorithmically model the information processing systems the brain uses to make sense of the world. However, I hope to also go one step deeper. In addition to an overview of many of the important algorithms used today, we will explore the cognitive implications of these algorithms. In particular, I aim to invert the paradigm of using neural architecture to inform algorithms: I will use algorithms to inform notions of neural architecture. By creating a bilateral dialogue between the cognitive and computer sciences, I hope this work will help to bridge the gaps between the two fields by I) equipping the cognitive ideas of neural information processing with a notational formalism consist with the algorithms research and II) contextualizing the algorithms research whereby it is clear how it might relate to the acquisition of human knowledge.
+	Since our mission is to emulate human understanding, a natural starting place for inspiration is the human brain itself. Indeed there is a long-standing tradition in computer and information science to algorithmically model the information processing systems the brain uses to make sense of the world. However, I hope to also go one step deeper. In addition to an overview of many of the important algorithms used today, we will explore the cognitive implications of these algorithms. In particular, I aim to invert the paradigm of using neural architecture to inform algorithms: I will use algorithms to inform notions of neural architecture. By creating a bilateral dialogue between the cognitive and computer sciences, I hope this work will help to bridge the gaps between the two fields by I) equipping the cognitive ideas of neural information processing with a notational formalism consist with the algorithms research and II) contextualizing the algorithms research whereby it is clear how it might relate to the acquisition of human knowledge.
 \end{chapter}
 
 \begin{chapter}{Theories for Human Image Understanding}
@@ -235,14 +246,23 @@ The values of the global properties at each node of the network are a real-value
 \label{interp}
 The theories put forward above have several key formulations of the Representation Problem that I will leverage and formalize throughout this thesis. 
 
-\textbf{Object Classification as Supervised Manifold Learning}
+\subsection*{Object Classification as Supervised Manifold Learning}
+\label{manifold}
 
-As we have seen, the hierarchies proposed above aim to match high-order labels to a series of raw retinal activations. For example, let $(r_1,r_2,\cdots, r_n)$ be the retinal activation of observing Figure \ref{cup}. Previous to observing the image, there exists somewhere in the perceptual hierarchy of your brain the label of cup $\ell_i$. Thus the task of object classification  can be formulated as the supervised learning of a manifold $f$, whereby $f(r_1,r_2,\cdots,r_n) = \ell_i$.
+As we have seen, the hierarchies proposed above aim to match high-order labels to a series of raw retinal activations. For example, let $(r_1,r_2,\cdots, r_n)$ be the retinal activation of observing Figure \ref{cup}. Previous to observing the image, there exists somewhere in the perceptual hierarchy of your brain the label of cup $\ell_i$. Thus the task of object classification  can be formulated as the supervised learning of a manifold $f$, whereby $f(r_1,r_2,\cdots,r_n) = \ell_i$. We discuss this formalism and its implications further in Chaper \ref{supervised}.
 
-\textbf{Geons as Topics}
+\subsection*{Geons as Topics}
+Biederman claims there exist a small number $d$ of atomic units that can be combined in various ways to represent complex visual stimulus \cite{biederman1987recognition}. This notion is formalied by \ref{eq:1}, which claims an object $O$ is just a linear combination of these $d$ geons. In the context of matricial algebra, we can formalize this even further as an embedding in $\mathbb{R}^m$. In the context of visual perception, the natural choice is $m=3$, which corresponds to the 3-dimensional reality our retinal systems pull data from. However, it is clear that detail of an object such as elephant can't really be captured by three real numbers. So for these purposes we will assume $m$ is very large. 
 
-\textbf{Hierarchical Organization of Topics}
-\todo{finish these and make figures}
+In addition, it is important to consider the field over which the $m$-dimensional vector space lives. 
+\begin{figure}[h]
+	\label{fig:geonLC}
+	\centering
+	\includegraphics[width=15cm]{geonLC}
+	\caption{An image can be represented as a linear combination of geons. Elephant adapted from \cite{biederman1987recognition}.}
+\end{figure}
+As can be see from Figure \ref{fig:geonLC}, the geon vectors have some relation to each other that the scalars $\alpha_i$ are designed to capture. It is clear that $\alpha_i \in \mathbb{R}$ does not give information  to reconstruct the elephant in Figure \ref{fig:geonLC}, because there are multiple dimensions of variations on which the geons are agglomerated. Thus the scalar field for this vector space must be a field where each element contains more information, such as $\mathbb{C}$. As long as multiplication is defined with care, the scalar field can be defined to contain an arbitrary amount of information \todo{why is this true??}
+\subsection*{Hierarchical Organization of Topics}
 \end{chapter}
 
 \begin{chapter}{Techniques}
@@ -411,6 +431,14 @@ As can be seen in Figure \ref{fig:face}, the bases each approach learns is radic
 Despite not being as discrete as images or graphs, sound also can be represented in a high structured way. There have been many approaches to do so. Perhaps the most success is the Deep Speech models, which feed speech snippets into a RNN paired with a language model for real time dictation \cite{amodei2015deep,hannun2014deep}. These Deep Speech systems represent sound as follows. An utterance $x$ is a time series of length $T$	sliced into time intervals $t$. For each time interval, the utterence is represented as a vector of audio features, $\vec{x_t}$. Hannun et al, in their famous Deep Speech neural model, use spectrograms as features, such that $\vec{x_{t,p}}$ is the power of the $p$th frequency bin the the audio frame at time $t$ \cite{hannun2014deep}.
 
 Another approach is to take the modulus of a given signal's the STFT as treat that spectrogram  $X$ as a matrix to be factorized \cite{kawamoto2000estimation,krause2015non}. NNMF is particularly useful in this domain because the source components (the results of the factorization) are also interpreted as spectrograms, which must have non-negative entries. 
+
+Holzapfel et al. do what is perhaps most organic given a corpus of sound documents. With inner dimension $k=10$, they find that the topics correspond to traditional genres of music \cite{holzapfel2008musical}. In addition, since the factorization yields sonic embeddings for each genre, the authors achieve a data driven notion of similarity between genres  (see Figure \ref{fig:sound}). 
+\begin{figure}[h]
+	\label{fig:sound}
+	\centering
+	\includegraphics[width=12.2cm]{genre}
+	\caption{Pairwise comparison of music genres. Adapted from \cite{holzapfel2008musical}}
+\end{figure}
 \section{Graph}
 Since a network of edges and vertices $G=(V,E)$ can be represented as an \textit{adjacency matrix} $A \in \{0,1\}^{|V| \times |V|}$ with $A_{i,j} = 1$ if $(i,j) \in E$ and $A_{i,j}=0$ otherwise, graphs are another domain well suited for low dimensional representations. \footnote{For now, we will work with unweighted, undirected graphs, although these results generalize to other types of graphs as well.} Factorizing this adjacency matrix is equivalent to clustering the graph, which is a central problem to graph theory \cite{ho2008nonnegative}.
 A given clustering $C = \{C_1, C_2, \cdots, C_k\}$ of a graph is a partition of the vertices and can be evaluated based on its \textit{connectivity}:
@@ -430,15 +458,63 @@ $$t_i = \{v^i_1, v^i_2, \cdots, v_m^i\}$$
 where $m$ is the size of the vocabulary. Topic modelling offers a powerful tool for understanding large amounts of text because they can discover latent semantic structure within text. 
 
 There are two primary techniques for learning these topics $t_i$. The first is LDA, a generative Bayesian statistical model which views each document $d_j$ as a mixture of various topics.
-The second is non-negative matrix factorization, which aims to factor the document/word matrix into a document/topic and a topic/word matrix \cite{lee1999learning}. The focus of this thesis will be NNMF, because of its relation to linear algebra, and its deep visual and conceptual intuition. 
+The second is non-negative matrix factorization, which aims to factor the document/word matrix into a document/topic and a topic/word matrix \cite{lee1999learning, blei2012probabilistic}. The focus of this thesis will be NNMF, because of its relation to linear algebra, and its deep visual and conceptual intuition. 
 
 Given our $n$ documents with vocabulary $\mathcal{V}$ of size $m$, we construct a matrix $X \in \mathbb{R}^{n\times m}$ where $X_{i,j}$ is the number of occurences of word $j$ in document $i$. For a given inner dimension $k$, we seek to factor $X$ into two matrices $A$ and $S$ such that
 $$X \approx AS$$
 where $A \in \mathbb{R}^{n\times k}$ is the document/topic matrix and  $S \in \mathbb{R}^{k\times m}$ is the topic/word matrix. When we impose that $A$ and $S$ must be non-negative, a strong intuition emerges. In particular, the $(i,j)$th entry of $A$ corresponds to the proportion of topic $j$ in document $i$ and the $(i,j)$th entry of $S$ corresponds to the relevance of word $j$ in topic $i$.
+
+To gain some visual intuition into the interpretations of $A$ and $S$, consider Figure \ref{fig:tmex}. The rows of $S$ give us the word break down of each topic, which is shown on the left column under Topics. Then each document can be represented as a weighted combination of topics.
+\begin{figure}[h]
+	\label{fig:tmex}
+	\centering
+	\includegraphics[width=16.2cm]{tmex}
+	\caption{A visual interpretation of topic model on text. Adapted from \cite{blei2012probabilistic}}
+\end{figure}
+
 \end{chapter}
 
-\begin{chapter}{Semi-Supervised NNMF}
-	The methods above are unsupervised, which means the algorithms are designed to reveal latent structure within the unlabeled data. Many times however, data is accompanied with labels and the new algorithmic objective is to assign new unobserved data into appropriate labels. In the semi-supervised case, when only some of the data is labeled, the objective is similar to the unsupervised case. However, the known class labels can be incorporated into the model to improve classification performance \cite{lee2010semi}. In this section, we will explore an extension of NNMF where some of the class labels are known, and this information is used to enhance the performance of the NNMF. This \emph{semi-supervised} NNMF  learns a one-versus all separating hyperplane for the observations \cite{lee2010semi}.
+\begin{chapter}{Manifold Learning as NNMF}
+	\label{supervised}
+	
+	\section{Motivation}
+	The standard NNMF has several simplistic assumptions that reduce its  robustness as a general model for human understanding. 
+
+	\subsection*{Manifold Smoothness}
+	First, standard NNMF only considers the data's euclidean embedding, but does not consider the inherent geometry of the data space \cite{cai2008non}. However, there is a growing body of evidence that suggests that object recognition corresponds to a locally continuous manifold \cite{dicarlo2012does}. We represent this formally with the \textit{manifold assumption}, which states that ``if two observations $x_i$ and $x_j$ are close in the instrinsic geometry of the data distribution, then the representations of the two points in the new basis are also close to each other \cite{belkin2001laplacian, cai2008non}.''
+	
+	In other words, let  $f_k(x_i) = s_ik$ be the mapping function from original observation $x_i$ s onto the axis $a_k$, then we have if $|x_i - x_j| < \epsilon$ then $|f_k(x_i) - f_k(x_j) | < \delta$ for some $\delta$. We will measure the smoothness of the $f_k$'s along the geodesics in the underlying geometry of the data space and denote it $||f_k||^2_M$ \cite{cai2008non}. 
+	
+	Let $\mathcal{M} \subset \mathbb{R}^m$ be the underlying smooth manifold that generated our data. Then the ``natural choice'' for $||f_k||^2_M$ is 
+	$$||f_k||^2_M = \int_{x \in \mathcal{M}} ||\nabla_\mathcal{M} f_k||^2 dP_X(x)$$
+	where $\nabla_\mathcal{M}$ is the gradient of $f_k$ along $\mathcal{M}$ and the integral is taken over the data distribution $P_X$.
+	
+	Unfortunately, the underlying data manifold $\mathcal{M}$ is unknown, so we cannot compute $||f_k||^2_M$ directly. Instead, we discretely approximate it through a nearest neighbor graph of the data using techniques from manifold learning theory \cite{belkin2003problems} and spectral graph theory \cite{chung1997spectral}. 
+	
+	First we construct an edge weight matrix $W$ such that
+	 $$W_{ij} = \begin{cases} 
+	1 & \textrm{ if $x_i \in N_p(x_j)$ or $x_j \in N_p(x_i)$} \\
+	0 & \text{otherwise} \\
+	\end{cases} $$
+	where $N_p(x_j)$ is the set of the $p$ nearest points to $x_j$.
+	
+	\subsection*{Supervision}
+	In addition, the procedure discussed above is unsupervised, which means the algorithm is designed to reveal latent structure from the unlabeled data. Many times however, data is accompanied with labels and the alternative algorithmic objective is to assign new unobserved data into appropriate labels.
+	
+	As I briefly discussed in Section \ref{manifold}, the supervised formulation is inherently related to the problem of visual object recognition \cite{biederman1987recognition}. Objects can be thought of as both their class labels and their retinal activations (see Figure \ref{manifold}).
+\begin{figure}[h]
+	\label{manifold}
+	\centering
+	\includegraphics[width=.42\textwidth]{manifoldA}
+		\includegraphics[width=.57\textwidth]{manifoldB}
+	\caption{A: Supervised representation of object recognition; B: seperating hyperplane via ventral stream transform. Image adapted from \cite{dicarlo2012does}.}
+\end{figure}	
+
+	A core task in the object recognition problem is to understand how the brain creates a separating hyperplane in this high dimensional retinal representation of objects. A growing body of literature suggests that the primate ventral visual processing steam -- a region of cortical segments in the temporal and occipital lobes -- contains import circuits for objection recognition \cite{gross1994inferior, dicarlo2012does, miyashita1993inferior, orban2008higher, rolls2000functions}. 
+	
+	Although the explicit algorithmic mechanisms of this ventral stream transform are still not yet known, in this section we will explore several analogies in the domain of NNMF. In particular, we will explore  the semi-supervised case, where only some of the data is labeled.  For semi-supervised NNMF, the objective is similar to the unsupervised case. However, the known class labels can be incorporated into the model to improve classification performance \cite{lee2010semi}. In this section, we will explore an extension of NNMF where some of the class labels are known, and this information is used to enhance the performance of the NNMF. This \emph{semi-supervised} NNMF  learns a one-versus all separating hyperplane for the observations \cite{lee2010semi}.
+	
+	A
 	\section{Approach}
 	In many cases, in addition to  $X \in \mathbb{R}^{n\times m}$ we also have a label matrix $Y \in \mathbb{R}^{n\times k}$, where $k$ is the number of classes and $Y_{i,j}$ is 1 if document $i$ is in class $j$ and 0 otherwise. 
 	Given $B \in \mathbb{R}^{k \times r}$, a basis matrix for $Y$, and $L \in \mathbb{R}^{k \times n}$, a weight matrix to handle missing labels, then the energy function for SSNMF is as follows
@@ -459,6 +535,7 @@ where $A \in \mathbb{R}^{n\times k}$ is the document/topic matrix and  $S \in \m
 		}
 		\caption{Multiplicative Update for Semi-Supervised NNMF}
 	\end{algorithm}
+	I implemented this algorithm for the Afghan dataset, where the each of the documents corresponds to one of three groups. 
 	\section{Visualization}
 \begin{center}
 	\includegraphics[width=7	in]{semi-viz}

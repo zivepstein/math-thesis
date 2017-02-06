@@ -6,10 +6,42 @@ Dario Amodei, Rishita Anubhai, Eric Battenberg, Carl Case, Jared Casper, Bryan
 \newblock Deep speech 2: End-to-end speech recognition in english and mandarin.
 \newblock {\em arXiv preprint arXiv:1512.02595}, 2015.
 
+\bibitem{belkin2003problems}
+Mikhail Belkin.
+\newblock Problems of learning on manifolds.
+\newblock 2003.
+
+\bibitem{belkin2001laplacian}
+Mikhail Belkin and Partha Niyogi.
+\newblock Laplacian eigenmaps and spectral techniques for embedding and
+  clustering.
+\newblock In {\em NIPS}, volume~14, pages 585--591, 2001.
+
 \bibitem{biederman1987recognition}
 Irving Biederman.
 \newblock Recognition-by-components: a theory of human image understanding.
 \newblock {\em Psychological review}, 94(2):115, 1987.
+
+\bibitem{blei2012probabilistic}
+David~M Blei.
+\newblock Probabilistic topic models.
+\newblock {\em Communications of the ACM}, 55(4):77--84, 2012.
+
+\bibitem{cai2008non}
+Deng Cai, Xiaofei He, Xiaoyun Wu, and Jiawei Han.
+\newblock Non-negative matrix factorization on manifold.
+\newblock In {\em Data Mining, 2008. ICDM'08. Eighth IEEE International
+  Conference on}, pages 63--72. IEEE, 2008.
+
+\bibitem{chung1997spectral}
+Fan~RK Chung.
+\newblock {\em Spectral graph theory}, volume~92.
+\newblock American Mathematical Soc., 1997.
+
+\bibitem{dicarlo2012does}
+James~J DiCarlo, Davide Zoccolan, and Nicole~C Rust.
+\newblock How does the brain solve visual object recognition?
+\newblock {\em Neuron}, 73(3):415--434, 2012.
 
 \bibitem{deepNonNeg}
 Jennifer Flenner and Blake Hunter.
@@ -25,6 +57,11 @@ DMBTL Griffiths and MIJJB Tenenbaum.
 \newblock Hierarchical topic models and the nested chinese restaurant process.
 \newblock {\em Advances in neural information processing systems}, 16:17, 2004.
 
+\bibitem{gross1994inferior}
+Charles~G Gross.
+\newblock How inferior temporal cortex became a visual area.
+\newblock {\em Cerebral cortex}, 4(5):455--469, 1994.
+
 \bibitem{hannun2014deep}
 Awni Hannun, Carl Case, Jared Casper, Bryan Catanzaro, Greg Diamos, Erich
   Elsen, Ryan Prenger, Sanjeev Satheesh, Shubho Sengupta, Adam Coates, et~al.
@@ -35,6 +72,13 @@ Awni Hannun, Carl Case, Jared Casper, Bryan Catanzaro, Greg Diamos, Erich
 Ngoc-Diep Ho.
 \newblock {\em Nonnegative matrix factorization algorithms and applications}.
 \newblock PhD thesis, {\'E}COLE POLYTECHNIQUE, 2008.
+
+\bibitem{holzapfel2008musical}
+Andre Holzapfel and Yannis Stylianou.
+\newblock Musical genre classification using nonnegative matrix
+  factorization-based features.
+\newblock {\em IEEE Transactions on Audio, Speech, and Language Processing},
+  16(2):424--434, 2008.
 
 \bibitem{hornik1991approximation}
 Kurt Hornik.
@@ -86,6 +130,16 @@ Marvin Minsky.
 \newblock A framework for representing knowledge.
 \newblock 1975.
 
+\bibitem{miyashita1993inferior}
+Yasushi Miyashita.
+\newblock Inferior temporal cortex: where visual perception meets memory.
+\newblock {\em Annual review of neuroscience}, 16(1):245--263, 1993.
+
+\bibitem{orban2008higher}
+Guy~A Orban.
+\newblock Higher order visual processing in macaque extrastriate cortex.
+\newblock {\em Physiological reviews}, 88(1):59--89, 2008.
+
 \bibitem{paatero1994positive}
 Pentti Paatero and Unto Tapper.
 \newblock Positive matrix factorization: A non-negative factor model with
@@ -96,6 +150,12 @@ Pentti Paatero and Unto Tapper.
 Stephen~E Palmer.
 \newblock Hierarchical structure in perceptual representation.
 \newblock {\em Cognitive psychology}, 9(4):441--474, 1977.
+
+\bibitem{rolls2000functions}
+Edmund~T Rolls.
+\newblock Functions of the primate temporal lobe cortical visual areas in
+  invariant visual object and face recognition.
+\newblock {\em Neuron}, 27(2):205--218, 2000.
 
 \bibitem{rumelhart1988learning}
 David~E Rumelhart, Geoffrey~E Hinton, and Ronald~J Williams.
