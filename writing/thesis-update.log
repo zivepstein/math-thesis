@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  5 FEB 2017 16:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 FEB 2017 23:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -828,7 +828,7 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<pomonalogo.pdf, id=115, 464.73625pt x 194.7275pt>
+<pomonalogo.pdf, id=111, 464.73625pt x 194.7275pt>
 File: pomonalogo.pdf Graphic file (type pdf)
  <use pomonalogo.pdf>
 Package pdftex.def Info: pomonalogo.pdf used on input line 162.
@@ -852,7 +852,7 @@ alogo.pdf>]
 
  [2
 
-] <wordcloud.png, id=160, 964.60374pt x 599.23875pt>
+] <wordcloud.png, id=155, 964.60374pt x 599.23875pt>
 File: wordcloud.png Graphic file (type png)
 
 <use wordcloud.png>
@@ -879,7 +879,7 @@ l.193
 
 ] [3]
 Chapter 2.
-<cup.jpg, id=183, 281.05pt x 180.675pt>
+<cup.jpg, id=178, 281.05pt x 180.675pt>
 File: cup.jpg Graphic file (type jpg)
  <use cup.jpg>
 Package pdftex.def Info: cup.jpg used on input line 199.
@@ -887,19 +887,19 @@ Package pdftex.def Info: cup.jpg used on input line 199.
  [4
 
  <./cup.jpg>]
-<rbc.png, id=192, 302.12875pt x 361.35pt>
+<rbc.png, id=187, 302.12875pt x 361.35pt>
 File: rbc.png Graphic file (type png)
  <use rbc.png>
 Package pdftex.def Info: rbc.png used on input line 215.
 (pdftex.def)             Requested size: 170.71652pt x 204.17967pt.
  [5] [6 <./rbc.png>]
-<palmer_tree.png, id=225, 472.76625pt x 361.35pt>
+<palmer_tree.png, id=220, 472.76625pt x 361.35pt>
 File: palmer_tree.png Graphic file (type png)
  <use palmer_tree.png>
 Package pdftex.def Info: palmer_tree.png used on input line 241.
 (pdftex.def)             Requested size: 284.52756pt x 217.47884pt.
 
-[7 <./palmer_tree.png>] <geonLC.png, id=241, 877.2775pt x 237.88875pt>
+[7 <./palmer_tree.png>] <geonLC.png, id=236, 877.2775pt x 237.88875pt>
 File: geonLC.png Graphic file (type png)
 
 <use geonLC.png>
@@ -911,20 +911,20 @@ ine 264.
 Chapter 3.
 [10
 
-] [11] <nn.png, id=273, 602.25pt x 724.7075pt>
+] [11] <nn.png, id=268, 602.25pt x 724.7075pt>
 File: nn.png Graphic file (type png)
  <use nn.png>
 Package pdftex.def Info: nn.png used on input line 342.
 (pdftex.def)             Requested size: 140.92793pt x 169.57645pt.
 
-<Conv_layer.png, id=274, 636.3775pt x 427.5975pt>
+<Conv_layer.png, id=269, 636.3775pt x 427.5975pt>
 File: Conv_layer.png Graphic file (type png)
  <use Conv_layer.png>
 Package pdftex.def Info: Conv_layer.png used on input line 343.
 (pdftex.def)             Requested size: 234.8775pt x 157.81711pt.
  [12 <./nn.png> <./Conv_layer.png>] [13] [14] [15]
 Chapter 4.
-<image.png, id=312, 374.39874pt x 591.20876pt>
+<image.png, id=306, 374.39874pt x 591.20876pt>
 File: image.png Graphic file (type png)
  <use image.png>
 Package pdftex.def Info: image.png used on input line 423.
@@ -935,7 +935,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [16
 
-] <genre.png, id=330, 553.06625pt x 390.45876pt>
+] <genre.png, id=325, 553.06625pt x 390.45876pt>
 File: genre.png Graphic file (type png)
  <use genre.png>
 Package pdftex.def Info: genre.png used on input line 439.
@@ -945,7 +945,7 @@ Package pdftex.def Info: genre.png used on input line 439.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [17 <./image.png>] [18 <./genre.png>]
-<tmex.png, id=361, 774.895pt x 421.575pt>
+<tmex.png, id=356, 774.895pt x 421.575pt>
 File: tmex.png Graphic file (type png)
  <use tmex.png>
 Package pdftex.def Info: tmex.png used on input line 471.
@@ -958,89 +958,89 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 Chapter 5.
 [21
 
-] <manifoldA.png, id=395, 386.44376pt x 228.855pt>
+] [22] <manifoldA.png, id=401, 386.44376pt x 228.855pt>
 File: manifoldA.png Graphic file (type png)
  <use manifoldA.png>
-Package pdftex.def Info: manifoldA.png used on input line 508.
+Package pdftex.def Info: manifoldA.png used on input line 532.
 (pdftex.def)             Requested size: 197.29623pt x 116.84021pt.
 
-<manifoldB.png, id=396, 383.4325pt x 181.67876pt>
+<manifoldB.png, id=402, 383.4325pt x 181.67876pt>
 File: manifoldB.png Graphic file (type png)
  <use manifoldB.png>
-Package pdftex.def Info: manifoldB.png used on input line 509.
+Package pdftex.def Info: manifoldB.png used on input line 533.
 (pdftex.def)             Requested size: 267.7638pt x 126.8804pt.
- [22 <./manifoldA.png> <./manifoldB.png>]
-<semi-viz.png, id=419, 1216.545pt x 392.46625pt>
+ [23 <./manifoldA.png> <./manifoldB.png>]
+<semi-viz.png, id=428, 1216.545pt x 392.46625pt>
 File: semi-viz.png Graphic file (type png)
  <use semi-viz.png>
-Package pdftex.def Info: semi-viz.png used on input line 541.
+Package pdftex.def Info: semi-viz.png used on input line 567.
 (pdftex.def)             Requested size: 505.89pt x 163.19981pt.
 
-Overfull \hbox (36.13498pt too wide) in paragraph at lines 541--542
- [] 
- []
-
-[23 <./semi-viz.png>]
-Chapter 6.
-[24
-
-] <tree.png, id=436, 1085.05376pt x 1053.9375pt>
-File: tree.png Graphic file (type png)
- <use tree.png>
-Package pdftex.def Info: tree.png used on input line 565.
-(pdftex.def)             Requested size: 234.8775pt x 228.136pt.
-
-<img.png, id=438, 789.95125pt x 696.6025pt>
-File: img.png Graphic file (type png)
- <use img.png>
-Package pdftex.def Info: img.png used on input line 578.
-(pdftex.def)             Requested size: 225.4804pt x 198.83139pt.
-
-<img2.png, id=439, 625.33624pt x 665.48625pt>
-File: img2.png Graphic file (type png)
- <use img2.png>
-Package pdftex.def Info: img2.png used on input line 579.
-(pdftex.def)             Requested size: 225.4804pt x 239.95058pt.
- [25 <./tree.png>]
-<topic.png, id=447, 932.48375pt x 482.80376pt>
-File: topic.png Graphic file (type png)
- <use topic.png>
-Package pdftex.def Info: topic.png used on input line 591.
-(pdftex.def)             Requested size: 505.89pt x 261.93306pt.
-
-Overfull \hbox (36.13498pt too wide) in paragraph at lines 591--592
+Overfull \hbox (36.13498pt too wide) in paragraph at lines 567--568
  [][] 
  []
 
-[26 <./img.png> <./img2.png>] [27 <./topic.png>]
+[24 <./semi-viz.png>]
+Chapter 6.
+[25
+
+] <tree.png, id=450, 1085.05376pt x 1053.9375pt>
+File: tree.png Graphic file (type png)
+ <use tree.png>
+Package pdftex.def Info: tree.png used on input line 599.
+(pdftex.def)             Requested size: 234.8775pt x 228.136pt.
+
+<img.png, id=452, 789.95125pt x 696.6025pt>
+File: img.png Graphic file (type png)
+ <use img.png>
+Package pdftex.def Info: img.png used on input line 612.
+(pdftex.def)             Requested size: 225.4804pt x 198.83139pt.
+
+<img2.png, id=453, 625.33624pt x 665.48625pt>
+File: img2.png Graphic file (type png)
+ <use img2.png>
+Package pdftex.def Info: img2.png used on input line 613.
+(pdftex.def)             Requested size: 225.4804pt x 239.95058pt.
+ [26 <./tree.png>]
+<topic.png, id=461, 932.48375pt x 482.80376pt>
+File: topic.png Graphic file (type png)
+ <use topic.png>
+Package pdftex.def Info: topic.png used on input line 625.
+(pdftex.def)             Requested size: 505.89pt x 261.93306pt.
+
+Overfull \hbox (36.13498pt too wide) in paragraph at lines 625--626
+ [][] 
+ []
+
+[27 <./img.png> <./img2.png>] [28 <./topic.png>]
 Chapter 7.
-[28
+[29
 
 ]
 Chapter 8.
-(./thesis-update.bbl [29
+(./thesis-update.bbl [30
 
-] [30
+] [31
 
-] [31]) [32]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 619.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 619.
+] [32]) [33]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 653.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 653.
  (./thesis-update.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 619.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 619.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 653.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 653.
 Package rerunfilecheck Info: File `thesis-update.out' has not changed.
-(rerunfilecheck)             Checksum: 3DFB02A8637013AD9AE60DDADE27EBB6;1693.
+(rerunfilecheck)             Checksum: ABC065D929BA8323C5EFAC9B92CD556A;1638.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 619.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 653.
  ) 
 Here is how much of TeX's memory you used:
- 19788 strings out of 493089
- 355807 string characters out of 6134842
- 658899 words of memory out of 5000000
- 22773 multiletter control sequences out of 15000+600000
+ 19803 strings out of 493089
+ 356047 string characters out of 6134842
+ 659100 words of memory out of 5000000
+ 22780 multiletter control sequences out of 15000+600000
  13742 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,19n,76p,1094b,865s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1063,10 +1063,10 @@ e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
 exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis-update.pdf (34 pages, 3985363 bytes).
+Output written on thesis-update.pdf (35 pages, 3994253 bytes).
 PDF statistics:
- 587 PDF objects out of 1000 (max. 8388607)
- 488 compressed objects within 5 object streams
- 133 named destinations out of 1000 (max. 500000)
- 319 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 602 PDF objects out of 1000 (max. 8388607)
+ 501 compressed objects within 6 object streams
+ 141 named destinations out of 1000 (max. 500000)
+ 311 words of extra memory for PDF output out of 10000 (max. 10000000)
 

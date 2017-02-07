@@ -15,13 +15,12 @@
 \contentsline {section}{\numberline {4.4}Natural Language}{19}{section.4.4}
 \contentsline {chapter}{\numberline {5}Manifold Learning as NNMF}{21}{chapter.5}
 \contentsline {section}{\numberline {5.1}Motivation}{21}{section.5.1}
-\contentsline {section}{\numberline {5.2}Approach}{22}{section.5.2}
-\contentsline {section}{\numberline {5.3}Visualization}{23}{section.5.3}
-\contentsline {chapter}{\numberline {6}Hierarchical Representation}{24}{chapter.6}
-\contentsline {section}{\numberline {6.1}Approach}{24}{section.6.1}
-\contentsline {section}{\numberline {6.2}Visualization}{26}{section.6.2}
-\contentsline {chapter}{\numberline {7}Deep Models}{28}{chapter.7}
-\contentsline {section}{\numberline {7.1}Approach}{28}{section.7.1}
-\contentsline {section}{\numberline {7.2}Deep Neural Models}{28}{section.7.2}
-\contentsline {section}{\numberline {7.3}Visualization}{28}{section.7.3}
-\contentsline {chapter}{\numberline {8}Discussion}{29}{chapter.8}
+\contentsline {section}{\numberline {5.2}Manifold NNMF}{24}{section.5.2}
+\contentsline {chapter}{\numberline {6}Hierarchical Representation}{25}{chapter.6}
+\contentsline {section}{\numberline {6.1}Approach}{25}{section.6.1}
+\contentsline {section}{\numberline {6.2}Visualization}{27}{section.6.2}
+\contentsline {chapter}{\numberline {7}Deep Models}{29}{chapter.7}
+\contentsline {section}{\numberline {7.1}Approach}{29}{section.7.1}
+\contentsline {section}{\numberline {7.2}Deep Neural Models}{29}{section.7.2}
+\contentsline {section}{\numberline {7.3}Visualization}{29}{section.7.3}
+\contentsline {chapter}{\numberline {8}Discussion}{30}{chapter.8}

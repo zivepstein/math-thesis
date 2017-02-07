@@ -483,23 +483,47 @@ To gain some visual intuition into the interpretations of $A$ and $S$, consider 
 	\subsection*{Manifold Smoothness}
 	First, standard NNMF only considers the data's euclidean embedding, but does not consider the inherent geometry of the data space \cite{cai2008non}. However, there is a growing body of evidence that suggests that object recognition corresponds to a locally continuous manifold \cite{dicarlo2012does}. We represent this formally with the \textit{manifold assumption}, which states that ``if two observations $x_i$ and $x_j$ are close in the instrinsic geometry of the data distribution, then the representations of the two points in the new basis are also close to each other \cite{belkin2001laplacian, cai2008non}.''
 	
-	In other words, let  $f_k(x_i) = s_ik$ be the mapping function from original observation $x_i$ s onto the axis $a_k$, then we have if $|x_i - x_j| < \epsilon$ then $|f_k(x_i) - f_k(x_j) | < \delta$ for some $\delta$. We will measure the smoothness of the $f_k$'s along the geodesics in the underlying geometry of the data space and denote it $||f_k||^2_M$ \cite{cai2008non}. 
+	In other words, let  $f_\ell(x_i) = s_{i\ell}$ be the mapping function from original observation $x_i$ s onto the axis $a_\ell$, then we have if $|x_i - x_j| < \epsilon$ then $|f_\ell(x_i) - f_\ell(x_j) | < \delta$ for some $\delta$. We will measure the smoothness of the $f_\ell$'s along the geodesics in the underlying geometry of the data space and denote it $||f_\ell||^2_M$ \cite{cai2008non}. 
 	
-	Let $\mathcal{M} \subset \mathbb{R}^m$ be the underlying smooth manifold that generated our data. Then the ``natural choice'' for $||f_k||^2_M$ is 
-	$$||f_k||^2_M = \int_{x \in \mathcal{M}} ||\nabla_\mathcal{M} f_k||^2 dP_X(x)$$
-	where $\nabla_\mathcal{M}$ is the gradient of $f_k$ along $\mathcal{M}$ and the integral is taken over the data distribution $P_X$.
+	Let $\mathcal{M} \subset \mathbb{R}^m$ be the underlying smooth manifold that generated our data. Then the ``natural choice'' for $||f_\ell||^2_M$ is 
+	$$||f_\ell||^2_M = \int_{x \in \mathcal{M}} ||\nabla_\mathcal{M} f_\ell||^2 dP_X(x)$$
+	where $\nabla_\mathcal{M}$ is the gradient of $f_\ell$ along $\mathcal{M}$ and the integral is taken over the data distribution $P_X$.
 	
-	Unfortunately, the underlying data manifold $\mathcal{M}$ is unknown, so we cannot compute $||f_k||^2_M$ directly. Instead, we discretely approximate it through a nearest neighbor graph of the data using techniques from manifold learning theory \cite{belkin2003problems} and spectral graph theory \cite{chung1997spectral}. 
+	Unfortunately, the underlying data manifold $\mathcal{M}$ is unknown, so we cannot compute $||f_\ell||^2_M$ directly. Instead, we discretely approximate it through a nearest neighbor graph of the data using techniques from manifold learning theory \cite{belkin2003problems} and spectral graph theory \cite{chung1997spectral}. 
 	
 	First we construct an edge weight matrix $W$ such that
 	 $$W_{ij} = \begin{cases} 
 	1 & \textrm{ if $x_i \in N_p(x_j)$ or $x_j \in N_p(x_i)$} \\
 	0 & \text{otherwise} \\
 	\end{cases} $$
-	where $N_p(x_j)$ is the set of the $p$ nearest points to $x_j$.
-	
+	where $N_p(x_j)$ is the set of the $p$ nearest points to $x_j$. Next let $L$ be the graph Laplacian defined as $L=D-W$, where $D$ is the diagonal matrix of column sums of $W$ (i.e. $D_{ii} = \sum_j W_{ij}$). \cite{chung1997spectral}. We leverage $L$ to form a discrete approximation for $||f_\ell||^2_M$, since the graph Laplacian $L$ is a discrete approximation of the Laplace-Beltrami operator $\Delta_\mathcal{M}$ on the underlying data manifold \cite{belkin2003problems}. Following Cai et al's derivation \cite{cai2008non}, we get the following closed for $\mathcal{R}_\ell$, the discrete approximation for $||f_\ell||^2_M$:
+	\begin{align*}
+\mathcal{R}_\ell &= \frac{1}{2} \sum_{i,j=1}^N (f_\ell(x_i)-f_\ell(x_j))^2W_{ij}\\
+&=\sum_{i=1}^N f_\ell(x_i)^2 D_{ii}  - \sum_{i,j=1}^N f_\ell(x_i)f_\ell(x_j)W_{ij} \\
+&= \sum_{i=1}^N v_{i\ell}^2 D_{ii}  - \sum_{i,j=1}^N v_{i\ell}v_{j\ell}W_{ij} \\ 
+&= s_\ell^TDs_k - s_\ell^TWs_\ell \\
+&= s_\ell^TLs_\ell
+	\end{align*}
+So $\mathcal{R}_\ell$ can be used to measure the smoothness of $f_\ell$ about the underlying geometry of the data space. So the matrix factorization that minimizes all the $\mathcal{R}_\ell$, which Cai et al denoted \textit{graph reguarized NNMF} or gNNMF, will maximize the smoothness of the mapping. The minimization of the  $\mathcal{R}_\ell$ is added to the energy function as follows
+\begin{align}
+\label{O:gNNMF}
+\mathcal{O}_{\text{gNNMF}} &= ||X-AS||^2_F + \lambda \sum_{\ell=1}^k \mathcal{R}_\ell \\&=  ||X-AS||^2_F + \lambda \operatorname{Tr}(S^TLS)
+\end{align}
+The authors also put forward a multiplicative update algorithm that is non-decreasing in $\mathcal{O}_{\text{gNNMF}} $: 
+
+	\begin{algorithm}[H]
+		\KwIn{Initialize $A^0, S^0$}
+		\Repeat{Stopping condition}{
+			\begin{align*}
+			A_{ij} &\leftarrow 	A_{ij} \frac{(XS)_{ij}}{(AS^TS)_{ij}}\\
+			S_{ij} &\leftarrow 	S_{ij} \frac{(XA_\lambda WS )_{ij}}{(SA^TA + \lambda DS)_{ij}}\\
+			\end{align*} 
+		}
+		\caption{Multiplicative Update for Graph Regularized NNMF}
+	\end{algorithm}
+	It's important to note that $W$ can be any matricial representation of the structure of the data. Here, Cai et al use $p$-nearest neighbor edge weight matrix, but are explicit in stating that this choice is in some ways arbitrary. If for whatever reason the data is known to exhibit structure in the form of some matrix $W'$, then the results above generalize to that matrix as well.
 	\subsection*{Supervision}
-	In addition, the procedure discussed above is unsupervised, which means the algorithm is designed to reveal latent structure from the unlabeled data. Many times however, data is accompanied with labels and the alternative algorithmic objective is to assign new unobserved data into appropriate labels.
+	Canonical NNMF is unsupervised, which means the algorithm is designed to reveal latent structure from the unlabeled data. Many times however, data is accompanied with labels and the alternative algorithmic objective is to assign new unobserved data into appropriate labels.
 	
 	As I briefly discussed in Section \ref{manifold}, the supervised formulation is inherently related to the problem of visual object recognition \cite{biederman1987recognition}. Objects can be thought of as both their class labels and their retinal activations (see Figure \ref{manifold}).
 \begin{figure}[h]
@@ -512,13 +536,14 @@ To gain some visual intuition into the interpretations of $A$ and $S$, consider 
 
 	A core task in the object recognition problem is to understand how the brain creates a separating hyperplane in this high dimensional retinal representation of objects. A growing body of literature suggests that the primate ventral visual processing steam -- a region of cortical segments in the temporal and occipital lobes -- contains import circuits for objection recognition \cite{gross1994inferior, dicarlo2012does, miyashita1993inferior, orban2008higher, rolls2000functions}. 
 	
-	Although the explicit algorithmic mechanisms of this ventral stream transform are still not yet known, in this section we will explore several analogies in the domain of NNMF. In particular, we will explore  the semi-supervised case, where only some of the data is labeled.  For semi-supervised NNMF, the objective is similar to the unsupervised case. However, the known class labels can be incorporated into the model to improve classification performance \cite{lee2010semi}. In this section, we will explore an extension of NNMF where some of the class labels are known, and this information is used to enhance the performance of the NNMF. This \emph{semi-supervised} NNMF  learns a one-versus all separating hyperplane for the observations \cite{lee2010semi}.
+	Although the explicit algorithmic mechanisms of this ventral stream transform are still not yet known, in this section we will explore several analogies in the domain of NNMF. In particular, we will explore  the semi-supervised case, where only some of the data is labeled.  For semi-supervised NNMF (ssNNMF), the objective is similar to the unsupervised case. However, the known class labels can be incorporated into the model to improve classification performance \cite{lee2010semi}. We will explore an extension of NNMF where some of the class labels are known, and this information is used to enhance the performance of the NNMF. This ssNNMF  learns a one-versus all separating hyperplane for the observations \cite{lee2010semi} as follows.
 	
-	A
-	\section{Approach}
-	In many cases, in addition to  $X \in \mathbb{R}^{n\times m}$ we also have a label matrix $Y \in \mathbb{R}^{n\times k}$, where $k$ is the number of classes and $Y_{i,j}$ is 1 if document $i$ is in class $j$ and 0 otherwise. 
+   In addition to  $X \in \mathbb{R}^{n\times m}$ we also have a label matrix $Y \in \mathbb{R}^{n\times k}$, where $k$ is the number of classes and $Y_{i,j}$ is 1 if document $i$ is in class $j$ and 0 otherwise. 
 	Given $B \in \mathbb{R}^{k \times r}$, a basis matrix for $Y$, and $L \in \mathbb{R}^{k \times n}$, a weight matrix to handle missing labels, then the energy function for SSNMF is as follows
-	$$E - ||(X-AS)||^2 + \lambda ||L \circ (Y-BS)||^2$$
+\begin{align}
+\label{O:ssMMMF}
+\mathcal{O}_{\text{ssNNMF}} = ||(X-AS)||^2 + \lambda ||L \circ (Y-BS)||^2
+\end{align}
 	where $\lambda$ is a tradeoff parameter that governs the importance of the supervised term.
 	
 	In the same vein of Algorithm 1, this energy function yields a convex optimization problem solved by the following algorithm. 
@@ -535,11 +560,20 @@ To gain some visual intuition into the interpretations of $A$ and $S$, consider 
 		}
 		\caption{Multiplicative Update for Semi-Supervised NNMF}
 	\end{algorithm}
-	I implemented this algorithm for the Afghan dataset, where the each of the documents corresponds to one of three groups. 
-	\section{Visualization}
-\begin{center}
-	\includegraphics[width=7	in]{semi-viz}
-\end{center}
+	I implemented this algorithm for the Afghan dataset, where the each of the documents corresponds to one of three groups, the results of which are shown in Figure \ref{fig:semi}. Here $k=3$, so each sunburst corresponds to the hierarchical model learned for each group. 
+	\begin{figure}
+		\label{fig:semi}
+		\centering
+		\includegraphics[width=7in]{semi-viz}
+		\caption{ssNNMF by label}
+	\end{figure}
+	
+	\section{Manifold NNMF}
+	I conclude this section by proposing a new NNMF that directly  combines the two methods disuccsed above, gNNMF and ssNNMF, to learn a supervised, locally smooth model. Inheriting from the energy functions \ref{O:gNNMF} and \ref{O:ssMMMF}, the energy function for Manifold NNMF is
+	\begin{align}
+	\mathcal{O}_{\text{manifold}} =  ||(X-AS)||^2 + \lambda_1 ||L \circ (Y-BS)||^2 +  + \lambda_2 \operatorname{Tr}(S^TLS)
+	\end{align}
+	\todo{what else is there to do here?}
 \end{chapter}
 \begin{chapter}{Hierarchical Representation}
 Many times, the data we wish to represent exhibits hierarchical structure. One such example is with the topics found in text data. Since topics correspond to semantic ideas, it makes sense that they would be organized in hierarchicaly. For example, in the 20 News Group data set, there are two separate topics for the Cincinnati Reds and Toronto Blue Jays, two baseball teams. Thus one could think about a supertopic, baseball, that branches into the two topics the standard NNMF finds.
