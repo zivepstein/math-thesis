@@ -42,7 +42,7 @@ with open('news24.json') as data_file:
 #tfdif and nmf model building
 tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
                                    stop_words='english')
-
+    
 tfidf = tfidf_vectorizer.fit_transform(local_data)
 tfidf_feature_names = tfidf_vectorizer.get_feature_names()
 nmf = NMF(n_components=n_topics).fit(tfidf)

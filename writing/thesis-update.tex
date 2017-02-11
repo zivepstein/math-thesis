@@ -171,6 +171,16 @@
 	\includegraphics[width=18cm]{wordcloud}
 \end{center}
 	}
+	\newpage
+\section*{Foreword}
+This thesis began as an exploration of the suite of algorithms that constitute non-negative matrix factorization (NNMF). Indeed because it learns robust topics in text and has strong intuitions in linear algebra, NNMF is a very suitable topic for a senior thesis in mathematics. 
+
+Parallel to these studies, I became very interested with another facet of NNMF. In reading many of the foundational papers in the field, such as Ngoc-Diep Ho's PhD Dissertation at Ecole Polytechnique and Lee and Seung's 1999 Nature paper, I noticed a pattern. The papers would also begin with a couple sentences relating the work to human cognition. For example, Lee and Sueng begin their seminal work with ``There
+is psychological and physiological evidence for parts-based representations in the brain, and certain computational theories of object recognition rely on such representations. But little is known about how brains or computers might learn the parts of objects.'' then dive to a technical overview of the algorithms they explored \cite{lee1999learning}. This topic sentence connecting to human cognition is always short, broad but \textit{present}.
+
+To my knowledge, a meditation on the connections between NNMF and the cognitive underpinnings of human understanding that exceeds a couple sentences does not exist. This is of course partially because such ideas have been channeled into discourse relating human understanding and more general and plastic forms of machine learning, such as neural networks. 
+
+In this thesis, I mine both the algorithms and cognitive science literature in an attempt to build a unifying theory. While the success of this pursuit is questionable, I do think it is an interesting attempt to blend these two ideas in an engaging and creative way.
 \begin{chapter}{Introduction}
 	
 	todo
@@ -265,9 +275,10 @@ As can be see from Figure \ref{fig:geonLC}, the geon vectors have some relation 
 \subsection*{Hierarchical Organization of Topics}
 \end{chapter}
 
-\begin{chapter}{Techniques}
+\begin{chapter}{Algorithms for Representing Data}
 	\label{chapter:techniques}
 \section{Singular Value Decomposition}
+\label{section:svd}
 The first technique to represent a matrix $X$ is to factorize it using singular value decomposition. 
 
 \begin{theorem}
@@ -321,7 +332,7 @@ An extension of the SVD can be used to create a low-rank approximation for the d
 	\end{bmatrix}$$
 
 	where $\sigma_1 \geq \sigma_2 \geq \cdots \geq \sigma_n \geq 0$ are the singular values of $A$ and where  $U \in \mathbb{R}^{m \times m}$  and $V^* \in \mathbb{R}^{n \times n}$ are unitary. Then the matrix $X_r = U\Sigma_rV^*$, where 
-	$$\Sigma = \begin{bmatrix}
+	$$\Sigma_r = \begin{bmatrix}
 	\sigma_1  & 0     & \cdots      &0       &   \cdots & 0   \\
 	0  & \sigma_2 & \cdots & 0    &  \cdots & 0    \\
 	\vdots  & \vdots & \ddots & \vdots &  & 0   \\
@@ -453,6 +464,7 @@ However, finding one such $X$ is NP-Complete \cite{vavasis2009complexity}. So we
 $$\min_{X \in \mathbb{R}_{+}^{n\times k}} ||A-XX^T||^2_F$$
 which just the standard optimization for non-negative matrix factorization for the symmetric case. Since the $X$ we are solving for in this case is no longer binary, but rather contains reals, it is considered a \textit{weak membership matrix}. That is, the larger $X_{i,j}$, the stronger membership of vertex $i$ in cluster $j$. 
 \section{Natural Language}
+\label{natlang}
 With the vast amount of digital text being generated across the internet, methods for understanding and processing corpora of human language become necessary. Across mathematics and computer science, many techniques have been put forward that allow one to understand a body of text far too large to read herself. A successful method in this domain is \emph{topic modelling}, whereby semantically cohesive subgroups of words can be identified. In particular, let $\mathcal{C} = \{d_1,d_2,\cdots, d_n\}$ be a collection of documents with a vocabulary $\mathcal{V}$. A \emph{topic}  $t_i$ is a vector over the words in the vocabulary that represents a coherent high level notion in the corpus:
 $$t_i = \{v^i_1, v^i_2, \cdots, v_m^i\}$$
 where $m$ is the size of the vocabulary. Topic modelling offers a powerful tool for understanding large amounts of text because they can discover latent semantic structure within text. 
@@ -474,11 +486,43 @@ To gain some visual intuition into the interpretations of $A$ and $S$, consider 
 
 \end{chapter}
 
+
+\begin{chapter}{Traditional NNMF and SVD on Test and Field Data}
+	\label{basic}
+	\section{Comparison of NNMF and SVD}
+	Both SVD and NNMF as discussed above can yield a matrix factorization, which can be interpreted as a ``topic model.'' Since NNMF already learns a matrix factorization, it is clear how this can be interpreted as a topic modelling scheme (see Section \ref{natlang}). 
+	
+	Recall that SVD factorizes a matrix into the product of a unitary matrix, a singular values matrix and another unitary matrix
+	$$X \approx U \Sigma_k V^T$$
+	In Section \ref{section:svd}, for a given $X \in \mathbb{R}^{n \times m}$ we referenced the so called \textit{full} SVD. Under this framework, we have $U \in \mathbb{R}^{n \times n}, \Sigma  \in \mathbb{R}^{n \times m}$ and $V \in \mathbb{R}^{m \times m}$. Under the full SVD, it is somewhat unclear how to interpret the factorization as a topic modelling scheme as we did for NNMF. 
+	
+	So we turn to another way to representing SVD, the \textit{compact} SVD. If you recall from Section \ref{section:svd}, under the full SVD the singular value matrix $\Sigma$ is 
+$$\Sigma_k = \begin{bmatrix}
+\sigma_1  & 0     & \cdots      &0       &   \cdots & 0   \\
+0  & \sigma_2 & \cdots & 0    &  \cdots & 0    \\
+\vdots  & \vdots & \ddots & \vdots &  & 0   \\
+0 & 0 & \cdots & \sigma_k  & \cdots & 0  \\
+\vdots  &     \vdots    && \vdots & \ddots & \vdots  \\
+0 & 0      &      \cdots  &0      & \cdots & 0 
+\end{bmatrix} \in \mathbb{R}^{n \times m}$$
+	where $\sigma_i$ are the singular values. An identical way to represent the same information is by having $\Sigma_k \in\mathbb{R}^{k \times k }$.  The all zero last $n-m$ rows of the previous representation of $\Sigma_k$ made the last $n-m$ columns of $U$ and the last $n-m$ rows of $V^T$ all zero, we can simply remove those columns and rows respectively and equivalently get  
+		$$X \approx U \Sigma_k V^T$$
+		with  $U \in \mathbb{R}^{n \times k}, \Sigma  \in \mathbb{R}^{k \times k}$ and $V \in \mathbb{R}^{m \times k}$. From this representation, an analogy to NNMF's topic model $X \approx AB$ can be formed by having $A = U\Sigma, B = V^T$ or $A = U, B=\Sigma V^T$. Now I conduct a horserace between compact SVD and NNMF. The hypothesis is that although SVD is much closer to a global minimum in the optimization scheme, the non-negativity constraints endow NNMF with a better ability to form topic models.
+	\section{Datasets}
+	For this thesis, I used two datasets to generate all the models, both of which are a collection of documents. 
+	\subsection*{20 News Groups}
+	This canonical NLP dataset consists of approximately 20,000 newsgroup documents across 20 different newsgroups. It was originally collected by Ken Lang and has been by NLP researchers in a variety of applicaitons \cite{20news}. For the purposes of this thesis, I used a small subset of the full data set, with 98 documents. 
+	
+	Because 20 News Groups is so well established in the literature, I use it as a canned dataset to verify that the algorithms I implemented are indeed doing something reasonable. 
+		\subsection*{Afghan Mujahideen}
+		To accompany the canned dataset, I used a more interesting and culturally significant source of data. This is a corpus of documents published by ``Afghan mujahideen forces fighting Soviet and Afghan communists forces between 1980 and 1992'' curated by NYU Sociologist \todo{what is his name?}. 
+	\section*{Results}
+\end{chapter}
 \begin{chapter}{Manifold Learning as NNMF}
 	\label{supervised}
 	
 	\section{Motivation}
-	The standard NNMF has several simplistic assumptions that reduce its  robustness as a general model for human understanding. 
+	The standard NNMF has several simplistic assumptions that reduce its robustness as a general model for human understanding. 
 
 	\subsection*{Manifold Smoothness}
 	First, standard NNMF only considers the data's euclidean embedding, but does not consider the inherent geometry of the data space \cite{cai2008non}. However, there is a growing body of evidence that suggests that object recognition corresponds to a locally continuous manifold \cite{dicarlo2012does}. We represent this formally with the \textit{manifold assumption}, which states that ``if two observations $x_i$ and $x_j$ are close in the instrinsic geometry of the data distribution, then the representations of the two points in the new basis are also close to each other \cite{belkin2001laplacian, cai2008non}.''
@@ -641,12 +685,13 @@ S_1  \approx A_2 \cdots A_m  S_m
 
 We then consider the algorithms and notions in the domain of Deep Semi NMF as a model for Hierarchical NMF \cite{ deepNonNeg, trigeorgis2014deep} 
 \section{Deep Neural Models}
-\section{Visualization}
 	\end{chapter}
 \begin{chapter}{Discussion}
 	\end{chapter}
-
-
+\section*{Acknowledgments}
+I would like the thank the Pomona College Math Department for their tireless support and guidance.  I would like to thank Professor Blake Hunter, Leo Selker, Dima Smirnov, Professor Shlomi Sher, Neo Mohsenvand for invaluable comments, ideas, inspiration and discussion. 
+\newpage
+\section*{Appendix}
 \bibliographystyle{plain}
 
 \bibliography{myBib}

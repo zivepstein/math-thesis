@@ -151,6 +151,12 @@ Stephen~E Palmer.
 \newblock Hierarchical structure in perceptual representation.
 \newblock {\em Cognitive psychology}, 9(4):441--474, 1977.
 
+\bibitem{20news}
+Jason Rennie.
+\newblock The 20 newsgroups data set.
+\newblock \url{http://qwone.com/~jason/20Newsgroups/}.
+\newblock Accessed: 2017-02-11.
+
 \bibitem{rolls2000functions}
 Edmund~T Rolls.
 \newblock Functions of the primate temporal lobe cortical visual areas in

@@ -8,45 +8,45 @@ Warning--can't use both volume and number fields in belkin2001laplacian
 Warning--empty journal in deepNonNeg
 Warning--empty year in deepNonNeg
 Warning--empty journal in minsky1975framework
-You've used 35 entries,
+You've used 36 entries,
             2118 wiz_defined-function locations,
-            709 strings with 9484 characters,
-and the built_in function-call counts, 11742 in all, are:
-= -- 1175
-> -- 526
+            714 strings with 9591 characters,
+and the built_in function-call counts, 11957 in all, are:
+= -- 1196
+> -- 533
 < -- 8
-+ -- 212
-- -- 174
-* -- 850
-:= -- 1962
-add.period$ -- 106
-call.type$ -- 35
-change.case$ -- 186
++ -- 216
+- -- 176
+* -- 855
+:= -- 1998
+add.period$ -- 110
+call.type$ -- 36
+change.case$ -- 190
 chr.to.int$ -- 0
-cite$ -- 40
-duplicate$ -- 437
-empty$ -- 908
-format.name$ -- 174
-if$ -- 2418
+cite$ -- 41
+duplicate$ -- 444
+empty$ -- 930
+format.name$ -- 176
+if$ -- 2465
 int.to.chr$ -- 0
-int.to.str$ -- 35
+int.to.str$ -- 36
 missing$ -- 36
-newline$ -- 177
-num.names$ -- 70
-pop$ -- 168
+newline$ -- 183
+num.names$ -- 72
+pop$ -- 178
 preamble$ -- 1
-purify$ -- 154
+purify$ -- 157
 quote$ -- 0
-skip$ -- 317
+skip$ -- 322
 stack$ -- 0
-substring$ -- 797
-swap$ -- 85
+substring$ -- 803
+swap$ -- 86
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 136
+type$ -- 140
 warning$ -- 5
-while$ -- 125
-width$ -- 37
-write$ -- 380
+while$ -- 127
+width$ -- 38
+write$ -- 391
 (There were 5 warnings)
