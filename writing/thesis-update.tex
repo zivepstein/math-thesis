@@ -3,6 +3,29 @@
 \usepackage[]{algorithm2e}
 \usepackage{tikz}
 \usepackage{ifthen}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Python,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
 % This first part of the file is called the PREAMBLE. It includes
 % customizations and command definitions. The preamble is everything
 % between \documentclass and \begin{document}.
@@ -454,15 +477,15 @@ Holzapfel et al. do what is perhaps most organic given a corpus of sound documen
 Since a network of edges and vertices $G=(V,E)$ can be represented as an \textit{adjacency matrix} $A \in \{0,1\}^{|V| \times |V|}$ with $A_{i,j} = 1$ if $(i,j) \in E$ and $A_{i,j}=0$ otherwise, graphs are another domain well suited for low dimensional representations. \footnote{For now, we will work with unweighted, undirected graphs, although these results generalize to other types of graphs as well.} Factorizing this adjacency matrix is equivalent to clustering the graph, which is a central problem to graph theory \cite{ho2008nonnegative}.
 A given clustering $C = \{C_1, C_2, \cdots, C_k\}$ of a graph is a partition of the vertices and can be evaluated based on its \textit{connectivity}:
 $$\text{connectivity}(G,C) = \frac{\#\{(i,j)\in E | (i,j) \in C\} + \#\{(i,j)\not\in E | (i,j) \not\in C\}}{|V|^2}$$
-The clustering $C$ can be formulated as a membership matrix $M \in \{0,1\}^{n \times k}$ with $M_{ir}=1$ if $i \in C_r$ and $X_{ir}$ if $i \not\in C_r$. Thus, the connectivity of $G$ under $C$ as defined above can be rewritten:
-\begin{align*}\text{connectivity}(G,C)  &= 1-\frac{\sum_{i,j} \left(A_ij - \sum_{r=1}^k X_{ir}X_{jr}\right)^2}{|V|^2}\\
-&=1-\frac{||A-XX^T||^2_F}{|V|^2}
+The clustering $C$ can be formulated as a membership matrix $M \in \{0,1\}^{n \times k}$ with $M_{ir}=1$ if $i \in C_r$ and $M_{ir}$ if $i \not\in C_r$. Thus, the connectivity of $G$ under $C$ as defined above can be rewritten:
+\begin{align*}\text{connectivity}(G,C)  &= 1-\frac{\sum_{i,j} \left(A_{ij} - \sum_{r=1}^k M_{ir}X_{jr}\right)^2}{|V|^2}\\
+&=1-\frac{||A-MM^T||^2_F}{|V|^2}
 \end{align*}
 Thus finding a clustering $C$ that maximizes the connectivity is equivalent to the minimization problem 
-$$\min_{X \in \{0,1\}^{n\times k}} ||A-XX^T||^2_F$$
-However, finding one such $X$ is NP-Complete \cite{vavasis2009complexity}. So we can relax the constraints to try to solve an easier problem we are more used to 
-$$\min_{X \in \mathbb{R}_{+}^{n\times k}} ||A-XX^T||^2_F$$
-which just the standard optimization for non-negative matrix factorization for the symmetric case. Since the $X$ we are solving for in this case is no longer binary, but rather contains reals, it is considered a \textit{weak membership matrix}. That is, the larger $X_{i,j}$, the stronger membership of vertex $i$ in cluster $j$. 
+$$\min_{M \in \{0,1\}^{n\times k}} ||A-MM^T||^2_F$$
+However, finding one such $M$ is NP-Complete \cite{vavasis2009complexity}. So we can relax the constraints to try to solve an easier problem we are more used to 
+$$\min_{X \in \mathbb{R}_{+}^{n\times k}} ||A-MM^T||^2_F$$
+which just the standard optimization for non-negative matrix factorization for the symmetric case. Since the $M$ we are solving for in this case is no longer binary, but rather contains reals, it is considered a \textit{weak membership matrix}. That is, the larger $X_{i,j}$, the stronger membership of vertex $i$ in cluster $j$. 
 \section{Natural Language}
 \label{natlang}
 With the vast amount of digital text being generated across the internet, methods for understanding and processing corpora of human language become necessary. Across mathematics and computer science, many techniques have been put forward that allow one to understand a body of text far too large to read herself. A successful method in this domain is \emph{topic modelling}, whereby semantically cohesive subgroups of words can be identified. In particular, let $\mathcal{C} = \{d_1,d_2,\cdots, d_n\}$ be a collection of documents with a vocabulary $\mathcal{V}$. A \emph{topic}  $t_i$ is a vector over the words in the vocabulary that represents a coherent high level notion in the corpus:
@@ -517,6 +540,7 @@ $$\Sigma_k = \begin{bmatrix}
 		\subsection*{Afghan Mujahideen}
 		To accompany the canned dataset, I used a more interesting and culturally significant source of data. This is a corpus of documents published by ``Afghan mujahideen forces fighting Soviet and Afghan communists forces between 1980 and 1992'' curated by NYU Sociologist \todo{what is his name?}. 
 	\section*{Results}
+	\todo{run these}
 \end{chapter}
 \begin{chapter}{Manifold Learning as NNMF}
 	\label{supervised}
@@ -622,9 +646,15 @@ The authors also put forward a multiplicative update algorithm that is non-decre
 \begin{chapter}{Hierarchical Representation}
 Many times, the data we wish to represent exhibits hierarchical structure. One such example is with the topics found in text data. Since topics correspond to semantic ideas, it makes sense that they would be organized in hierarchicaly. For example, in the 20 News Group data set, there are two separate topics for the Cincinnati Reds and Toronto Blue Jays, two baseball teams. Thus one could think about a supertopic, baseball, that branches into the two topics the standard NNMF finds.
 \section{Approach}
-For a given document matrix $V$, we use the python library \texttt{scikitlearn} to decompose $V$ into document/topic matrix $W$ and topic/word matrix $H$ such that $$V \approx WH.$$ The  \texttt{scikitlearn} implementation uses alternating gradient descent with the following objective function to generate optimal guesses for $W$ and $H$.
+For a given document matrix $V$, we use the python library \texttt{scikitlearn} to decompose $V$ into document/topic matrix $W$ and topic/word matrix $H$ such that $$V \approx WH.$$ The  \texttt{scikitlearn} library contains a function \texttt{NMF} that performs the factorization: 
+
+
+$$\texttt{nmf = sklearn.decomposition.NMF(n\_components=k).fit(X)}$$
+
+
+The \texttt{scikitlearn} NNMF implementation uses alternating gradient descent with the following objective function to generate optimal guesses for $W$ and $H$.
 $$c(H,W) = \tfrac{1}{2} ||X-WH||_{fro}^2 + \alpha \lambda ||W||_1 + \alpha \lambda ||H||_1 + \tfrac{1}{2} \alpha (1-\lambda) ||W||^2_{fro} + \tfrac{1}{2} \alpha (1-\lambda) ||H||^2_{fro}  $$
-where $||\cdot||_{fro}$ is the Frobenius norm, $||\cdot||_{1}$ is the L1 norm, $\lambda$ is the L1 ratio and $\alpha$ is a free parameter. 
+where $||\cdot||_{fro}$ is the Frobenius norm, $||\cdot||_{1}$ is the L1 norm, $\lambda$ is the L1 ratio and $\alpha$ is a free parameter \cite{nnmfimp}. For a more information, see the \texttt{scikit learn} documentation \cite{nnmfimp}.
 
 From the $N$ topics $t_n$ for $n \in \{1\cdots N\}$\footnote{observe that $t_n$ is simply the $n$th row of $H$}, we populate an adjacency matrix $A$ where $$A_{i,j} = \frac{T_i \cdot T_j}{||T_i|| \ ||T_j||}$$ is the cosine similarity between topics $i$ and $j$. We then define a \emph{threshold vector} $\sigma$ by sorting all the elements of $A$. $$\sigma = \{\sigma_1, \sigma_2, \cdots \sigma_{N^2} \mid0 \leq \sigma_{i} \leq \sigma_j \leq 1 \forall i \leq j\text{ and }\sigma_k \in A\}$$
 We then create an array of graphs $A^{(k)}$ thresholded using the values of $\sigma$, such that  \[
@@ -650,6 +680,7 @@ c(A^{(j+1)})=\{0, 0, 0 ,0, 1 ,1 ,2, 2\}
 \end{align*}
 This means that $A^{(j)}$ has two connected components, ordered 0 (with vertices 1,2,3,4) and 1 (with vertices 5,6,7,8) and that $A^{(j+1)}$ has three connected components, ordered 0 (with vertices 1,2,3,4), 1 (with vertices 5 and 6) and 2 (with vertices 7 and 8).  Thus there is a branch from the connect component 1 in $A^{(j)}$ to the connected componenets 1 and 2 in $A^{(j+1)}$. By greedily repeating this iterative algorithm starting with $A^{(1)}$ \footnote{which has by definition only a single connected component and so $c(A^{(1)})=\{0, \cdots, 0\}$} as the root, we produce the tree of topics. Observe that at this stage, all the leaf nodes correspond to actual topics $t_n$. We formulate the topic vectors for the parent nodes by additive percolating up the tree. That is, for a given parent topic $\tau$ with children $\tau_1, \cdots, \tau_k$ we simply have 
 $$\tau =\sum_i \tau_i $$
+The code that proceduralizes the above algorithm can be found in the \textbf{Building a hierarchy} section of the Appendix.
 \section{Visualization}
 \begin{figure}
 	\centering
@@ -659,7 +690,7 @@ $$\tau =\sum_i \tau_i $$
 \end{figure}
 I use the d3.js Sunburst implementation to visualize the hierarchical topic model. Arcs at the same level represent discrete topics. A topic on an inner layer that encompasses multiple outer topics represent a super-topic. For example, in Figure 3, the two outer green topics that represent European banking and Chinese banking representatively (with top words$$ \{\text{banks, loans, collateral, abs, ecb bank, lending, small, european, asset}\} $$and $$\{\text{china, economic, reforms, growth, beijing, economy, said, li, year, urged}\}) $$merge into the inner super topic with top words$$ \{\text{banks, china, economic, abs, reforms, growth, loans, collateral, said, beijing}\}.$$
 
-The visualization is responsive, dynamic and available at \\ \texttt{http://www1.cmc.edu/pages/faculty/BHunter/ziv.html}
+The visualization is responsive, dynamic and available at \\ \texttt{http://www1.cmc.edu/pages/faculty/BHunter/ziv.html}. The Javascript code uses to generate these sunbursts can be found in the \textbf{Javascript Sunburst} section of the Appendix.
 
 Next, I extended this visualization to the Semi-Supervised domain using the Afghan Dataset. Here each document has associated with it a class $C\in \{1,\cdots,k\}$ which in this case $k=3$. Recall that the matrix $B \in \mathbb{R}^{k \times r}$ in the semi-supervised NMF model is multiplied by $S$ to obtain an approximation for $Y$, the label matrix. Thus the $i,j$th entry of $B$ can be interpreted in the weighted importance of topic $i$ in predicting class $j$. Thus I sum over the columns of $B$ to capture how important topic $i$ is predicting classes in general. After normalizing, we get a color value $c_i$ for topic $i$, such that
 $$c_i = \sum_j B_{i,j} /  \sum_{i,j} B_{i,j}$$
@@ -692,6 +723,325 @@ We then consider the algorithms and notions in the domain of Deep Semi NMF as a 
 I would like the thank the Pomona College Math Department for their tireless support and guidance.  I would like to thank Professor Blake Hunter, Leo Selker, Dima Smirnov, Professor Shlomi Sher, Neo Mohsenvand for invaluable comments, ideas, inspiration and discussion. 
 \newpage
 \section*{Appendix}
+\subsection*{Graph Regularized NNMF}
+\begin{lstlisting}
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+from sklearn.decomposition import NMF
+from sklearn.datasets import fetch_20newsgroups
+from sklearn.metrics.pairwise import cosine_similarity as cosine
+from scipy.sparse.csgraph import connected_components
+import itertools
+import json
+import numpy as np
+import glob
+local_data = []
+philes =  glob.glob("/Users/ziv/GDrive/school/math-thesis/nmf-imp/data/*.txt")
+for phile in philes:
+	with open(phile, 'r') as myfile:
+		data=myfile.read().replace('\n', '')
+		local_data.append(unicode(data, errors='ignore'))
+tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
+stop_words='english')
+
+tfidf = tfidf_vectorizer.fit_transform(local_data)
+tfidf_feature_names = tfidf_vectorizer.get_feature_names()
+
+def generate_graphs(X,p):
+	W_raw = np.zeros((X.shape[1],X.shape[1]))
+	for i in range(0,X.shape[0]):
+		for j in range(0,X.shape[0]):
+			W_raw[i,j] = np.dot(X[i,], t(X[j,]))[0,0]
+	s = W_raw.flatten()
+	thresh = np.percentile(s,p)
+	W = (W_raw > thresh).astype(int)
+	D = np.zeros((X.shape[1],X.shape[1]))
+	for i in range(0,X.shape[0]):
+		D[i,i] = sum(W[i,])
+	return W,D
+	
+def grnmf(X,k,lam,p,u0=None,v0=None):
+	W,D = generate_graphs(X,p)
+	if u0==None: 
+		u = np.random.rand(X.shape[0],k)
+	else:
+		u = u0
+	if v0==None:
+		v = np.random.rand(X.shape[1],k)
+	else:
+		v = v0
+	i = 0    
+	while i < 1000:
+		u = u = np.multiply(u,((X*v)/ np.dot(np.dot(u,t(v)),v)))
+		v = np.multiply(v , ((np.dot(t(X),u) + 0.2*np.dot(W,v))/ (np.dot(np.dot(v,t(u)),u) + .2*np.dot(D,v))))
+		i +=1
+		if i % 5 ==0:
+		print str(i) + "/1000 iterations complete"
+	return u,v
+	
+def t(x):
+	return np.transpose(x)
+	
+u,v = grnmf(X,k=10,lam=0.2,p=90)
+\end{lstlisting}
+\subsection*{Semi-Supervised NNMF}
+\begin{lstlisting}
+get_ipython().magic(u'matplotlib inline')
+import numpy as np
+import matplotlib.pylab as plt
+import random
+import glob
+from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+
+def ssnmf(X,L,Y,lamb,r,k,A0=None,S0=None):
+	if A0==None: 
+		A = np.random.rand(X.shape[0],r)
+	else:
+		A = A0
+	if S0==None:
+		S = np.random.rand(r,X.shape[1])
+	else:
+		S = S0
+	B = np.random.rand(k,r)
+	i = 0  
+	while i < 100:
+		A = A * (np.dot(X,t(S))/ np.dot(np.dot(A,S),t(S)))
+		B = B * (np.dot((L * Y), t(S)))/np.dot((L * np.dot(B,S)), t(S))
+		S = S * (np.dot(t(A),X) + lamb*np.dot(t(B),L*Y))/(np.dot(t(A),np.dot(A,S)) + lamb*np.dot(t(B),L*np.dot(B,S)))
+		i +=1
+		if i%20 == 0:
+		print i
+	return A,S,B
+def t(x):
+	return np.transpose(x)
+\end{lstlisting}
+\subsection*{Building a hierarchy}
+\begin{lstlisting}
+local_data = []
+philes =  glob.glob("/Users/ziv/GDrive/school/math-thesis/nmf-imp/txt_data_bypage/*.txt")
+for phile in philes:
+with open(phile, 'r') as myfile:
+data=myfile.read().replace('\n', '')
+local_data.append(unicode(data, errors='ignore'))
+tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
+stop_words='english')
+
+tfidf = tfidf_vectorizer.fit_transform(local_data)
+tfidf_feature_names = tfidf_vectorizer.get_feature_names()
+nmf = NMF(n_components=n_topics).fit(tfidf)
+H = nmf.components_
+W = nmf.fit_transform(tfidf)
+weights = (5000/W.sum())*W.sum(axis=0)
+
+def build_wgraph(alpha=2):
+	if alpha != 2:
+		return [[int(cosine(H[i],H[j])[0][0] > alpha) for i in range(0, len(H))] for j in range(0, len(H))]
+	else:
+		return [[cosine(H[i],H[j])[0][0] for i in range(0, len(H))] for j in range(0, len(H))]
+def thresh_vals(numbin):
+	binz = []
+	w = build_wgraph(2)
+	chain = itertools.chain(*w)
+	s =sorted(list(chain))
+	val = n_topics*n_topics/numbin
+	for i,v in enumerate(s):
+		if i%val ==0: binz.append(v)
+	return binz
+	}    
+}
+
+def array_distance(A,B):
+	count = 0
+	for i,x in enumerate(A):
+		if x == B[i]:
+			count+=1
+	return len(A)-count
+
+def greedy_TV_build(to_consume,bins):
+	if len(to_consume)>1:
+		a = to_consume[0]
+		b = to_consume[1]
+		ccA = connected_components(build_wgraph(a))[1]
+		ccB = connected_components(build_wgraph(b))[1]
+		if not np.array_equal(ccA, ccB):
+			distance = array_distance(ccA,ccB)
+			if distance > 8:
+				new_tv = [a + i*(b-a)/bins for i in range(0,bins)]
+				return new_tv + greedy_TV_build( to_consume[1:], bins)
+			else:
+				return [a] + greedy_TV_build(to_consume[1:], bins)
+		else:
+			return greedy_TV_build(to_consume[1:], bins)
+	elif len(to_consume) == 1:
+		return to_consume
+	else:
+	return []
+def populateTree(row_level, valid_community):
+	if row_level > size-2 :
+		return []
+	else:
+		children = []
+		parent_community = connected_components(build_wgraph(tv[row_level]))[1]
+		child_community = connected_components(build_wgraph(tv[row_level+1]))[1]
+		unique_communities = list(set(parent_community)) 
+		for unique_community in unique_communities:
+			if valid_community == unique_community:
+				indices = [i for i, x in enumerate(parent_community) if x == unique_community] #[8,9]
+				seen_communities = []
+			for i in indices: #8 and 9
+				if child_community[i] in seen_communities:
+					filter(lambda x: x['community'] == str(child_community[i]), children)[0]['indices'].append(i)
+				else:
+					community_to_find = child_community[i]
+					grow_my_children = populateTree(row_level+1, community_to_find)
+					if grow_my_children:
+						name = ""
+						children.append({"community":str(child_community[i]),"indices":[i],"name" : name , "children":grow_my_children, "hasChildren": True})
+					else:
+						name = " ".join([tfidf_feature_names[j] for j in nmf.components_[i].argsort()[:-n_top_words - 1:-1]])
+						children.append({"community":str(child_community[i]),"indices":[i],"size":weights[i],"name":name, "hasChildren": False})
+					seen_communities.append(child_community[i])
+			if len(children) == 1:
+				try: 
+					return children[0]['children']
+				except:
+					return []
+			else:
+				return children
+
+def recursiveNaming(tree):
+	i = tree['indices']
+	base = nmf.components_[i[0]]
+	if len(i) > 1:
+		for ind in i[1:]:
+			base = np.add(nmf.components_[ind], base)
+	tree['name'] = " ".join([tfidf_feature_names[j] for j in base.argsort()[:-n_top_words - 1:-1]])
+	if tree['hasChildren']:
+	for child in tree['children']:
+		recursiveNaming(child)
+		
+tv = greedy_TV_build(thresh_vals(100),2)
+size = len(tv)
+flare = {"name" : "" , "children" : populateTree(0, 0)}
+for child in flare['children']:
+recursiveNaming(child)
+with open('demo.json', 'w') as outfile:
+json.dump(flare, outfile)
+\end{lstlisting}
+\subsection*{Javascript Sunburst}
+\begin{lstlisting}
+<script>
+
+var width = 1260,
+height = 1100,
+radius = Math.min(width, height) / 2.1;
+
+var x = d3.scale.linear()
+.range([0, 2 * Math.PI]);
+
+var y = d3.scale.linear()
+.range([0, radius]);
+
+var color = d3.scale.category20c();
+
+var svg = d3.select("body").append("svg")
+.attr("width", width)
+.attr("height", height)
+.append("g")
+.attr("transform", "translate(" + width / 2 + "," + (height / 2 + 10) + ")");
+
+var partition = d3.layout.partition()
+.value(function(d) { return d.size; });
+
+var arc = d3.svg.arc()
+.startAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x))); })
+.endAngle(function(d) { return Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))); })
+.innerRadius(function(d) { return Math.max(0, y(d.y)); })
+.outerRadius(function(d) { return Math.max(0, 20+y(d.y + d.dy)); });
+
+d3.json("20news.json", function(error, root) {
+var g = svg.selectAll("g")
+.data(partition.nodes(root))
+.enter().append("g");
+
+var path = g.append("path")
+.attr("d", arc)
+.style("fill", function(d) { return color((d.children ? d : d.parent).name); })
+.on("click", click);
+
+var text = []
+for (i = 0; i < 10; i++) { 
+var localText = g.append("text")
+.attr("transform", function(d) { 
+var theta = Math.max(0, Math.min(2 * Math.PI, x(d.x + d.dx))) - Math.max(0, Math.min(2 * Math.PI, x(d.x))) 
+var scale_factor = theta * Math.sqrt(Math.max(0, y(d.y + d.dy)))
+var offset = 2.4*scale_factor / 10 
+return "rotate(" + computeTextRotation(d,offset*i,scale_factor ) + ")"; 
+})
+.attr("x", function(d) { return y(d.y); })
+.attr("dx", "6") // margin
+.attr("dy", ".35em") // vertical-align
+.attr("class", "topicText".concat(i))
+.text(function(d) {
+return d.name.split(" ")[i]
+});
+text.push(localText)
+}
+
+function click(d) {
+// fade out all text elements
+for (i = 0; i < 10; i++) { 
+text[i].transition().attr("opacity", 0);
+}
+
+path.transition()
+.duration(750)
+.attrTween("d", arcTween(d))
+.each("end", function(e, i) {
+if (e.x >= d.x && e.x < (d.x + d.dx)) {
+// get a selection of the associated text element
+for (j = 0; j < 10; j++) { 
+var arcText = d3.select(this.parentNode).select(".topicText".concat(j));
+console.log(arcText);
+// fade in the text element and recalculate positions
+arcText.transition().duration(750)
+.attr("opacity", 1)
+.attr("transform", function() { 
+var theta = Math.max(0, Math.min(2 * Math.PI, x(e.x + e.dx))) - Math.max(0, Math.min(2 * Math.PI, x(e.x))) 
+var scale_factor = theta * Math.sqrt(Math.max(0, y(e.y + e.dy)))
+var offset = 2.4*scale_factor / 10 
+return "rotate(" + computeTextRotation(e,j*offset,scale_factor ) + ")" 
+})
+.attr("x", function(d) { return y(d.y); });
+}
+}
+});
+}
+});
+
+d3.select(self.frameElement).style("height", height + "px");
+
+// Interpolate the scales!
+function arcTween(d) {
+var xd = d3.interpolate(x.domain(), [d.x, d.x + d.dx]),
+yd = d3.interpolate(y.domain(), [d.y, 1]),
+yr = d3.interpolate(y.range(), [d.y ? 20 : 0, radius]);
+return function(d, i) {
+return i
+? function(t) { return arc(d); }
+: function(t) { x.domain(xd(t)); y.domain(yd(t)).range(yr(t)); return arc(d); };
+};
+}
+
+function computeTextRotation(d,inc, sf) {
+return inc-sf-2+(x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
+}
+
+function computeTextRotationUpdate(d) {
+return (x(d.x + d.dx / 2) - Math.PI / 2) / Math.PI * 180;
+}
+
+</script>
+\end{lstlisting}
 \bibliographystyle{plain}
 
 \bibliography{myBib}

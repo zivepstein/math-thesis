@@ -31,7 +31,7 @@ for phile in philes:
         local_data.append(unicode(data, errors='ignore'))
 
 
-# In[13]:
+# In[3]:
 
 with open('news24.json') as data_file:    
     data = json.load(data_file)
@@ -78,7 +78,7 @@ S[:tfidf_dense.shape[0], :tfidf_dense.shape[0]] = np.diag(s)
 np.allclose(tfidf_dense, np.dot(U, np.dot(S, V)))
 
 
-# In[12]:
+# In[6]:
 
 base =nmf.components_[20]
 name =  " ".join([tfidf_feature_names[j] for j in base.argsort()[:-n_top_words - 1:-1]])

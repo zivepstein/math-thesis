@@ -79,12 +79,46 @@ def t(x):
     return np.transpose(x)
 
 
-# In[87]:
+# In[137]:
 
-u,v = grnmf(X,k=10,lam=0.2,p=90)
+u,v = grnmf(X,k=10,lam=2,p=90)
+
+
+# In[138]:
+
+for i in range(0,v.shape[1]):
+    base = v[:,i].A1
+    n_top_words = 10
+    name =  " ".join([tfidf_feature_names[j] for j in base.argsort()[:-n_top_words - 1:-1]])
+    print name
 
 
 # In[ ]:
 
+#lambda = 0.2
+#truth opinions reason certain nature objects true men god thought
+#pirates reds cincinnati pittsburgh hit alvarez latos season left inning
+#percent revenue quarter billion million company share cents year sales
+#watt mae freddie fannie mac senate republican nomination panel committee
+#cueto reds arizona run corbin kubel diamondbacks cincinnati bruce hit
+#twins minnesota runs game said innings inning indians plouffe hit
+#report exchanges hhs consumers plans cost health costs premiums healthcare
+#invasion allied troops normandy german british germans landing beaches france
+#banks abs loans collateral bank lending economic ecb said small
+#jays blue toronto hit game said gibbons run bautista rockie#s
 
+
+# In[ ]:
+
+#lambda = 2
+#banks abs loans collateral bank lending economic ecb said small
+#watt freddie mae fannie mac senate republican nomination panel committee
+#truth opinions reason certain nature objects true men god thought
+#invasion allied troops normandy german british germans landing beaches france
+#report exchanges hhs consumers plans cost health costs premiums healthcare
+#jays blue toronto hit rockies run bautista game said johnson
+#reds cincinnati pirates hit season cueto latos pittsburgh game bruce
+#twins minnesota runs game said innings inning indians run plouffe
+#rays jays blue tampa toronto bay reyes myers dickey gibbons
+#percent revenue quarter billion million company share cents year sales
 
