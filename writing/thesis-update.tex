@@ -205,14 +205,6 @@ To my knowledge, a meditation on the connections between NNMF and the cognitive 
 
 In this thesis, I mine both the algorithms and cognitive science literature in an attempt to build a unifying theory. While the success of this pursuit is questionable, I do think it is an interesting attempt to blend these two ideas in an engaging and creative way.
 \begin{chapter}{Introduction}
-	
-	todo
-	\begin{enumerate}
-		\item jen deep models
-		\item hierarchical topics
-		\item more supervised and hierarchical stuff
-		\item svd implementation details
-	\end{enumerate}
 	There is a growing interest in the computational and mathematical science in the development of algorithms that can automatically create understanding about data corresponding to some phenomenon. As an explosion of data collection and distribution systems have become the mainstream, there is now more data available than humans observers to understand it. Thus the need for automated algorithms that can infer patterns and relationships within data is self evident. 
 	
 	Here, I will consider the case were data is represented as a well-structured and  real-valued matrix. This approach can represent data from a large range of domains, such as sound, natural language, visual images and networks. Thus, many of the algorithms and heuristics I explore here are domain general, and can be applied with success to a range of settings. 
@@ -222,6 +214,7 @@ In this thesis, I mine both the algorithms and cognitive science literature in a
 	This approach also has explanatory power. Let $r = \operatorname{rank}(X')$ and $b= (b_1,b_2,\cdots,b_r)$ be a basis for $X'$. Depending on the constraints imposed on the $b_i$'s, they can have many different interpretations. For example, when the $b_i$'s are constrained to be orthonormal to each other, the resulting algorithm is Principal Component Analysis (PCA), which ``supplies the user with a lower-dimensional projection of the object when viewed from its most informative viewpoint.'' 
 	
 	Since our mission is to emulate human understanding, a natural starting place for inspiration is the human brain itself. Indeed there is a long-standing tradition in computer and information science to algorithmically model the information processing systems the brain uses to make sense of the world. However, I hope to also go one step deeper. In addition to an overview of many of the important algorithms used today, we will explore the cognitive implications of these algorithms. In particular, I aim to invert the paradigm of using neural architecture to inform algorithms: I will use algorithms to inform notions of neural architecture. By creating a bilateral dialogue between the cognitive and computer sciences, I hope this work will help to bridge the gaps between the two fields by I) equipping the cognitive ideas of neural information processing with a notational formalism consist with the algorithms research and II) contextualizing the algorithms research whereby it is clear how it might relate to the acquisition of human knowledge.
+	\todo{roadmap of thesis}
 \end{chapter}
 
 \begin{chapter}{Theories for Human Image Understanding}
@@ -478,14 +471,14 @@ Since a network of edges and vertices $G=(V,E)$ can be represented as an \textit
 A given clustering $C = \{C_1, C_2, \cdots, C_k\}$ of a graph is a partition of the vertices and can be evaluated based on its \textit{connectivity}:
 $$\text{connectivity}(G,C) = \frac{\#\{(i,j)\in E | (i,j) \in C\} + \#\{(i,j)\not\in E | (i,j) \not\in C\}}{|V|^2}$$
 The clustering $C$ can be formulated as a membership matrix $M \in \{0,1\}^{n \times k}$ with $M_{ir}=1$ if $i \in C_r$ and $M_{ir}$ if $i \not\in C_r$. Thus, the connectivity of $G$ under $C$ as defined above can be rewritten:
-\begin{align*}\text{connectivity}(G,C)  &= 1-\frac{\sum_{i,j} \left(A_{ij} - \sum_{r=1}^k M_{ir}X_{jr}\right)^2}{|V|^2}\\
+\begin{align*}\text{connectivity}(G,C)  &= 1-\frac{\sum_{i,j} \left(A_{ij} - \sum_{r=1}^k M_{ir}M_{jr}\right)^2}{|V|^2}\\
 &=1-\frac{||A-MM^T||^2_F}{|V|^2}
 \end{align*}
 Thus finding a clustering $C$ that maximizes the connectivity is equivalent to the minimization problem 
 $$\min_{M \in \{0,1\}^{n\times k}} ||A-MM^T||^2_F$$
 However, finding one such $M$ is NP-Complete \cite{vavasis2009complexity}. So we can relax the constraints to try to solve an easier problem we are more used to 
-$$\min_{X \in \mathbb{R}_{+}^{n\times k}} ||A-MM^T||^2_F$$
-which just the standard optimization for non-negative matrix factorization for the symmetric case. Since the $M$ we are solving for in this case is no longer binary, but rather contains reals, it is considered a \textit{weak membership matrix}. That is, the larger $X_{i,j}$, the stronger membership of vertex $i$ in cluster $j$. 
+$$\min_{M \in \mathbb{R}_{+}^{n\times k}} ||A-MM^T||^2_F$$
+which just the standard optimization for non-negative matrix factorization for the symmetric case. Since the $M$ we are solving for in this case is no longer binary, but rather contains reals, it is considered a \textit{weak membership matrix}. That is, the larger $M_{i,j}$, the stronger membership of vertex $i$ in cluster $j$. 
 \section{Natural Language}
 \label{natlang}
 With the vast amount of digital text being generated across the internet, methods for understanding and processing corpora of human language become necessary. Across mathematics and computer science, many techniques have been put forward that allow one to understand a body of text far too large to read herself. A successful method in this domain is \emph{topic modelling}, whereby semantically cohesive subgroups of words can be identified. In particular, let $\mathcal{C} = \{d_1,d_2,\cdots, d_n\}$ be a collection of documents with a vocabulary $\mathcal{V}$. A \emph{topic}  $t_i$ is a vector over the words in the vocabulary that represents a coherent high level notion in the corpus:
@@ -510,8 +503,9 @@ To gain some visual intuition into the interpretations of $A$ and $S$, consider 
 \end{chapter}
 
 
-\begin{chapter}{Traditional NNMF and SVD on Test and Field Data}
+\begin{chapter}{Building Fluency with NNMF}
 	\label{basic}
+	\section{Visualizing NNMF}
 	\section{Comparison of NNMF and SVD}
 	Both SVD and NNMF as discussed above can yield a matrix factorization, which can be interpreted as a ``topic model.'' Since NNMF already learns a matrix factorization, it is clear how this can be interpreted as a topic modelling scheme (see Section \ref{natlang}). 
 	
@@ -697,7 +691,7 @@ $$c_i = \sum_j B_{i,j} /  \sum_{i,j} B_{i,j}$$
 where $c_i=1$ corresponds to yellow and $c_i=0$ corresponds to blue (see Figure 3 right)
 \begin{figure}
 	\centering
-	\includegraphics[width=7	in]{topic}
+	\includegraphics[width=7in]{topic}
 	\caption{Topics used in hierarchical topic model}
 \end{figure}
 \end{chapter}
@@ -718,6 +712,12 @@ We then consider the algorithms and notions in the domain of Deep Semi NMF as a 
 \section{Deep Neural Models}
 	\end{chapter}
 \begin{chapter}{Discussion}
+	In this thesis, I explored a suite of non-negative matrix factorization algorithms. In recent years, NNMF has emerged as a powerful new way to perform dimensionality reduction, topic modelling, and data visualization, among others. Because of its broad applications, there are many variants of traditional NNMF that have made their way to the main stream, such as graph regularized, supervised, hiearchical, deep, etc. Many of these variants explore the same functionality that the visual perceptual literature is interested in.  A central tenant of this thesis was to use many of the NNMF variants that relate to the cognitive underpinnings to underscore the plasticity and power of this suite of algorithms. It is important to note that I am not directly claiming that for image recognition, our brain actually implements non-negative matrix factorization. In that sense, the analogy fails. However, the regularizers for manifold and supervised learning, coupled with the arbitrary amounts of complexity that can introduced via hierarchy and deep NNMF suggest that key cognitive elements of the human understanding machine can be formalized as algorithmic models. 
+	
+	There are several next steps for this inquiry, along different axes. The first is applying the canonical visualization techniques of NNMF to deep (neural) models. As deep models such as neural networks become more pervasive in industry and the academy, gaining windows to understand mechanism becomes increasingly important. In the future, I hope deep models can adopt the suite of visualization and interpretation tactics that the NNMF literature uses to gain understanding about their inner workings. 
+	
+	Another domain for exploration is the space of hierarchy. In this thesis, I explored a bottom-up, agglomerative hierarchical clustering algorithm. While this technique yields reasonable results, it is unclear whether this method is optimal. In the future, I hope advances in the technical understanding of the hierarchical nature of human perception will lead to an hierarchical clustering algorithm that can be implemented in this domain.
+	
 	\end{chapter}
 \section*{Acknowledgments}
 I would like the thank the Pomona College Math Department for their tireless support and guidance.  I would like to thank Professor Blake Hunter, Leo Selker, Dima Smirnov, Professor Shlomi Sher, Neo Mohsenvand for invaluable comments, ideas, inspiration and discussion. 

@@ -13,9 +13,10 @@
 \contentsline {section}{\numberline {4.2}Sound}{18}{section.4.2}
 \contentsline {section}{\numberline {4.3}Graph}{19}{section.4.3}
 \contentsline {section}{\numberline {4.4}Natural Language}{20}{section.4.4}
-\contentsline {chapter}{\numberline {5}Traditional NNMF and SVD on Test and Field Data}{22}{chapter.5}
-\contentsline {section}{\numberline {5.1}Comparison of NNMF and SVD}{22}{section.5.1}
-\contentsline {section}{\numberline {5.2}Datasets}{23}{section.5.2}
+\contentsline {chapter}{\numberline {5}Building Fluency with NNMF}{22}{chapter.5}
+\contentsline {section}{\numberline {5.1}Visualizing NNMF}{22}{section.5.1}
+\contentsline {section}{\numberline {5.2}Comparison of NNMF and SVD}{22}{section.5.2}
+\contentsline {section}{\numberline {5.3}Datasets}{23}{section.5.3}
 \contentsline {chapter}{\numberline {6}Manifold Learning as NNMF}{24}{chapter.6}
 \contentsline {section}{\numberline {6.1}Motivation}{24}{section.6.1}
 \contentsline {section}{\numberline {6.2}Manifold NNMF}{27}{section.6.2}

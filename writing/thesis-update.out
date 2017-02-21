@@ -13,16 +13,17 @@
 \BOOKMARK [1][-]{section.4.2}{Sound}{chapter.4}% 13
 \BOOKMARK [1][-]{section.4.3}{Graph}{chapter.4}% 14
 \BOOKMARK [1][-]{section.4.4}{Natural Language}{chapter.4}% 15
-\BOOKMARK [0][-]{chapter.5}{Traditional NNMF and SVD on Test and Field Data}{}% 16
-\BOOKMARK [1][-]{section.5.1}{Comparison of NNMF and SVD}{chapter.5}% 17
-\BOOKMARK [1][-]{section.5.2}{Datasets}{chapter.5}% 18
-\BOOKMARK [0][-]{chapter.6}{Manifold Learning as NNMF}{}% 19
-\BOOKMARK [1][-]{section.6.1}{Motivation}{chapter.6}% 20
-\BOOKMARK [1][-]{section.6.2}{Manifold NNMF}{chapter.6}% 21
-\BOOKMARK [0][-]{chapter.7}{Hierarchical Representation}{}% 22
-\BOOKMARK [1][-]{section.7.1}{Approach}{chapter.7}% 23
-\BOOKMARK [1][-]{section.7.2}{Visualization}{chapter.7}% 24
-\BOOKMARK [0][-]{chapter.8}{Deep Models}{}% 25
-\BOOKMARK [1][-]{section.8.1}{Approach}{chapter.8}% 26
-\BOOKMARK [1][-]{section.8.2}{Deep Neural Models}{chapter.8}% 27
-\BOOKMARK [0][-]{chapter.9}{Discussion}{}% 28
+\BOOKMARK [0][-]{chapter.5}{Building Fluency with NNMF}{}% 16
+\BOOKMARK [1][-]{section.5.1}{Visualizing NNMF}{chapter.5}% 17
+\BOOKMARK [1][-]{section.5.2}{Comparison of NNMF and SVD}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.3}{Datasets}{chapter.5}% 19
+\BOOKMARK [0][-]{chapter.6}{Manifold Learning as NNMF}{}% 20
+\BOOKMARK [1][-]{section.6.1}{Motivation}{chapter.6}% 21
+\BOOKMARK [1][-]{section.6.2}{Manifold NNMF}{chapter.6}% 22
+\BOOKMARK [0][-]{chapter.7}{Hierarchical Representation}{}% 23
+\BOOKMARK [1][-]{section.7.1}{Approach}{chapter.7}% 24
+\BOOKMARK [1][-]{section.7.2}{Visualization}{chapter.7}% 25
+\BOOKMARK [0][-]{chapter.8}{Deep Models}{}% 26
+\BOOKMARK [1][-]{section.8.1}{Approach}{chapter.8}% 27
+\BOOKMARK [1][-]{section.8.2}{Deep Neural Models}{chapter.8}% 28
+\BOOKMARK [0][-]{chapter.9}{Discussion}{}% 29
