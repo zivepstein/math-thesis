@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 FEB 2017 18:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 MAR 2017 16:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -754,7 +754,16 @@ Package csquotes Info: ... none found.
 
 (./thesis-update.aux
 
+LaTeX Warning: Label `fig:geonLC' multiply defined.
+
+
+LaTeX Warning: Label `natlang' multiply defined.
+
+
 LaTeX Warning: Label `manifold' multiply defined.
+
+
+LaTeX Warning: Label `NN' multiply defined.
 
 )
 \openout1 = `thesis-update.aux'.
@@ -858,7 +867,7 @@ ABD: EveryShipout initializing macros
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<pomonalogo.pdf, id=123, 464.73625pt x 194.7275pt>
+<pomonalogo.pdf, id=115, 464.73625pt x 194.7275pt>
 File: pomonalogo.pdf Graphic file (type pdf)
  <use pomonalogo.pdf>
 Package pdftex.def Info: pomonalogo.pdf used on input line 185.
@@ -876,16 +885,16 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./pomon
 alogo.pdf>]
-(./thesis-update.toc [2
-
-])
+(./thesis-update.toc)
 \tf@toc=\write5
 \openout5 = `thesis-update.toc'.
 
- [3]
-<wordcloud.png, id=175, 964.60374pt x 599.23875pt>
+ [2
+
+] <wordcloud.png, id=160, 964.60374pt x 599.23875pt>
 File: wordcloud.png Graphic file (type png)
- <use wordcloud.png>
+
+<use wordcloud.png>
 Package pdftex.def Info: wordcloud.png used on input line 194.
 (pdftex.def)             Requested size: 512.1496pt x 318.17107pt.
 
@@ -905,207 +914,254 @@ e same identifier (name{page.2}) has been already used, duplicate ignored
 l.207 \begin{chapter}
                      {Introduction} [2]
 Chapter 1.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 217.
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.219 
-       [3
+[3
 
 ] [4]
 Chapter 2.
-<cup.jpg, id=202, 281.05pt x 180.675pt>
+<cup.jpg, id=191, 281.05pt x 180.675pt>
 File: cup.jpg Graphic file (type jpg)
  <use cup.jpg>
-Package pdftex.def Info: cup.jpg used on input line 225.
+Package pdftex.def Info: cup.jpg used on input line 227.
 (pdftex.def)             Requested size: 216.81pt x 139.37656pt.
  [5
 
  <./cup.jpg>]
-<rbc.png, id=211, 302.12875pt x 361.35pt>
+<rbc.png, id=201, 302.12875pt x 361.35pt>
 File: rbc.png Graphic file (type png)
  <use rbc.png>
-Package pdftex.def Info: rbc.png used on input line 241.
+Package pdftex.def Info: rbc.png used on input line 243.
 (pdftex.def)             Requested size: 170.71652pt x 204.17967pt.
  [6] [7 <./rbc.png>]
-<palmer_tree.png, id=243, 472.76625pt x 361.35pt>
+<palmer_tree.png, id=233, 472.76625pt x 361.35pt>
 File: palmer_tree.png Graphic file (type png)
  <use palmer_tree.png>
-Package pdftex.def Info: palmer_tree.png used on input line 267.
+Package pdftex.def Info: palmer_tree.png used on input line 269.
 (pdftex.def)             Requested size: 284.52756pt x 217.47884pt.
 
-[8 <./palmer_tree.png>] <geonLC.png, id=259, 877.2775pt x 237.88875pt>
+[8 <./palmer_tree.png>] <geonLC.png, id=250, 877.2775pt x 237.88875pt>
 File: geonLC.png Graphic file (type png)
 
 <use geonLC.png>
-Package pdftex.def Info: geonLC.png used on input line 287.
+Package pdftex.def Info: geonLC.png used on input line 289.
 (pdftex.def)             Requested size: 426.79134pt x 115.73161pt.
- [9 <./geonLC.png>] [10]
+ [9 <./geonLC.png>]
+
+LaTeX Warning: Reference `fig:geonLCTree' on page 10 undefined on input line 29
+6.
+
+<geonLCTree.png, id=267, 1257.69875pt x 758.835pt>
+File: geonLCTree.png Graphic file (type png)
+ <use geonLCTree.png>
+Package pdftex.def Info: geonLCTree.png used on input line 300.
+(pdftex.def)             Requested size: 426.79134pt x 257.5026pt.
+
+[10 <./geonLCTree.png>]
 Chapter 3.
 [11
 
-] [12] <nn.png, id=290, 602.25pt x 724.7075pt>
+] [12] <nn.png, id=287, 602.25pt x 724.7075pt>
 File: nn.png Graphic file (type png)
  <use nn.png>
-Package pdftex.def Info: nn.png used on input line 369.
+Package pdftex.def Info: nn.png used on input line 384.
 (pdftex.def)             Requested size: 140.92793pt x 169.57645pt.
 
-<Conv_layer.png, id=291, 636.3775pt x 427.5975pt>
+<Conv_layer.png, id=288, 636.3775pt x 427.5975pt>
 File: Conv_layer.png Graphic file (type png)
  <use Conv_layer.png>
-Package pdftex.def Info: Conv_layer.png used on input line 370.
+Package pdftex.def Info: Conv_layer.png used on input line 385.
 (pdftex.def)             Requested size: 234.8775pt x 157.81711pt.
  [13 <./nn.png> <./Conv_layer.png>] [14] [15] [16]
+<nnmf-news.png, id=328, 832.10875pt x 420.57124pt>
+File: nnmf-news.png Graphic file (type png)
+ <use nnmf-news.png>
+Package pdftex.def Info: nnmf-news.png used on input line 479.
+(pdftex.def)             Requested size: 352.31625pt x 178.0698pt.
+
+<nnmf-afghan.png, id=329, 827.09pt x 420.57124pt>
+File: nnmf-afghan.png Graphic file (type png)
+ <use nnmf-afghan.png>
+Package pdftex.def Info: nnmf-afghan.png used on input line 480.
+(pdftex.def)             Requested size: 352.31625pt x 179.15433pt.
+
+<svd-afghan.png, id=330, 829.0975pt x 420.57124pt>
+File: svd-afghan.png Graphic file (type png)
+ <use svd-afghan.png>
+Package pdftex.def Info: svd-afghan.png used on input line 482.
+(pdftex.def)             Requested size: 352.31625pt x 178.71153pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[17] [18 <./nnmf-news.png> <./nnmf-afghan.png> <./svd-afghan.png>]
 Chapter 4.
-<image.png, id=329, 374.39874pt x 591.20876pt>
+<image.png, id=345, 374.39874pt x 591.20876pt>
 File: image.png Graphic file (type png)
  <use image.png>
-Package pdftex.def Info: image.png used on input line 450.
+Package pdftex.def Info: image.png used on input line 496.
 (pdftex.def)             Requested size: 176.407pt x 278.56277pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[17
+[19
 
-] <genre.png, id=347, 553.06625pt x 390.45876pt>
+] <genre.png, id=363, 553.06625pt x 390.45876pt>
 File: genre.png Graphic file (type png)
  <use genre.png>
-Package pdftex.def Info: genre.png used on input line 466.
+Package pdftex.def Info: genre.png used on input line 512.
 (pdftex.def)             Requested size: 347.12354pt x 245.06087pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[18 <./image.png>] [19 <./genre.png>]
-<tmex.png, id=377, 774.895pt x 421.575pt>
+[20 <./image.png>] [21 <./genre.png>]
+<tmex.png, id=392, 774.895pt x 421.575pt>
 File: tmex.png Graphic file (type png)
  <use tmex.png>
-Package pdftex.def Info: tmex.png used on input line 499.
+Package pdftex.def Info: tmex.png used on input line 545.
 (pdftex.def)             Requested size: 460.93456pt x 250.77269pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[20] [21 <./tmex.png>]
+[22] [23 <./tmex.png>]
 Chapter 5.
-[22
-
-] [23]
-Chapter 6.
 [24
 
-] [25] <manifoldA.png, id=441, 386.44376pt x 228.855pt>
+] [25] <manifoldA.png, id=439, 386.44376pt x 228.855pt>
 File: manifoldA.png Graphic file (type png)
  <use manifoldA.png>
-Package pdftex.def Info: manifoldA.png used on input line 594.
+Package pdftex.def Info: manifoldA.png used on input line 608.
 (pdftex.def)             Requested size: 197.29623pt x 116.84021pt.
 
-<manifoldB.png, id=442, 383.4325pt x 181.67876pt>
+<manifoldB.png, id=440, 383.4325pt x 181.67876pt>
 File: manifoldB.png Graphic file (type png)
  <use manifoldB.png>
-Package pdftex.def Info: manifoldB.png used on input line 595.
+Package pdftex.def Info: manifoldB.png used on input line 609.
 (pdftex.def)             Requested size: 267.7638pt x 126.8804pt.
  [26 <./manifoldA.png> <./manifoldB.png>]
-<semi-viz.png, id=468, 1216.545pt x 392.46625pt>
+<semi-viz.png, id=466, 1216.545pt x 392.46625pt>
 File: semi-viz.png Graphic file (type png)
  <use semi-viz.png>
-Package pdftex.def Info: semi-viz.png used on input line 629.
+Package pdftex.def Info: semi-viz.png used on input line 643.
 (pdftex.def)             Requested size: 505.89pt x 163.19981pt.
 
-Overfull \hbox (36.13498pt too wide) in paragraph at lines 629--630
+Overfull \hbox (36.13498pt too wide) in paragraph at lines 643--644
  [][] 
  []
 
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 652.
 [27 <./semi-viz.png>]
-Chapter 7.
+Chapter 6.
 [28
 
-] <tree.png, id=493, 1085.05376pt x 1053.9375pt>
+] <tree.png, id=490, 1085.05376pt x 1053.9375pt>
 File: tree.png Graphic file (type png)
  <use tree.png>
-Package pdftex.def Info: tree.png used on input line 667.
+Package pdftex.def Info: tree.png used on input line 681.
 (pdftex.def)             Requested size: 234.8775pt x 228.136pt.
- [29 <./tree.png>] <img.png, id=502, 789.95125pt x 696.6025pt>
+ [29 <./tree.png>] <img.png, id=500, 789.95125pt x 696.6025pt>
 File: img.png Graphic file (type png)
  <use img.png>
-Package pdftex.def Info: img.png used on input line 681.
+Package pdftex.def Info: img.png used on input line 695.
 (pdftex.def)             Requested size: 225.4804pt x 198.83139pt.
 
-<img2.png, id=503, 625.33624pt x 665.48625pt>
+<img2.png, id=501, 625.33624pt x 665.48625pt>
 File: img2.png Graphic file (type png)
  <use img2.png>
-Package pdftex.def Info: img2.png used on input line 682.
+Package pdftex.def Info: img2.png used on input line 696.
 (pdftex.def)             Requested size: 225.4804pt x 239.95058pt.
- [30 <./img.png> <./img2.png>] <topic.png, id=511, 932.48375pt x 482.80376pt>
+ [30 <./img.png> <./img2.png>] <topic.png, id=509, 932.48375pt x 482.80376pt>
 File: topic.png Graphic file (type png)
  <use topic.png>
-Package pdftex.def Info: topic.png used on input line 694.
+Package pdftex.def Info: topic.png used on input line 708.
 (pdftex.def)             Requested size: 505.89pt x 261.93306pt.
 
-Overfull \hbox (36.13498pt too wide) in paragraph at lines 694--695
+Overfull \hbox (36.13498pt too wide) in paragraph at lines 708--709
  [][] 
  []
 
 [31 <./topic.png>]
-Chapter 8.
+Chapter 7.
+<poggio.png, id=517, 531.9875pt x 144.54pt>
+File: poggio.png Graphic file (type png)
+ <use poggio.png>
+Package pdftex.def Info: poggio.png used on input line 720.
+(pdftex.def)             Requested size: 505.89pt x 137.45335pt.
+
+Overfull \hbox (36.13498pt too wide) in paragraph at lines 720--721
+ [][] 
+ []
+
 [32
 
-]
-Chapter 9.
-[33
+ <./poggio.png>] <deep.png, id=529, 611.28375pt x 236.885pt>
+File: deep.png Graphic file (type png)
+ <use deep.png>
+Package pdftex.def Info: deep.png used on input line 738.
+(pdftex.def)             Requested size: 505.89pt x 196.03978pt.
 
-] [34] [35]
-Overfull \hbox (4.39131pt too wide) in paragraph at lines 820--821
+Overfull \hbox (36.13498pt too wide) in paragraph at lines 738--739
+ [][] 
+ []
+
+[33 <./deep.png>] [34]
+Chapter 8.
+[35
+
+] [36] [37]
+Overfull \hbox (4.39131pt too wide) in paragraph at lines 858--859
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
-[36]
-Overfull \hbox (48.77596pt too wide) in paragraph at lines 898--899
+[38] [39]
+Overfull \hbox (48.77596pt too wide) in paragraph at lines 936--937
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][] 
  []
 
-[37]
-Overfull \hbox (186.74446pt too wide) in paragraph at lines 901--902
+
+Overfull \hbox (186.74446pt too wide) in paragraph at lines 939--940
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[38] [39] [40] (./thesis-update.bbl [41] [42
+[40] [41] [42] (./thesis-update.bbl [43] [44
 
-]
-Underfull \hbox (badness 3229) in paragraph at lines 155--159
+] [45]
+Underfull \hbox (badness 3229) in paragraph at lines 165--169
 []\OT1/cmr/m/n/12 Jason Ren-nie.  The 20 news-groups data set.  []$\OT1/cmtt/m/
 n/12 http : / / qwone . com / []jason /
  []
 
-[43]) [44]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1048.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1048.
+) [46]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1086.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1086.
  (./thesis-update.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1048.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1048.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1086.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1086.
 
 Package rerunfilecheck Info: File `thesis-update.out' has not changed.
-(rerunfilecheck)             Checksum: 8FC573326A490C3AD1242A450F627452;1853.
+(rerunfilecheck)             Checksum: A865C26DD222F5CC01A6339C92E00A5E;1739.
+
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1048.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1086.
  ) 
 Here is how much of TeX's memory you used:
- 21754 strings out of 493089
- 383643 string characters out of 6134842
- 732275 words of memory out of 5000000
- 24377 multiletter control sequences out of 15000+600000
+ 21771 strings out of 493089
+ 383687 string characters out of 6134842
+ 729347 words of memory out of 5000000
+ 24385 multiletter control sequences out of 15000+600000
  14546 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,19n,76p,1187b,1904s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,19n,76p,1231b,1904s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
@@ -1126,10 +1182,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis-update.pdf (47 pages, 4046015 bytes).
+Output written on thesis-update.pdf (48 pages, 5306168 bytes).
 PDF statistics:
- 1078 PDF objects out of 1200 (max. 8388607)
- 960 compressed objects within 10 object streams
- 477 named destinations out of 1000 (max. 500000)
- 335 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1100 PDF objects out of 1200 (max. 8388607)
+ 967 compressed objects within 10 object streams
+ 480 named destinations out of 1000 (max. 500000)
+ 349 words of extra memory for PDF output out of 10000 (max. 10000000)
 

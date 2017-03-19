@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.decomposition import NMF
@@ -12,9 +12,9 @@ import itertools
 import json
 import numpy as np
 import glob
-n_topics = 20
+n_topics = 10
 n_top_words = 20
-###fake data
+###fake data|
 # dataset = fetch_20newsgroups(shuffle=True, random_state=1,
 #                              remove=('headers', 'footers', 'quotes'))
 # data_samples = dataset.data
@@ -37,7 +37,7 @@ with open('news24.json') as data_file:
     data = json.load(data_file)
 
 
-# In[4]:
+# In[3]:
 
 #tfdif and nmf model building
 tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
@@ -45,7 +45,7 @@ tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_featur
     
 tfidf = tfidf_vectorizer.fit_transform(local_data)
 tfidf_feature_names = tfidf_vectorizer.get_feature_names()
-nmf = NMF(n_components=n_topics).fit(tfidf)
+#nmf = NMF(n_components=n_topics).fit(tfidf)
 
 
 # In[5]:
@@ -55,16 +55,65 @@ W = nmf.fit_transform(tfidf)
 #x = WH
 
 
-# In[25]:
+# In[9]:
+
+t = tfidf[0:2000,:]
+t.shape
 
 
-U, s, V = np.linalg.svd(tfidf, full_matrices=True)
+# In[ ]:
 
-
-# In[42]:
-
-a = np.random.randn(tfidf.shape[0], tfidf.shape[1])
+tfidf_dense = t.todense()
 U, s, V = np.linalg.svd(tfidf_dense, full_matrices=True)
+
+
+# In[14]:
+
+print H.shape
+print W.shape
+
+
+# In[5]:
+
+uk= U[:,0:20]
+sk= s[0:20,]
+vk= V[0:20,]
+
+S = np.zeros((20, 20), dtype=complex)
+S[:20, :20] = np.diag(sk)
+
+
+
+# ## a = np.random.randn(tfidf.shape[0], tfidf.shape[1])
+# U, s, V = np.linalg.svd(tfidf_dense, full_matrices=True)
+# 
+
+# In[24]:
+
+
+print uk.shape
+print S.shape
+print vk.shape
+W_svd = np.dot(uk,S)
+H_svd = vk
+
+for i in range(0,10):
+    base =vk[i,:].A1
+    name =  " ".join([tfidf_feature_names[j] for j in base.argsort()[:-n_top_words - 1:-1]])
+    print name
+
+
+# In[19]:
+
+d = []
+for j in base.argsort()[:-n_top_words - 1:-1]:
+    print j
+    d.append([tfidf_feature_names[j]])
+
+
+# In[20]:
+
+base.argsort()[:-n_top_words - 1:-1]
 
 
 # In[50]:
@@ -85,9 +134,24 @@ name =  " ".join([tfidf_feature_names[j] for j in base.argsort()[:-n_top_words -
 print name
 
 
-# In[45]:
+# In[3]:
 
-s
+dataset = fetch_20newsgroups(shuffle=True, random_state=1,
+                             remove=('headers', 'footers', 'quotes'))
+data_samples = dataset.data
+tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
+                                   stop_words='english')
+    
+tfidf = tfidf_vectorizer.fit_transform(data_samples)
+tfidf_feature_names = tfidf_vectorizer.get_feature_names()
+
+
+# In[55]:
+
+for i in range(0,10):
+    base =nmf.components_[i]
+    name =  " ".join([tfidf_feature_names[j] for j in base.argsort()[:-n_top_words - 1:-1]])
+    print name
 
 
 # In[22]:

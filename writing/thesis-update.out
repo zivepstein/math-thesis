@@ -8,22 +8,20 @@
 \BOOKMARK [1][-]{section.3.1}{Singular Value Decomposition}{chapter.3}% 8
 \BOOKMARK [1][-]{section.3.2}{Neural Network Representation}{chapter.3}% 9
 \BOOKMARK [1][-]{section.3.3}{Matrix factorization}{chapter.3}% 10
-\BOOKMARK [0][-]{chapter.4}{Types of Data}{}% 11
-\BOOKMARK [1][-]{section.4.1}{Image}{chapter.4}% 12
-\BOOKMARK [1][-]{section.4.2}{Sound}{chapter.4}% 13
-\BOOKMARK [1][-]{section.4.3}{Graph}{chapter.4}% 14
-\BOOKMARK [1][-]{section.4.4}{Natural Language}{chapter.4}% 15
-\BOOKMARK [0][-]{chapter.5}{Building Fluency with NNMF}{}% 16
-\BOOKMARK [1][-]{section.5.1}{Visualizing NNMF}{chapter.5}% 17
-\BOOKMARK [1][-]{section.5.2}{Comparison of NNMF and SVD}{chapter.5}% 18
-\BOOKMARK [1][-]{section.5.3}{Datasets}{chapter.5}% 19
-\BOOKMARK [0][-]{chapter.6}{Manifold Learning as NNMF}{}% 20
-\BOOKMARK [1][-]{section.6.1}{Motivation}{chapter.6}% 21
-\BOOKMARK [1][-]{section.6.2}{Manifold NNMF}{chapter.6}% 22
-\BOOKMARK [0][-]{chapter.7}{Hierarchical Representation}{}% 23
-\BOOKMARK [1][-]{section.7.1}{Approach}{chapter.7}% 24
-\BOOKMARK [1][-]{section.7.2}{Visualization}{chapter.7}% 25
-\BOOKMARK [0][-]{chapter.8}{Deep Models}{}% 26
-\BOOKMARK [1][-]{section.8.1}{Approach}{chapter.8}% 27
-\BOOKMARK [1][-]{section.8.2}{Deep Neural Models}{chapter.8}% 28
-\BOOKMARK [0][-]{chapter.9}{Discussion}{}% 29
+\BOOKMARK [1][-]{section.3.4}{Comparison of NNMF and SVD}{chapter.3}% 11
+\BOOKMARK [0][-]{chapter.4}{Types of Data}{}% 12
+\BOOKMARK [1][-]{section.4.1}{Image}{chapter.4}% 13
+\BOOKMARK [1][-]{section.4.2}{Sound}{chapter.4}% 14
+\BOOKMARK [1][-]{section.4.3}{Graph}{chapter.4}% 15
+\BOOKMARK [1][-]{section.4.4}{Natural Language}{chapter.4}% 16
+\BOOKMARK [0][-]{chapter.5}{Manifold Learning as NNMF}{}% 17
+\BOOKMARK [1][-]{section.5.1}{Motivation}{chapter.5}% 18
+\BOOKMARK [1][-]{section.5.2}{Manifold NNMF}{chapter.5}% 19
+\BOOKMARK [0][-]{chapter.6}{Hierarchical Representation}{}% 20
+\BOOKMARK [1][-]{section.6.1}{Approach}{chapter.6}% 21
+\BOOKMARK [1][-]{section.6.2}{Visualization}{chapter.6}% 22
+\BOOKMARK [0][-]{chapter.7}{Deep Models}{}% 23
+\BOOKMARK [1][-]{section.7.1}{Motivation}{chapter.7}% 24
+\BOOKMARK [1][-]{section.7.2}{A Deep NNMF Model}{chapter.7}% 25
+\BOOKMARK [1][-]{section.7.3}{Deep Neural Models}{chapter.7}% 26
+\BOOKMARK [0][-]{chapter.8}{Discussion}{}% 27

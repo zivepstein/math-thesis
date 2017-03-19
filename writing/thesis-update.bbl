@@ -85,6 +85,11 @@ Kurt Hornik.
 \newblock Approximation capabilities of multilayer feedforward networks.
 \newblock {\em Neural networks}, 4(2):251--257, 1991.
 
+\bibitem{jolliffe2002principal}
+Ian Jolliffe.
+\newblock {\em Principal component analysis}.
+\newblock Wiley Online Library, 2002.
+
 \bibitem{kawamoto2000estimation}
 T~Kawamoto, K~Hotta, T~Mishima, J~Fujiki, M~Tanaka, and T~Kurita.
 \newblock Estimation of single tones from chord sounds using non-negative
@@ -124,6 +129,11 @@ Hyekyoung Lee, Jiho Yoo, and Seungjin Choi.
 Nikos~K Logothetis and David~L Sheinberg.
 \newblock Visual object recognition.
 \newblock {\em Annual review of neuroscience}, 19(1):577--621, 1996.
+
+\bibitem{mhaskar2016learning}
+Hrushikesh Mhaskar, Qianli Liao, and Tomaso Poggio.
+\newblock Learning functions: When is deep better than shallow.
+\newblock {\em arXiv preprint arXiv:1603.00988}, 2016.
 
 \bibitem{minsky1975framework}
 Marvin Minsky.

@@ -8,22 +8,20 @@
 \contentsline {section}{\numberline {3.1}Singular Value Decomposition}{11}{section.3.1}
 \contentsline {section}{\numberline {3.2}Neural Network Representation}{13}{section.3.2}
 \contentsline {section}{\numberline {3.3}Matrix factorization}{14}{section.3.3}
-\contentsline {chapter}{\numberline {4}Types of Data}{17}{chapter.4}
-\contentsline {section}{\numberline {4.1}Image}{17}{section.4.1}
-\contentsline {section}{\numberline {4.2}Sound}{18}{section.4.2}
-\contentsline {section}{\numberline {4.3}Graph}{19}{section.4.3}
-\contentsline {section}{\numberline {4.4}Natural Language}{20}{section.4.4}
-\contentsline {chapter}{\numberline {5}Building Fluency with NNMF}{22}{chapter.5}
-\contentsline {section}{\numberline {5.1}Visualizing NNMF}{22}{section.5.1}
-\contentsline {section}{\numberline {5.2}Comparison of NNMF and SVD}{22}{section.5.2}
-\contentsline {section}{\numberline {5.3}Datasets}{23}{section.5.3}
-\contentsline {chapter}{\numberline {6}Manifold Learning as NNMF}{24}{chapter.6}
-\contentsline {section}{\numberline {6.1}Motivation}{24}{section.6.1}
-\contentsline {section}{\numberline {6.2}Manifold NNMF}{27}{section.6.2}
-\contentsline {chapter}{\numberline {7}Hierarchical Representation}{28}{chapter.7}
-\contentsline {section}{\numberline {7.1}Approach}{28}{section.7.1}
-\contentsline {section}{\numberline {7.2}Visualization}{30}{section.7.2}
-\contentsline {chapter}{\numberline {8}Deep Models}{32}{chapter.8}
-\contentsline {section}{\numberline {8.1}Approach}{32}{section.8.1}
-\contentsline {section}{\numberline {8.2}Deep Neural Models}{32}{section.8.2}
-\contentsline {chapter}{\numberline {9}Discussion}{33}{chapter.9}
+\contentsline {section}{\numberline {3.4}Comparison of NNMF and SVD}{16}{section.3.4}
+\contentsline {chapter}{\numberline {4}Types of Data}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Image}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Sound}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Graph}{21}{section.4.3}
+\contentsline {section}{\numberline {4.4}Natural Language}{22}{section.4.4}
+\contentsline {chapter}{\numberline {5}Manifold Learning as NNMF}{24}{chapter.5}
+\contentsline {section}{\numberline {5.1}Motivation}{24}{section.5.1}
+\contentsline {section}{\numberline {5.2}Manifold NNMF}{27}{section.5.2}
+\contentsline {chapter}{\numberline {6}Hierarchical Representation}{28}{chapter.6}
+\contentsline {section}{\numberline {6.1}Approach}{28}{section.6.1}
+\contentsline {section}{\numberline {6.2}Visualization}{30}{section.6.2}
+\contentsline {chapter}{\numberline {7}Deep Models}{32}{chapter.7}
+\contentsline {section}{\numberline {7.1}Motivation}{32}{section.7.1}
+\contentsline {section}{\numberline {7.2}A Deep NNMF Model}{33}{section.7.2}
+\contentsline {section}{\numberline {7.3}Deep Neural Models}{33}{section.7.3}
+\contentsline {chapter}{\numberline {8}Discussion}{35}{chapter.8}

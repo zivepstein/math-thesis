@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  21 FEB 2017 14:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  24 FEB 2017 12:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1253,552 +1253,1127 @@ Package pdftex.def Info: highD.jpg used on input line 33.
  [5
 
 ]
-<X.png, id=49, 222.8325pt x 182.6825pt>
-File: X.png Graphic file (type png)
- <use X.png>
-Package pdftex.def Info: X.png used on input line 52.
-(pdftex.def)             Requested size: 104.11926pt x 85.35826pt.
- [6
+<nnmf/nnmfA1.png, id=49, 507.8975pt x 387.4475pt>
+File: nnmf/nnmfA1.png Graphic file (type png)
+ <use nnmf/nnmfA1.png>
+Package pdftex.def Info: nnmf/nnmfA1.png used on input line 50.
+(pdftex.def)             Requested size: 111.89279pt x 85.35826pt.
 
- <./X.png>]
-<nnmf.png, id=59, 691.58376pt x 182.6825pt>
-File: nnmf.png Graphic file (type png)
- <use nnmf.png>
-Package pdftex.def Info: nnmf.png used on input line 52.
-(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
+[6
 
-Overfull \hbox (15.85504pt too wide) in paragraph at lines 52--52
- [] 
- []
+ <./nnmf/nnmfA1.png>] <nnmf/nnmfA2.png, id=59, 554.07pt x 395.4775pt>
+File: nnmf/nnmfA2.png Graphic file (type png)
 
-[7
+<use nnmf/nnmfA2.png>
+Package pdftex.def Info: nnmf/nnmfA2.png used on input line 50.
+(pdftex.def)             Requested size: 119.58772pt x 85.35826pt.
+ [7
 
- <./nnmf.png>] <nnmfLC.png, id=67, 691.58376pt x 182.6825pt>
-File: nnmfLC.png Graphic file (type png)
+ <./nnmf/nnmfA2.png>]
+<nnmf/nnmfA3.png, id=67, 1514.65875pt x 395.4775pt>
+File: nnmf/nnmfA3.png Graphic file (type png)
+ <use nnmf/nnmfA3.png>
+Package pdftex.def Info: nnmf/nnmfA3.png used on input line 66.
+(pdftex.def)             Requested size: 326.91643pt x 85.35826pt.
 
-<use nnmfLC.png>
-Package pdftex.def Info: nnmfLC.png used on input line 72.
-(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
-
-Overfull \hbox (15.85504pt too wide) in paragraph at lines 72--72
+Overfull \hbox (19.62656pt too wide) in paragraph at lines 66--66
  [] 
  []
 
 [8
 
- <./nnmfLC.png (PNG copy)>]
-File: nnmf.png Graphic file (type png)
- <use nnmf.png>
-Package pdftex.def Info: nnmf.png used on input line 72.
-(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
+ <./nnmf/nnmfA3.png>] <nnmf/nnmfA4.png, id=74, 1514.65875pt x 409.53pt>
+File: nnmf/nnmfA4.png Graphic file (type png)
 
-Overfull \hbox (15.85504pt too wide) in paragraph at lines 72--72
+<use nnmf/nnmfA4.png>
+Package pdftex.def Info: nnmf/nnmfA4.png used on input line 66.
+(pdftex.def)             Requested size: 315.6841pt x 85.35826pt.
+
+Overfull \hbox (8.39423pt too wide) in paragraph at lines 66--66
  [] 
- []
-
-File: nnmfLC.png Graphic file (type png)
-<use nnmfLC.png>
-Package pdftex.def Info: nnmfLC.png used on input line 72.
-(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
-
-Overfull \hbox (15.85504pt too wide) in paragraph at lines 72--72
- [] 
- []
-
-
-Overfull \vbox (91.39774pt too high) detected at line 72
  []
 
 [9
 
-] <nnmfLC2.png, id=80, 691.58376pt x 188.705pt>
-File: nnmfLC2.png Graphic file (type png)
- <use nnmfLC2.png>
-Package pdftex.def Info: nnmfLC2.png used on input line 72.
-(pdftex.def)             Requested size: 312.82437pt x 85.35826pt.
+ <./nnmf/nnmfA4.png>] <nnmf/nnmfA5.png, id=81, 1514.65875pt x 409.53pt>
+File: nnmf/nnmfA5.png Graphic file (type png)
 
-Overfull \hbox (5.5345pt too wide) in paragraph at lines 72--72
+<use nnmf/nnmfA5.png>
+Package pdftex.def Info: nnmf/nnmfA5.png used on input line 66.
+(pdftex.def)             Requested size: 315.6841pt x 85.35826pt.
+
+Overfull \hbox (8.39423pt too wide) in paragraph at lines 66--66
  [] 
- []
-
-File: nnmfLC.png Graphic file (type png)
-<use nnmfLC.png>
-Package pdftex.def Info: nnmfLC.png used on input line 72.
-(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
-
-Overfull \hbox (15.85504pt too wide) in paragraph at lines 72--72
- [] 
- []
-
-
-Overfull \vbox (91.39774pt too high) detected at line 72
  []
 
 [10
 
- <./nnmfLC2.png>]
-File: nnmfLC.png Graphic file (type png)
- <use nnmfLC.png>
-Package pdftex.def Info: nnmfLC.png used on input line 72.
+ <./nnmf/nnmfA5.png>] <nnmf/nnmf6.png, id=88, 691.58376pt x 182.6825pt>
+File: nnmf/nnmf6.png Graphic file (type png)
+
+<use nnmf/nnmf6.png>
+Package pdftex.def Info: nnmf/nnmf6.png used on input line 98.
 (pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
 
-Overfull \hbox (15.85504pt too wide) in paragraph at lines 72--72
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
  [] 
  []
 
 [11
 
-]
-File: nnmfLC.png Graphic file (type png)
- <use nnmfLC.png>
-Package pdftex.def Info: nnmfLC.png used on input line 72.
+ <./nnmf/nnmf6.png (PNG copy)>]
+<nnmf/nnmf1.png, id=96, 691.58376pt x 182.6825pt>
+File: nnmf/nnmf1.png Graphic file (type png)
+ <use nnmf/nnmf1.png>
+Package pdftex.def Info: nnmf/nnmf1.png used on input line 98.
 (pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
 
-Overfull \hbox (15.85504pt too wide) in paragraph at lines 72--72
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
  [] 
+ []
+
+File: nnmf/nnmf6.png Graphic file (type png)
+<use nnmf/nnmf6.png>
+Package pdftex.def Info: nnmf/nnmf6.png used on input line 98.
+(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
+
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
+ [] 
+ []
+
+
+Overfull \vbox (91.39774pt too high) detected at line 98
  []
 
 [12
 
-] <face.png, id=97, 74.77937pt x 73.27374pt>
-File: face.png Graphic file (type png)
- <use face.png>
-Package pdftex.def Info: face.png used on input line 83.
-(pdftex.def)             Requested size: 87.11154pt x 85.35826pt.
- [13
+ <./nnmf/nnmf1.png (PNG copy)>]
+<nnmf/nnmf2.png, id=102, 691.58376pt x 182.6825pt>
+File: nnmf/nnmf2.png Graphic file (type png)
+ <use nnmf/nnmf2.png>
+Package pdftex.def Info: nnmf/nnmf2.png used on input line 98.
+(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
 
- <./face.png>]
-File: face.png Graphic file (type png)
- <use face.png>
-Package pdftex.def Info: face.png used on input line 83.
-(pdftex.def)             Requested size: 87.11154pt x 85.35826pt.
- [14
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
+ [] 
+ []
 
-]
-File: face.png Graphic file (type png)
- <use face.png>
-Package pdftex.def Info: face.png used on input line 83.
-(pdftex.def)             Requested size: 87.11154pt x 85.35826pt.
- [15
+File: nnmf/nnmf6.png Graphic file (type png)
+<use nnmf/nnmf6.png>
+Package pdftex.def Info: nnmf/nnmf6.png used on input line 98.
+(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
 
-]
-File: face.png Graphic file (type png)
- <use face.png>
-Package pdftex.def Info: face.png used on input line 83.
-(pdftex.def)             Requested size: 87.11154pt x 85.35826pt.
- [16
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
+ [] 
+ []
 
-]
-File: nnmf.png Graphic file (type png)
- <use nnmf.png>
-Package pdftex.def Info: nnmf.png used on input line 100.
-(pdftex.def)             Requested size: 215.42291pt x 56.9055pt.
+
+Overfull \vbox (91.39774pt too high) detected at line 98
+ []
+
+[13
+
+ <./nnmf/nnmf2.png (PNG copy)>]
+<nnmf/nnmf3.png, id=109, 691.58376pt x 182.6825pt>
+File: nnmf/nnmf3.png Graphic file (type png)
+ <use nnmf/nnmf3.png>
+Package pdftex.def Info: nnmf/nnmf3.png used on input line 98.
+(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
+
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
+ [] 
+ []
+
+File: nnmf/nnmf6.png Graphic file (type png)
+<use nnmf/nnmf6.png>
+Package pdftex.def Info: nnmf/nnmf6.png used on input line 98.
+(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
+
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
+ [] 
+ []
+
+
+Overfull \vbox (91.39774pt too high) detected at line 98
+ []
+
+[14
+
+ <./nnmf/nnmf3.png (PNG copy)>]
+<nnmf/nnmf4.png, id=115, 691.58376pt x 182.6825pt>
+File: nnmf/nnmf4.png Graphic file (type png)
+ <use nnmf/nnmf4.png>
+Package pdftex.def Info: nnmf/nnmf4.png used on input line 98.
+(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
+
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
+ [] 
+ []
+
+File: nnmf/nnmf6.png Graphic file (type png)
+<use nnmf/nnmf6.png>
+Package pdftex.def Info: nnmf/nnmf6.png used on input line 98.
+(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
+
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
+ [] 
+ []
+
+
+Overfull \vbox (91.39774pt too high) detected at line 98
+ []
+
+[15
+
+ <./nnmf/nnmf4.png (PNG copy)>]
+<nnmf/nnmf5.png, id=121, 691.58376pt x 182.6825pt>
+File: nnmf/nnmf5.png Graphic file (type png)
+ <use nnmf/nnmf5.png>
+Package pdftex.def Info: nnmf/nnmf5.png used on input line 98.
+(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
+
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
+ [] 
+ []
+
+File: nnmf/nnmf6.png Graphic file (type png)
+<use nnmf/nnmf6.png>
+Package pdftex.def Info: nnmf/nnmf6.png used on input line 98.
+(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
+
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
+ [] 
+ []
+
+
+Overfull \vbox (91.39774pt too high) detected at line 98
+ []
+
+[16
+
+ <./nnmf/nnmf5.png (PNG copy)>]
+File: nnmf/nnmf6.png Graphic file (type png)
+ <use nnmf/nnmf6.png>
+Package pdftex.def Info: nnmf/nnmf6.png used on input line 98.
+(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
+
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
+ [] 
+ []
 
 [17
 
 ]
+File: nnmf/nnmf6.png Graphic file (type png)
+ <use nnmf/nnmf6.png>
+Package pdftex.def Info: nnmf/nnmf6.png used on input line 98.
+(pdftex.def)             Requested size: 323.14491pt x 85.35826pt.
+
+Overfull \hbox (15.85504pt too wide) in paragraph at lines 98--98
+ [] 
+ []
+
+[18
+
+] [19
+
+] <face/face1.png, id=143, 1573.88pt x 461.725pt>
+File: face/face1.png Graphic file (type png)
+ <use face/face1.png>
+Package pdftex.def Info: face/face1.png used on input line 117.
+(pdftex.def)             Requested size: 290.9471pt x 85.35826pt.
+
+[20
+
+ <./face/face1.png>] <face/face2.png, id=150, 1573.88pt x 461.725pt>
+File: face/face2.png Graphic file (type png)
+
+<use face/face2.png>
+Package pdftex.def Info: face/face2.png used on input line 117.
+(pdftex.def)             Requested size: 290.9471pt x 85.35826pt.
+ [21
+
+ <./face/face2.png>]
+File: face/face2.png Graphic file (type png)
+ <use face/face2.png>
+Package pdftex.def Info: face/face2.png used on input line 117.
+(pdftex.def)             Requested size: 290.9471pt x 85.35826pt.
+ [22
+
+]
+<face/face4.png, id=162, 1574.88374pt x 461.725pt>
+File: face/face4.png Graphic file (type png)
+ <use face/face4.png>
+Package pdftex.def Info: face/face4.png used on input line 117.
+(pdftex.def)             Requested size: 291.13266pt x 85.35826pt.
+
+[23
+
+ <./face/face4.png>] <nnmf.png, id=169, 691.58376pt x 182.6825pt>
+File: nnmf.png Graphic file (type png)
+
+<use nnmf.png>
+Package pdftex.def Info: nnmf.png used on input line 134.
+(pdftex.def)             Requested size: 215.42291pt x 56.9055pt.
+ [24
+
+ <./nnmf.png>]
 File: nnmf.png Graphic file (type png)
  <use nnmf.png>
-Package pdftex.def Info: nnmf.png used on input line 100.
+Package pdftex.def Info: nnmf.png used on input line 134.
 (pdftex.def)             Requested size: 215.42291pt x 56.9055pt.
- [18
+ [25
 
 ]
 File: nnmf.png Graphic file (type png)
  <use nnmf.png>
-Package pdftex.def Info: nnmf.png used on input line 100.
+Package pdftex.def Info: nnmf.png used on input line 134.
 (pdftex.def)             Requested size: 215.42291pt x 56.9055pt.
- [19
-
-]
-File: nnmf.png Graphic file (type png)
- <use nnmf.png>
-Package pdftex.def Info: nnmf.png used on input line 100.
-(pdftex.def)             Requested size: 215.42291pt x 56.9055pt.
- [20
+ [26
 
 ]
 File: nnmf.png Graphic file (type png)
 
 <use nnmf.png>
-Package pdftex.def Info: nnmf.png used on input line 100.
+Package pdftex.def Info: nnmf.png used on input line 134.
 (pdftex.def)             Requested size: 215.42291pt x 56.9055pt.
- [21
-
-] <pcaFACE.png, id=147, 351.81438pt x 148.05313pt>
-File: pcaFACE.png Graphic file (type png)
-
-<use pcaFACE.png>
-Package pdftex.def Info: pcaFACE.png used on input line 115.
-(pdftex.def)             Requested size: 162.2714pt x 68.28644pt.
- <nmfFACE.png, id=148, 351.81438pt x 144.54pt>
-File: nmfFACE.png Graphic file (type png)
-
-<use nmfFACE.png>
-Package pdftex.def Info: nmfFACE.png used on input line 115.
-(pdftex.def)             Requested size: 166.21169pt x 68.28644pt.
- [22
-
- <./pcaFACE.png> <./nmfFACE.png>]
-File: pcaFACE.png Graphic file (type png)
- <use pcaFACE.png>
-Package pdftex.def Info: pcaFACE.png used on input line 115.
-(pdftex.def)             Requested size: 162.2714pt x 68.28644pt.
-File: nmfFACE.png Graphic file (type png)
-
-<use nmfFACE.png>
-Package pdftex.def Info: nmfFACE.png used on input line 115.
-(pdftex.def)             Requested size: 166.21169pt x 68.28644pt.
- [23
-
-]
-File: pcaFACE.png Graphic file (type png)
- <use pcaFACE.png>
-Package pdftex.def Info: pcaFACE.png used on input line 115.
-(pdftex.def)             Requested size: 162.2714pt x 68.28644pt.
-File: nmfFACE.png Graphic file (type png)
- <use nmfFACE.png>
-Package pdftex.def Info: nmfFACE.png used on input line 115.
-(pdftex.def)             Requested size: 166.21169pt x 68.28644pt.
- [24
-
-]
-File: pcaFACE.png Graphic file (type png)
-
-<use pcaFACE.png>
-Package pdftex.def Info: pcaFACE.png used on input line 115.
-(pdftex.def)             Requested size: 162.2714pt x 68.28644pt.
-File: nmfFACE.png Graphic file (type png)
- <use nmfFACE.png>
-Package pdftex.def Info: nmfFACE.png used on input line 115.
-(pdftex.def)             Requested size: 166.21169pt x 68.28644pt.
- [25
-
-]
-File: pcaFACE.png Graphic file (type png)
- <use pcaFACE.png>
-Package pdftex.def Info: pcaFACE.png used on input line 115.
-(pdftex.def)             Requested size: 162.2714pt x 68.28644pt.
-File: nmfFACE.png Graphic file (type png)
- <use nmfFACE.png>
-Package pdftex.def Info: nmfFACE.png used on input line 115.
-(pdftex.def)             Requested size: 166.21169pt x 68.28644pt.
-
-[26
-
-]
-File: pcaFACE.png Graphic file (type png)
- <use pcaFACE.png>
-Package pdftex.def Info: pcaFACE.png used on input line 115.
-(pdftex.def)             Requested size: 162.2714pt x 68.28644pt.
-File: nmfFACE.png Graphic file (type png)
- <use nmfFACE.png>
-Package pdftex.def Info: nmfFACE.png used on input line 115.
-(pdftex.def)             Requested size: 166.21169pt x 68.28644pt.
  [27
 
 ]
-File: pcaFACE.png Graphic file (type png)
- <use pcaFACE.png>
-Package pdftex.def Info: pcaFACE.png used on input line 115.
-(pdftex.def)             Requested size: 162.2714pt x 68.28644pt.
-File: nmfFACE.png Graphic file (type png)
-
-<use nmfFACE.png>
-Package pdftex.def Info: nmfFACE.png used on input line 115.
-(pdftex.def)             Requested size: 166.21169pt x 68.28644pt.
+File: nnmf.png Graphic file (type png)
+ <use nnmf.png>
+Package pdftex.def Info: nnmf.png used on input line 134.
+(pdftex.def)             Requested size: 215.42291pt x 56.9055pt.
  [28
 
-] <dingusBefore.png, id=188, 262.73157pt x 246.1697pt>
-File: dingusBefore.png Graphic file (type png)
+]
+<face-imp/pcaFACE2.png, id=199, 77.28876pt x 147.04938pt>
+File: face-imp/pcaFACE2.png Graphic file (type png)
 
-<use dingusBefore.png>
-Package pdftex.def Info: dingusBefore.png used on input line 131.
-(pdftex.def)             Requested size: 72.8788pt x 68.28644pt.
+<use face-imp/pcaFACE2.png>
+Package pdftex.def Info: face-imp/pcaFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 35.89053pt x 68.28644pt.
+
+<face-imp/eq.png, id=200, 29.61063pt x 148.05313pt>
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+
+<face-imp/pcaFACE1.png, id=201, 81.80562pt x 148.05313pt>
+File: face-imp/pcaFACE1.png Graphic file (type png)
+
+<use face-imp/pcaFACE1.png>
+Package pdftex.def Info: face-imp/pcaFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.73213pt x 68.28644pt.
+ <face-imp/x.png, id=202, 18.56938pt x 145.54375pt>
+File: face-imp/x.png Graphic file (type png)
+
+<use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+ <face-imp/pcaFACE.png, id=203, 147.55125pt x 148.05313pt>
+File: face-imp/pcaFACE.png Graphic file (type png)
+
+<use face-imp/pcaFACE.png>
+Package pdftex.def Info: face-imp/pcaFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.05675pt x 68.28644pt.
+
+<face-imp/nmfFACE2.png, id=204, 77.79062pt x 144.54pt>
+File: face-imp/nmfFACE2.png Graphic file (type png)
+
+<use face-imp/nmfFACE2.png>
+Package pdftex.def Info: face-imp/nmfFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 36.75151pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+
+<face-imp/nmfFACE1.png, id=205, 80.3pt x 144.54pt>
+File: face-imp/nmfFACE1.png Graphic file (type png)
+ <use face-imp/nmfFACE1.png>
+Package pdftex.def Info: face-imp/nmfFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.93704pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+
+<use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+ <face-imp/nmfFACE.png, id=206, 144.03813pt x 144.54pt>
+File: face-imp/nmfFACE.png Graphic file (type png)
+
+<use face-imp/nmfFACE.png>
+Package pdftex.def Info: face-imp/nmfFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.04958pt x 68.28644pt.
  [29
 
- <./dingusBefore.png>]
-<dingus.png, id=195, 261.22594pt x 241.65282pt>
-File: dingus.png Graphic file (type png)
- <use dingus.png>
-Package pdftex.def Info: dingus.png used on input line 131.
-(pdftex.def)             Requested size: 73.81638pt x 68.28644pt.
+ <./face-imp/pcaFACE2.png> <./face-imp/eq.png> <./face-imp/pcaFACE1.png> <./fac
+e-imp/x.png> <./face-imp/pcaFACE.png> <./face-imp/nmfFACE2.png> <./face-imp/nmf
+FACE1.png> <./face-imp/nmfFACE.png>]
+File: face-imp/pcaFACE2.png Graphic file (type png)
+
+<use face-imp/pcaFACE2.png>
+Package pdftex.def Info: face-imp/pcaFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 35.89053pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/pcaFACE1.png Graphic file (type png)
+ <use face-imp/pcaFACE1.png>
+Package pdftex.def Info: face-imp/pcaFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.73213pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+
+<use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/pcaFACE.png Graphic file (type png)
+ <use face-imp/pcaFACE.png>
+Package pdftex.def Info: face-imp/pcaFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.05675pt x 68.28644pt.
+File: face-imp/nmfFACE2.png Graphic file (type png)
+ <use face-imp/nmfFACE2.png>
+Package pdftex.def Info: face-imp/nmfFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 36.75151pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+
+<use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/nmfFACE1.png Graphic file (type png)
+ <use face-imp/nmfFACE1.png>
+Package pdftex.def Info: face-imp/nmfFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.93704pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/nmfFACE.png Graphic file (type png)
+
+<use face-imp/nmfFACE.png>
+Package pdftex.def Info: face-imp/nmfFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.04958pt x 68.28644pt.
  [30
 
- <./dingus.png>] [31
+]
+File: face-imp/pcaFACE2.png Graphic file (type png)
+ <use face-imp/pcaFACE2.png>
+Package pdftex.def Info: face-imp/pcaFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 35.89053pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
 
-] [32
+<use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/pcaFACE1.png Graphic file (type png)
+ <use face-imp/pcaFACE1.png>
+Package pdftex.def Info: face-imp/pcaFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.73213pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/pcaFACE.png Graphic file (type png)
 
-] [33
+<use face-imp/pcaFACE.png>
+Package pdftex.def Info: face-imp/pcaFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.05675pt x 68.28644pt.
+File: face-imp/nmfFACE2.png Graphic file (type png)
+ <use face-imp/nmfFACE2.png>
+Package pdftex.def Info: face-imp/nmfFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 36.75151pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/nmfFACE1.png Graphic file (type png)
 
-] [34
+<use face-imp/nmfFACE1.png>
+Package pdftex.def Info: face-imp/nmfFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.93704pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/nmfFACE.png Graphic file (type png)
+ <use face-imp/nmfFACE.png>
+Package pdftex.def Info: face-imp/nmfFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.04958pt x 68.28644pt.
 
-] <el1.png, id=223, 160.6pt x 131.49126pt>
-File: el1.png Graphic file (type png)
+[31
 
-<use el1.png>
-Package pdftex.def Info: el1.png used on input line 149.
-(pdftex.def)             Requested size: 69.50264pt x 56.9055pt.
+]
+File: face-imp/pcaFACE2.png Graphic file (type png)
+ <use face-imp/pcaFACE2.png>
+Package pdftex.def Info: face-imp/pcaFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 35.89053pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/pcaFACE1.png Graphic file (type png)
+
+<use face-imp/pcaFACE1.png>
+Package pdftex.def Info: face-imp/pcaFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.73213pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/pcaFACE.png Graphic file (type png)
+ <use face-imp/pcaFACE.png>
+Package pdftex.def Info: face-imp/pcaFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.05675pt x 68.28644pt.
+File: face-imp/nmfFACE2.png Graphic file (type png)
+
+<use face-imp/nmfFACE2.png>
+Package pdftex.def Info: face-imp/nmfFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 36.75151pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/nmfFACE1.png Graphic file (type png)
+ <use face-imp/nmfFACE1.png>
+Package pdftex.def Info: face-imp/nmfFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.93704pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+
+<use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/nmfFACE.png Graphic file (type png)
+ <use face-imp/nmfFACE.png>
+Package pdftex.def Info: face-imp/nmfFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.04958pt x 68.28644pt.
+ [32
+
+]
+File: face-imp/pcaFACE2.png Graphic file (type png)
+
+<use face-imp/pcaFACE2.png>
+Package pdftex.def Info: face-imp/pcaFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 35.89053pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/pcaFACE1.png Graphic file (type png)
+ <use face-imp/pcaFACE1.png>
+Package pdftex.def Info: face-imp/pcaFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.73213pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+
+<use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/pcaFACE.png Graphic file (type png)
+ <use face-imp/pcaFACE.png>
+Package pdftex.def Info: face-imp/pcaFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.05675pt x 68.28644pt.
+File: face-imp/nmfFACE2.png Graphic file (type png)
+ <use face-imp/nmfFACE2.png>
+Package pdftex.def Info: face-imp/nmfFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 36.75151pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+
+<use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/nmfFACE1.png Graphic file (type png)
+ <use face-imp/nmfFACE1.png>
+Package pdftex.def Info: face-imp/nmfFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.93704pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/nmfFACE.png Graphic file (type png)
+
+<use face-imp/nmfFACE.png>
+Package pdftex.def Info: face-imp/nmfFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.04958pt x 68.28644pt.
+ [33
+
+]
+File: face-imp/pcaFACE2.png Graphic file (type png)
+ <use face-imp/pcaFACE2.png>
+Package pdftex.def Info: face-imp/pcaFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 35.89053pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+
+<use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/pcaFACE1.png Graphic file (type png)
+ <use face-imp/pcaFACE1.png>
+Package pdftex.def Info: face-imp/pcaFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.73213pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/pcaFACE.png Graphic file (type png)
+
+<use face-imp/pcaFACE.png>
+Package pdftex.def Info: face-imp/pcaFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.05675pt x 68.28644pt.
+File: face-imp/nmfFACE2.png Graphic file (type png)
+ <use face-imp/nmfFACE2.png>
+Package pdftex.def Info: face-imp/nmfFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 36.75151pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/nmfFACE1.png Graphic file (type png)
+
+<use face-imp/nmfFACE1.png>
+Package pdftex.def Info: face-imp/nmfFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.93704pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/nmfFACE.png Graphic file (type png)
+ <use face-imp/nmfFACE.png>
+Package pdftex.def Info: face-imp/nmfFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.04958pt x 68.28644pt.
+
+[34
+
+]
+File: face-imp/pcaFACE2.png Graphic file (type png)
+ <use face-imp/pcaFACE2.png>
+Package pdftex.def Info: face-imp/pcaFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 35.89053pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/pcaFACE1.png Graphic file (type png)
+
+<use face-imp/pcaFACE1.png>
+Package pdftex.def Info: face-imp/pcaFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.73213pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/pcaFACE.png Graphic file (type png)
+ <use face-imp/pcaFACE.png>
+Package pdftex.def Info: face-imp/pcaFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.05675pt x 68.28644pt.
+File: face-imp/nmfFACE2.png Graphic file (type png)
+
+<use face-imp/nmfFACE2.png>
+Package pdftex.def Info: face-imp/nmfFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 36.75151pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/nmfFACE1.png Graphic file (type png)
+ <use face-imp/nmfFACE1.png>
+Package pdftex.def Info: face-imp/nmfFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.93704pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+
+<use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/nmfFACE.png Graphic file (type png)
+ <use face-imp/nmfFACE.png>
+Package pdftex.def Info: face-imp/nmfFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.04958pt x 68.28644pt.
  [35
 
- <./el1.png>] <el2.png, id=230, 243.91125pt x 205.76875pt>
-File: el2.png Graphic file (type png)
+]
+File: face-imp/pcaFACE2.png Graphic file (type png)
 
-<use el2.png>
-Package pdftex.def Info: el2.png used on input line 149.
-(pdftex.def)             Requested size: 67.45355pt x 56.9055pt.
+<use face-imp/pcaFACE2.png>
+Package pdftex.def Info: face-imp/pcaFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 35.89053pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/pcaFACE1.png Graphic file (type png)
+ <use face-imp/pcaFACE1.png>
+Package pdftex.def Info: face-imp/pcaFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.73213pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+
+<use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/pcaFACE.png Graphic file (type png)
+ <use face-imp/pcaFACE.png>
+Package pdftex.def Info: face-imp/pcaFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.05675pt x 68.28644pt.
+File: face-imp/nmfFACE2.png Graphic file (type png)
+ <use face-imp/nmfFACE2.png>
+Package pdftex.def Info: face-imp/nmfFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 36.75151pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+
+<use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/nmfFACE1.png Graphic file (type png)
+ <use face-imp/nmfFACE1.png>
+Package pdftex.def Info: face-imp/nmfFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.93704pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/nmfFACE.png Graphic file (type png)
+
+<use face-imp/nmfFACE.png>
+Package pdftex.def Info: face-imp/nmfFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.04958pt x 68.28644pt.
  [36
+
+]
+File: face-imp/pcaFACE2.png Graphic file (type png)
+ <use face-imp/pcaFACE2.png>
+Package pdftex.def Info: face-imp/pcaFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 35.89053pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+
+<use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/pcaFACE1.png Graphic file (type png)
+ <use face-imp/pcaFACE1.png>
+Package pdftex.def Info: face-imp/pcaFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.73213pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/pcaFACE.png Graphic file (type png)
+
+<use face-imp/pcaFACE.png>
+Package pdftex.def Info: face-imp/pcaFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.05675pt x 68.28644pt.
+File: face-imp/nmfFACE2.png Graphic file (type png)
+ <use face-imp/nmfFACE2.png>
+Package pdftex.def Info: face-imp/nmfFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 36.75151pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/nmfFACE1.png Graphic file (type png)
+
+<use face-imp/nmfFACE1.png>
+Package pdftex.def Info: face-imp/nmfFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.93704pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/nmfFACE.png Graphic file (type png)
+ <use face-imp/nmfFACE.png>
+Package pdftex.def Info: face-imp/nmfFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.04958pt x 68.28644pt.
+
+[37
+
+]
+File: face-imp/pcaFACE2.png Graphic file (type png)
+ <use face-imp/pcaFACE2.png>
+Package pdftex.def Info: face-imp/pcaFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 35.89053pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/pcaFACE1.png Graphic file (type png)
+
+<use face-imp/pcaFACE1.png>
+Package pdftex.def Info: face-imp/pcaFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.73213pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+ <use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/pcaFACE.png Graphic file (type png)
+ <use face-imp/pcaFACE.png>
+Package pdftex.def Info: face-imp/pcaFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.05675pt x 68.28644pt.
+File: face-imp/nmfFACE2.png Graphic file (type png)
+
+<use face-imp/nmfFACE2.png>
+Package pdftex.def Info: face-imp/nmfFACE2.png used on input line 155.
+(pdftex.def)             Requested size: 36.75151pt x 68.28644pt.
+File: face-imp/eq.png Graphic file (type png)
+ <use face-imp/eq.png>
+Package pdftex.def Info: face-imp/eq.png used on input line 155.
+(pdftex.def)             Requested size: 13.65764pt x 68.28644pt.
+File: face-imp/nmfFACE1.png Graphic file (type png)
+ <use face-imp/nmfFACE1.png>
+Package pdftex.def Info: face-imp/nmfFACE1.png used on input line 155.
+(pdftex.def)             Requested size: 37.93704pt x 68.28644pt.
+File: face-imp/x.png Graphic file (type png)
+
+<use face-imp/x.png>
+Package pdftex.def Info: face-imp/x.png used on input line 155.
+(pdftex.def)             Requested size: 8.71259pt x 68.28644pt.
+File: face-imp/nmfFACE.png Graphic file (type png)
+ <use face-imp/nmfFACE.png>
+Package pdftex.def Info: face-imp/nmfFACE.png used on input line 155.
+(pdftex.def)             Requested size: 68.04958pt x 68.28644pt.
+ [38
+
+]
+<dingusBefore.png, id=267, 262.73157pt x 246.1697pt>
+File: dingusBefore.png Graphic file (type png)
+ <use dingusBefore.png>
+Package pdftex.def Info: dingusBefore.png used on input line 171.
+(pdftex.def)             Requested size: 72.8788pt x 68.28644pt.
+
+[39
+
+ <./dingusBefore.png>] <dingus.png, id=274, 261.22594pt x 241.65282pt>
+File: dingus.png Graphic file (type png)
+
+<use dingus.png>
+Package pdftex.def Info: dingus.png used on input line 171.
+(pdftex.def)             Requested size: 73.81638pt x 68.28644pt.
+ [40
+
+ <./dingus.png>] [41
+
+] [42
+
+] [43
+
+] [44
+
+]
+<el1.png, id=302, 160.6pt x 131.49126pt>
+File: el1.png Graphic file (type png)
+ <use el1.png>
+Package pdftex.def Info: el1.png used on input line 189.
+(pdftex.def)             Requested size: 69.50264pt x 56.9055pt.
+
+<el4.png, id=303, 542.025pt x 79.29625pt>
+File: el4.png Graphic file (type png)
+ <use el4.png>
+Package pdftex.def Info: el4.png used on input line 189.
+(pdftex.def)             Requested size: 291.738pt x 42.67912pt.
+ [45
+
+ <./el1.png> <./el4.png>] <el2.png, id=311, 243.91125pt x 205.76875pt>
+File: el2.png Graphic file (type png)
+ <use el2.png>
+Package pdftex.def Info: el2.png used on input line 189.
+(pdftex.def)             Requested size: 67.45355pt x 56.9055pt.
+File: el4.png Graphic file (type png)
+ <use el4.png>
+Package pdftex.def Info: el4.png used on input line 189.
+(pdftex.def)             Requested size: 291.738pt x 42.67912pt.
+
+[46
 
  <./el2.png>]
 File: el2.png Graphic file (type png)
  <use el2.png>
-Package pdftex.def Info: el2.png used on input line 149.
+Package pdftex.def Info: el2.png used on input line 189.
 (pdftex.def)             Requested size: 67.45355pt x 56.9055pt.
-
-<el3.png, id=237, 502.87875pt x 62.2325pt>
+ <el3.png, id=318, 502.87875pt x 62.2325pt>
 File: el3.png Graphic file (type png)
- <use el3.png>
-Package pdftex.def Info: el3.png used on input line 149.
+
+<use el3.png>
+Package pdftex.def Info: el3.png used on input line 189.
 (pdftex.def)             Requested size: 229.9228pt x 28.45274pt.
- [37
+File: el4.png Graphic file (type png)
+ <use el4.png>
+Package pdftex.def Info: el4.png used on input line 189.
+(pdftex.def)             Requested size: 291.738pt x 42.67912pt.
+ [47
 
  <./el3.png>]
 File: el2.png Graphic file (type png)
-
-<use el2.png>
-Package pdftex.def Info: el2.png used on input line 149.
+ <use el2.png>
+Package pdftex.def Info: el2.png used on input line 189.
 (pdftex.def)             Requested size: 67.45355pt x 56.9055pt.
 File: el3.png Graphic file (type png)
  <use el3.png>
-Package pdftex.def Info: el3.png used on input line 149.
+Package pdftex.def Info: el3.png used on input line 189.
 (pdftex.def)             Requested size: 229.9228pt x 28.45274pt.
- <el4.png, id=245, 542.025pt x 79.29625pt>
 File: el4.png Graphic file (type png)
 
 <use el4.png>
-Package pdftex.def Info: el4.png used on input line 149.
+Package pdftex.def Info: el4.png used on input line 189.
 (pdftex.def)             Requested size: 291.738pt x 42.67912pt.
- [38
+ [48
 
- <./el4.png>] [39
+] [49
 
-]
-<tmodX.png, id=257, 400.99812pt x 289.58188pt>
+] <tmodX.png, id=336, 400.99812pt x 289.58188pt>
 File: tmodX.png Graphic file (type png)
- <use tmodX.png>
-Package pdftex.def Info: tmodX.png used on input line 160.
+
+<use tmodX.png>
+Package pdftex.def Info: tmodX.png used on input line 198.
 (pdftex.def)             Requested size: 157.60014pt x 113.81102pt.
- [40
+ [50
 
  <./tmodX.png>]
 File: tmodX.png Graphic file (type png)
  <use tmodX.png>
-Package pdftex.def Info: tmodX.png used on input line 160.
+Package pdftex.def Info: tmodX.png used on input line 198.
 (pdftex.def)             Requested size: 157.60014pt x 113.81102pt.
- <tmodF.png, id=264, 437.635pt x 169.63374pt>
-File: tmodF.png Graphic file (type png)
 
-<use tmodF.png>
-Package pdftex.def Info: tmodF.png used on input line 160.
+<tmodF.png, id=344, 437.635pt x 169.63374pt>
+File: tmodF.png Graphic file (type png)
+ <use tmodF.png>
+Package pdftex.def Info: tmodF.png used on input line 198.
 (pdftex.def)             Requested size: 132.12622pt x 51.21504pt.
- [41
+ [51
 
  <./tmodF.png>]
 File: tmodX.png Graphic file (type png)
- <use tmodX.png>
-Package pdftex.def Info: tmodX.png used on input line 160.
+<use tmodX.png>
+Package pdftex.def Info: tmodX.png used on input line 198.
 (pdftex.def)             Requested size: 157.60014pt x 113.81102pt.
 File: tmodF.png Graphic file (type png)
  <use tmodF.png>
-Package pdftex.def Info: tmodF.png used on input line 160.
+Package pdftex.def Info: tmodF.png used on input line 198.
 (pdftex.def)             Requested size: 132.12622pt x 51.21504pt.
- [42
+ [52
 
 ]
-<topic.png, id=276, 932.48375pt x 482.80376pt>
+<topic.png, id=356, 932.48375pt x 482.80376pt>
 File: topic.png Graphic file (type png)
  <use topic.png>
-Package pdftex.def Info: topic.png used on input line 160.
+Package pdftex.def Info: topic.png used on input line 203.
 (pdftex.def)             Requested size: 302.2426pt x 156.49014pt.
- [43
+ [53
 
- <./topic.png>] <cluster.jpg, id=284, 577.15625pt x 582.175pt>
+ <./topic.png>] <cluster.jpg, id=363, 577.15625pt x 582.175pt>
 File: cluster.jpg Graphic file (type jpg)
  <use cluster.jpg>
-Package pdftex.def Info: cluster.jpg used on input line 180.
+Package pdftex.def Info: cluster.jpg used on input line 223.
 (pdftex.def)             Requested size: 141.03023pt x 142.26378pt.
 
-Overfull \hbox (23.75296pt too wide) detected at line 180
+Overfull \hbox (23.75296pt too wide) detected at line 223
 []\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 G\OML/cmm/m/it/10.95 ; \OT1
 /mathkerncmss/m/sl/10.95 C\OT1/cmss/m/n/10.95 ) = []
  []
 
-[44
+[54
 
  <./cluster.jpg>]
 File: cluster.jpg Graphic file (type jpg)
  <use cluster.jpg>
-Package pdftex.def Info: cluster.jpg used on input line 180.
+Package pdftex.def Info: cluster.jpg used on input line 223.
 (pdftex.def)             Requested size: 141.03023pt x 142.26378pt.
 
-Overfull \hbox (23.75296pt too wide) detected at line 180
+Overfull \hbox (23.75296pt too wide) detected at line 223
 []\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 G\OML/cmm/m/it/10.95 ; \OT1
 /mathkerncmss/m/sl/10.95 C\OT1/cmss/m/n/10.95 ) = []
- []
-
-[45
-
-]
-File: cluster.jpg Graphic file (type jpg)
- <use cluster.jpg>
-Package pdftex.def Info: cluster.jpg used on input line 180.
-(pdftex.def)             Requested size: 141.03023pt x 142.26378pt.
-
-Overfull \hbox (23.75296pt too wide) detected at line 180
-[]\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 G\OML/cmm/m/it/10.95 ; \OT1
-/mathkerncmss/m/sl/10.95 C\OT1/cmss/m/n/10.95 ) = []
- []
-
-[46
-
-]
-File: cluster.jpg Graphic file (type jpg)
- <use cluster.jpg>
-Package pdftex.def Info: cluster.jpg used on input line 180.
-(pdftex.def)             Requested size: 141.03023pt x 142.26378pt.
-
-Overfull \hbox (23.75296pt too wide) detected at line 180
-[]\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 G\OML/cmm/m/it/10.95 ; \OT1
-/mathkerncmss/m/sl/10.95 C\OT1/cmss/m/n/10.95 ) = []
- []
-
-[47
-
-] [48
-
-] [49
-
-] [50
-
-]
-Overfull \vbox (15.0426pt too high) detected at line 193
- []
-
-[51
-
-] [52
-
-] [53
-
-] [54
-
-]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 212
-.
-LaTeX Font Info:    No file OMScmss.fd. on input line 212.
-
-
-LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbullet' on input line 212.
-
-<conc.jpg, id=344, 763.85374pt x 208.78pt>
-File: conc.jpg Graphic file (type jpg)
- <use conc.jpg>
-Package pdftex.def Info: conc.jpg used on input line 212.
-(pdftex.def)             Requested size: 468.46768pt x 128.0374pt.
-
-Overfull \hbox (161.17781pt too wide) in paragraph at lines 212--212
- [] 
- []
-
-
-Overfull \vbox (21.70021pt too high) detected at line 212
  []
 
 [55
 
- <./conc.jpg>]
-File: conc.jpg Graphic file (type jpg)
- <use conc.jpg>
-Package pdftex.def Info: conc.jpg used on input line 212.
-(pdftex.def)             Requested size: 468.46768pt x 128.0374pt.
+]
+File: cluster.jpg Graphic file (type jpg)
+ <use cluster.jpg>
+Package pdftex.def Info: cluster.jpg used on input line 223.
+(pdftex.def)             Requested size: 141.03023pt x 142.26378pt.
 
-Overfull \hbox (161.17781pt too wide) in paragraph at lines 212--212
- [] 
- []
-
-
-Overfull \vbox (21.70021pt too high) detected at line 212
+Overfull \hbox (23.75296pt too wide) detected at line 223
+[]\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 G\OML/cmm/m/it/10.95 ; \OT1
+/mathkerncmss/m/sl/10.95 C\OT1/cmss/m/n/10.95 ) = []
  []
 
 [56
 
 ]
-File: conc.jpg Graphic file (type jpg)
- <use conc.jpg>
-Package pdftex.def Info: conc.jpg used on input line 212.
-(pdftex.def)             Requested size: 468.46768pt x 128.0374pt.
+File: cluster.jpg Graphic file (type jpg)
+ <use cluster.jpg>
+Package pdftex.def Info: cluster.jpg used on input line 223.
+(pdftex.def)             Requested size: 141.03023pt x 142.26378pt.
 
-Overfull \hbox (161.17781pt too wide) in paragraph at lines 212--212
- [] 
- []
-
-
-Overfull \vbox (21.70021pt too high) detected at line 212
+Overfull \hbox (23.75296pt too wide) detected at line 223
+[]\OT1/cmss/m/n/10.95 (\OT1/mathkerncmss/m/sl/10.95 G\OML/cmm/m/it/10.95 ; \OT1
+/mathkerncmss/m/sl/10.95 C\OT1/cmss/m/n/10.95 ) = []
  []
 
 [57
 
+] [58
+
+] [59
+
+] [60
+
 ]
+Overfull \vbox (15.0426pt too high) detected at line 236
+ []
+
+[61
+
+] [62
+
+] [63
+
+] [64
+
+]
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 255
+.
+LaTeX Font Info:    No file OMScmss.fd. on input line 255.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbullet' on input line 255.
+
+<conc.jpg, id=423, 763.85374pt x 208.78pt>
 File: conc.jpg Graphic file (type jpg)
  <use conc.jpg>
-Package pdftex.def Info: conc.jpg used on input line 212.
+Package pdftex.def Info: conc.jpg used on input line 255.
 (pdftex.def)             Requested size: 468.46768pt x 128.0374pt.
 
-Overfull \hbox (161.17781pt too wide) in paragraph at lines 212--212
+Overfull \hbox (161.17781pt too wide) in paragraph at lines 255--255
  [] 
  []
 
 
-Overfull \vbox (21.70021pt too high) detected at line 212
+Overfull \vbox (37.30022pt too high) detected at line 255
  []
 
-[58
+[65
 
-]
+ <./conc.jpg>]
 File: conc.jpg Graphic file (type jpg)
  <use conc.jpg>
-Package pdftex.def Info: conc.jpg used on input line 212.
+Package pdftex.def Info: conc.jpg used on input line 255.
 (pdftex.def)             Requested size: 468.46768pt x 128.0374pt.
 
-Overfull \hbox (161.17781pt too wide) in paragraph at lines 212--212
+Overfull \hbox (161.17781pt too wide) in paragraph at lines 255--255
  [] 
  []
 
 
-Overfull \vbox (21.70021pt too high) detected at line 212
+Overfull \vbox (37.30022pt too high) detected at line 255
  []
 
-[59
+[66
 
 ]
 File: conc.jpg Graphic file (type jpg)
  <use conc.jpg>
-Package pdftex.def Info: conc.jpg used on input line 212.
+Package pdftex.def Info: conc.jpg used on input line 255.
 (pdftex.def)             Requested size: 468.46768pt x 128.0374pt.
 
-Overfull \hbox (161.17781pt too wide) in paragraph at lines 212--212
+Overfull \hbox (161.17781pt too wide) in paragraph at lines 255--255
  [] 
  []
 
 
-Overfull \vbox (21.70021pt too high) detected at line 212
+Overfull \vbox (37.30022pt too high) detected at line 255
  []
 
-[60
+[67
 
 ]
+File: conc.jpg Graphic file (type jpg)
+ <use conc.jpg>
+Package pdftex.def Info: conc.jpg used on input line 255.
+(pdftex.def)             Requested size: 468.46768pt x 128.0374pt.
+
+Overfull \hbox (161.17781pt too wide) in paragraph at lines 255--255
+ [] 
+ []
+
+
+Overfull \vbox (37.30022pt too high) detected at line 255
+ []
+
+[68
+
+]
+File: conc.jpg Graphic file (type jpg)
+ <use conc.jpg>
+Package pdftex.def Info: conc.jpg used on input line 255.
+(pdftex.def)             Requested size: 468.46768pt x 128.0374pt.
+
+Overfull \hbox (161.17781pt too wide) in paragraph at lines 255--255
+ [] 
+ []
+
+
+Overfull \vbox (37.30022pt too high) detected at line 255
+ []
+
+[69
+
+]
+File: conc.jpg Graphic file (type jpg)
+ <use conc.jpg>
+Package pdftex.def Info: conc.jpg used on input line 255.
+(pdftex.def)             Requested size: 468.46768pt x 128.0374pt.
+
+Overfull \hbox (161.17781pt too wide) in paragraph at lines 255--255
+ [] 
+ []
+
+
+Overfull \vbox (37.30022pt too high) detected at line 255
+ []
+
+[70
+
+]
+File: conc.jpg Graphic file (type jpg)
+ <use conc.jpg>
+Package pdftex.def Info: conc.jpg used on input line 255.
+(pdftex.def)             Requested size: 468.46768pt x 128.0374pt.
+
+Overfull \hbox (161.17781pt too wide) in paragraph at lines 255--255
+ [] 
+ []
+
+
+Overfull \vbox (37.30022pt too high) detected at line 255
+ []
+
+[71
+
+] <thanks.png, id=461, 442.65375pt x 176.66pt>
+File: thanks.png Graphic file (type png)
+ <use thanks.png>
+Package pdftex.def Info: thanks.png used on input line 265.
+(pdftex.def)             Requested size: 320.82455pt x 128.0374pt.
+
+Overfull \hbox (13.53468pt too wide) in paragraph at lines 265--265
+ [] 
+ []
+
+File: conc.jpg Graphic file (type jpg)
+<use conc.jpg>
+Package pdftex.def Info: conc.jpg used on input line 265.
+(pdftex.def)             Requested size: 468.46768pt x 128.0374pt.
+
+Overfull \hbox (161.17781pt too wide) in paragraph at lines 265--265
+ [] 
+ []
+
+
+Overfull \vbox (40.12819pt too high) detected at line 265
+ []
+
+[72
+
+ <./thanks.png>]
 \tf@nav=\write6
 \openout6 = `presentation.nav'.
 
@@ -1808,11 +2383,11 @@ Overfull \vbox (21.70021pt too high) detected at line 212
 \tf@snm=\write8
 \openout8 = `presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 214.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 214.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 267.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 267.
  (./presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 214.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 214.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 267.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 267.
 Package rerunfilecheck Info: File `presentation.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1823,13 +2398,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 214.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 267.
  ) 
 Here is how much of TeX's memory you used:
- 19954 strings out of 493089
- 393096 string characters out of 6134842
+ 20071 strings out of 493089
+ 395106 string characters out of 6134842
  459219 words of memory out of 5000000
- 22827 multiletter control sequences out of 15000+600000
+ 22901 multiletter control sequences out of 15000+600000
  16180 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,12n,59p,392b,702s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1849,10 +2424,10 @@ al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/te
 xlive/2015/texmf-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb></usr/loc
 al/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (60 pages, 1467413 bytes).
+Output written on presentation.pdf (72 pages, 1622234 bytes).
 PDF statistics:
- 459 PDF objects out of 1000 (max. 8388607)
- 337 compressed objects within 4 object streams
- 121 named destinations out of 1000 (max. 500000)
- 138 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 555 PDF objects out of 1000 (max. 8388607)
+ 392 compressed objects within 4 object streams
+ 145 named destinations out of 1000 (max. 500000)
+ 223 words of extra memory for PDF output out of 10000 (max. 10000000)
 
