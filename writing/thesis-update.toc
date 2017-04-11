@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {2.1}Part-based recognition and visual perception}{5}{section.2.1}
 \contentsline {section}{\numberline {2.2}Knowledge representation as information retrieval}{7}{section.2.2}
 \contentsline {section}{\numberline {2.3}The hierarchical structure of perception}{8}{section.2.3}
-\contentsline {section}{\numberline {2.4}Interpretations for Algorithmic Formulation}{9}{section.2.4}
+\contentsline {section}{\numberline {2.4}Algorithmically formalizing cognitive mechanism}{9}{section.2.4}
 \contentsline {chapter}{\numberline {3}Algorithms for Representing Data}{11}{chapter.3}
 \contentsline {section}{\numberline {3.1}Singular Value Decomposition}{11}{section.3.1}
 \contentsline {section}{\numberline {3.2}Neural Network Representation}{13}{section.3.2}
@@ -20,8 +20,8 @@
 \contentsline {chapter}{\numberline {6}Hierarchical Representation}{28}{chapter.6}
 \contentsline {section}{\numberline {6.1}Approach}{28}{section.6.1}
 \contentsline {section}{\numberline {6.2}Visualization}{30}{section.6.2}
-\contentsline {chapter}{\numberline {7}Deep Models}{32}{chapter.7}
-\contentsline {section}{\numberline {7.1}Motivation}{32}{section.7.1}
-\contentsline {section}{\numberline {7.2}A Deep NNMF Model}{33}{section.7.2}
-\contentsline {section}{\numberline {7.3}Deep Neural Models}{33}{section.7.3}
-\contentsline {chapter}{\numberline {8}Discussion}{35}{chapter.8}
+\contentsline {section}{\numberline {6.3}Deep Models}{31}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Motivation}{31}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}A Deep NNMF Model}{32}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Deep Neural Models}{32}{subsection.6.3.3}
+\contentsline {chapter}{\numberline {7}Discussion}{34}{chapter.7}

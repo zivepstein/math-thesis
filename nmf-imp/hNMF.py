@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.decomposition import NMF
@@ -24,7 +24,7 @@ n_top_words = 20
 
 ##generate data as array of strings from local .txt files
 local_data = []
-philes =  glob.glob("/Users/ziv/GDrive/school/math-thesis/nmf-imp/txt_data_bypage/*.txt")
+philes =  glob.glob("/Users/ziv/GDrive/school/math-thesis/nmf-imp/data/*.txt")
 for phile in philes:
     with open(phile, 'r') as myfile:
         data=myfile.read().replace('\n', '')
@@ -37,7 +37,7 @@ with open('news24.json') as data_file:
     data = json.load(data_file)
 
 
-# In[3]:
+# In[5]:
 
 #tfdif and nmf model building
 tfidf_vectorizer = TfidfVectorizer(max_df=0.95, min_df=2, #max_features=n_features,
@@ -55,16 +55,22 @@ W = nmf.fit_transform(tfidf)
 #x = WH
 
 
-# In[9]:
+# In[4]:
 
-t = tfidf[0:2000,:]
+
+
+
+# In[8]:
+
+t = tfidf[:,:]
 t.shape
 
 
-# In[ ]:
+# In[9]:
 
+import scipy
 tfidf_dense = t.todense()
-U, s, V = np.linalg.svd(tfidf_dense, full_matrices=True)
+U, s, V = scipy.linalg.svd(tfidf_dense, full_matrices=True)
 
 
 # In[14]:
@@ -73,7 +79,7 @@ print H.shape
 print W.shape
 
 
-# In[5]:
+# In[11]:
 
 uk= U[:,0:20]
 sk= s[0:20,]
@@ -88,7 +94,7 @@ S[:20, :20] = np.diag(sk)
 # U, s, V = np.linalg.svd(tfidf_dense, full_matrices=True)
 # 
 
-# In[24]:
+# In[17]:
 
 
 print uk.shape
@@ -98,9 +104,14 @@ W_svd = np.dot(uk,S)
 H_svd = vk
 
 for i in range(0,10):
-    base =vk[i,:].A1
+    base =vk[i,:]
     name =  " ".join([tfidf_feature_names[j] for j in base.argsort()[:-n_top_words - 1:-1]])
     print name
+
+
+# In[15]:
+
+abs(vk)
 
 
 # In[19]:

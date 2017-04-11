@@ -5,11 +5,11 @@
 \contentsline {section}{\numberline {3}Algorithms}{5}
 \contentsline {subsection}{\numberline {3.1}Single Linkage Graph Construction}{5}
 \contentsline {subsection}{\numberline {3.2}Semi-Supervised NNMF}{6}
-\contentsline {subsection}{\numberline {3.3}Deep Semi NMF}{7}
+\contentsline {subsection}{\numberline {3.3}Deep Semi NMF}{6}
 \contentsline {section}{\numberline {4}Visualization}{7}
 \contentsline {section}{\numberline {5}Hierarchical Topic Model}{8}
-\contentsline {section}{\numberline {6}Results}{9}
-\contentsline {subsection}{\numberline {6.1}Synthetic Data}{9}
-\contentsline {subsection}{\numberline {6.2}Standard Data}{9}
-\contentsline {subsection}{\numberline {6.3}Afghan Data}{9}
-\contentsline {section}{\numberline {7}Discussion/Conlusion}{9}
+\contentsline {section}{\numberline {6}Results}{8}
+\contentsline {subsection}{\numberline {6.1}Synthetic Data}{8}
+\contentsline {subsection}{\numberline {6.2}Standard Data}{8}
+\contentsline {subsection}{\numberline {6.3}Afghan Data}{8}
+\contentsline {section}{\numberline {7}Discussion/Conlusion}{8}

@@ -189,48 +189,48 @@
 
 
 \abstract{ 
-	A growing body of literature suggests that visual perception and representation is the result of a hierarchical relation network, whereby nodes are scaffolded with increasing levels of representational complexity. Here, I explore algorithms (with an emphasis on nonnegative matrix factorization) that approximates data in a low-dimensional manner.  I also introduce the notion of hierarchical manifold NNMF as an NNMF anaology that echoes many of the important functionality of the human visual perception system.
+	Non-negative matrix factorization (NNMF) is a powerful representational model to detect underlying structure from noisy data. In this thesis, I explore a suite of NNMF algorithms, and connect them to the cognitive science literature, which is also concerned about detecting underlying from noisy data (think visual perception).
+	In this vein, I introduce the notion of hierarchical manifold NNMF as an NNMF analogy that echoes many of the important functionality of the human visual perception system.
 	\begin{center}
 	\includegraphics[width=18cm]{wordcloud}
 \end{center}
 	}
 	\newpage
 \section*{Foreword}
-This thesis began as an exploration of the suite of algorithms that constitute non-negative matrix factorization (NNMF). Indeed because it learns robust topics in text and has strong intuitions in linear algebra, NNMF is a very suitable topic for a senior thesis in mathematics. 
+This thesis began as an exploration of the suite of algorithms that constitute non-negative matrix factorization (NNMF). Indeed because it learns robust topics in text and has strong intuitions in linear algebra, NNMF is a very a fascinating domain suitable for further inquiry. 
 
 Parallel to these studies, I became very interested with another facet of NNMF. In reading many of the foundational papers in the field, such as Ngoc-Diep Ho's PhD Dissertation at Ecole Polytechnique \cite{ho2008nonnegative} and Lee and Seung's 1999 Nature paper \cite{lee1999learning}, I noticed a pattern. The papers would always begin with several sentences relating the work to human cognition. For example, Lee and Sueng begin their seminal work by saying that ``there
-is psychological and physiological evidence for parts-based representations in the brain, and certain computational theories of object recognition rely on such representations. But little is known about how brains or computers might learn the parts of objects.'' They then proceed to dive into a technical overview of the algorithms they compared \cite{lee1999learning}. This topic sentence connecting to human cognition is always short, broad but \textit{present}.
+is psychological and physiological evidence for parts-based representations in the brain, and certain computational theories of object recognition rely on such representations. But little is known about how brains or computers might learn the parts of objects.'' They then proceed to dive into a technical overview of the algorithms they proposed \cite{lee1999learning}. This topic sentence connecting to human cognition is always short, broad but \textit{present}.
 
-To my knowledge, a meditation on the connections between NNMF and the cognitive underpinnings of human understanding that exceeds a couple sentences does not exist. This is of course partially because such ideas have been channeled into discourse relating human understanding and more general and plastic forms of machine learning, such as neural networks. 
-
+To my knowledge, a meditation on the connections between NNMF and the cognitive underpinnings of human understanding that exceeds a couple sentences does not exist. This is of course partially because such ideas have been channeled into discourse relating human understanding and more general and plastic forms of machine learning, such as neural networks. But the structured nature of NNMF provides interesting comparisons with the human visual system. 
 In this thesis, I both explore the algorithms and mine the cognitive science literature in an attempt to build a unifying theory. While the success of this pursuit is questionable, I do think it is an interesting attempt to blend these two ideas in an engaging and creative way.
 \begin{chapter}{Introduction}
-	There is a growing interest in the computational and mathematical sciences in the development of algorithms that can automatically create understanding  data pertaining to some phenomenon. As an explosion of data collection and distribution systems in line with the shift have become the mainstream, there is now more data available than humans observers to understand it. Thus the need for automated algorithms that can infer patterns and relationships within data is self evident. 
+	There is a growing interest in the computational and mathematical sciences in the development of algorithms that can automatically create understanding of data pertaining to some phenomenon. As an explosion of data collection and distribution systems have become the mainstream, there is now more data available than humans observers to understand it. Thus the need for automated algorithms that can infer patterns and relationships within data is self evident. 
 	
 	Here, I will consider the case were data is represented as a well-structured and  real-valued matrix. This approach can represent data from a large range of domains, such as sound, natural language, visual images and networks. Thus, many of the algorithms and heuristics I explore here are domain general, and can be applied with success to a range of settings. 
 	
-	My particular focus in this thesis is the notion of \textit{low-dimensional representations of data}. A real valued matrix $X$ that represents a collection of sounds, natural language documents, images or networks taken from real world settings will necessarily be noisy and not optimally structured. One canonical challenge (that we will dub ``The Representation Problem'') is to find a $X' \approx X$ that well approximates the original data's structure, but with $\operatorname{rank}(X') << \operatorname{rank}(X)$. A low rank approximation of the data gives a sparse representation that in some sense captures the most important facets of the data. 
+	My particular focus in this thesis is the notion of \textit{low-dimensional representations of data}. A real valued matrix $X$ that represents a collection of sounds, natural language documents, images or networks taken from real world settings will necessarily be noisy and not optimally structured. One canonical challenge (that we will dub ``The Representation Problem'') is to find a $X' \approx X$ that well approximates the original data's structure, but with $\operatorname{rank}(X') << \operatorname{rank}(X)$. A low rank approximation of the data gives a sparse representation that captures the underlying latent structure of the data. 
 	
 	This approach also has explanatory power. Let $r = \operatorname{rank}(X')$ and $b= (b_1,b_2,\cdots,b_r)$ be a basis for the columns of $X'$. Depending on the constraints imposed on the $b_i$'s, they can have many different interpretations. For example, when the $b_i$'s are constrained to be orthonormal, the resulting algorithm is Principal Component Analysis (PCA), which ``supplies the user with a lower-dimensional projection of the object when viewed from its most informative viewpoint.'' \cite{jolliffe2002principal}
 	
 	Since our mission is to emulate human understanding, a natural starting place for inspiration is the human brain itself. Indeed there is a long-standing tradition in computer and information science to algorithmically model the information processing systems the brain uses to make sense of the world. However, I hope to also go one step deeper. In addition to an overview of many of the important algorithms used today, we will explore the cognitive implications of these algorithms. In particular, I aim to invert the paradigm of using neural architecture to inform algorithms: I will use algorithms to inform notions of neural architecture. By creating a bilateral dialogue between the cognitive and computer sciences, I hope this work will help to bridge the gaps between the two fields by I) equipping the cognitive ideas of neural information processing with a notational formalism consist with the algorithms research and II) contextualizing the algorithms research whereby it is clear how it might relate to the acquisition of human knowledge.
 	
 	
-	The overarching organization structure of this thesis is to first begin with the large, cognitive notions I will be exploring, then I will accumulate the complexity of nonnegative matrix factorization algorithms to arrive at a final correspondence between the theory and application. Chapter 2 begins with an overview of several theories used to understand the human visual processing machine. Chapter 3 introduces several canonical algorithms for representing data, including NNMF, which is the algorithm I will focus on in the thesis. Chapter 4 explores four different types of data that can be represented as a real-valued matrix, and gives some intuition as to what the results of NNMF look like in that domain. Chapter 5 establishes NNMF as a robust, parts based model and includes  empirical results that support that claim. Chapter 6 introduces the notion of supervised learning into the NNMF objective function, and argues the importance of manifold learning in simulating the human visual processing system. Chapter 7 builds on the functionality of NNMF by adding a hierarchical component to the model. And finally Chapter 8 expands this notion of hierarchy by generalizing to deep, recursive models. 
+	The overarching organization structure of this thesis is to first begin with the large, cognitive notions I will be exploring, then I will accumulate the complexity of nonnegative matrix factorization algorithms to arrive at a final correspondence between the theory and application. Chapter 2 begins with an overview of several theories used to understand the human visual processing machine. Chapter 3 introduces several canonical algorithms for representing data, including NNMF, which is the algorithm I will focus on in the thesis. Chapter 4 explores four different types of data that can be represented as a real-valued matrix, and gives some intuition as to what the results of NNMF look like in that domain. Chapter 5 introduces the notion of supervised learning into the NNMF objective function, and argues the importance of manifold learning in simulating the human visual processing system. Chapter 6 builds on the functionality of NNMF by adding a hierarchical component to the model, and then subsequently expands this notion of hierarchy by generalizing to deep, recursive models. 
 \end{chapter}
 
 \begin{chapter}{Theories for Human Image Understanding}
-	The general class of algorithms I am considering have in the common the fact that they take as input a large amount of noisy, somewhat structured data, and output some unified high-level notion of underlying pattern. 
+	The general class of algorithms I consider have in the common the fact that they take as input a large amount of noisy, somewhat structured data, and output some unified high-level notion of underlying pattern. 
 	\begin{figure}[h]
 		\label{cup}
 		\centering
 		\includegraphics[width=3in]{cup}
 		\caption{How does your brain take the raw retinal activations of this picture and produce a mental representation of a cup?}
 	\end{figure}
-	Thus in many ways they emulate the most successful machine that converts raw data to high-level concepts: the human vision system. When observing at a cup, our brains take  in thousands of raw retinal activities, and through a complex schema of neural information processing systems, result in a high-level conceptualization of a cup. The intricacies of this pipeline are not fully understood, but many of the driving mechanisms are. To motivate the algorithmic approach, I begin with a short overview of the pervading theories for human image understanding. 
+	Thus in many ways they emulate the most successful machine that converts raw data to high-level concepts: the human visual system. When observing at a cup, our brains take  in thousands of raw retinal activities, and through a complex schema of neural information processing systems, result in a high-level conceptualization of a cup. The intricacies of this pipeline are not fully understood, but many of the driving mechanisms are. To motivate the algorithmic approach, I begin with a short overview of the pervading theories for human image understanding. 
 
 \section{Part-based recognition and visual perception}
-A given object can project an uncountable infinitude of possible visual configurations to the human retina. Thus the phenomenon of how raw visual input to the visual system is represented as robust concepts in the human mind has long haunted philosophers, cognitive scientists, mathematicians and computer scientists. Empirical observation imposes several axioms that any repsectable theory of object recognition must take into account, which Biederman enumerates:
+A given object can project an uncountable infinitude of possible visual configurations to the human retina. Thus the phenomenon of how raw visual input to the visual system is represented as robust concepts in the human mind has long haunted philosophers, cognitive scientists, mathematicians and computer scientists. Empirical observation imposes several axioms that any repsectable theory of object recognition must take into account, which Biederman enumerates \cite{biederman1987recognition}:
 \begin{enumerate}
 	\item \textbf{Imprecise attention to detail:} ``Access to the mental representation of an object should not be dependent on the absolute judgments of quantitative detail. For example, distinguishing among just several levels of the degree of curvature or length of an object typically requires more time that that retuqired for the identifcation of the object itself.''
 	\item \textbf{Topological fuzziness:} ``The information that is the basis for recognition should be relatively invariant with respect to orientation and modest degradation'.'
@@ -254,15 +254,15 @@ where $d$ is much smaller than the space of possible objects. Natural questions 
 
 The second heuristic of RBC we will use the schematic for recognition (see Figure \ref{fig: rbc}). This schema gives us a roadmap for a suite of algorithms we will use to generate representational models (see Section \ref{chapter:techniques}). 
 \section{Knowledge representation as information retrieval}
-The RBC Theory puts forward a highly structured representation of a given input $O$ as described in Equation \ref{eq:1}. It then suggests that this representation is then procedural matched with a preexisting notion in memory towards recognition. To understand how this matching occurs, we turn to Minsky's framework for representing knowledge \cite{minsky1975framework}. Minsky thinks of memory as a collection of \textbf{frames}, which is a data structure that represents a stereotyped situation, space or object \cite{minsky1975framework}. In particular, a frame is a hierarchical network of nodes and relations which correspond to that which the frame represents. In particular, the ``top levels'' of the network are fixed. They represent entities and relations that are always true about the frame's content. The lower lever has \textbf{terminals}, empty ``slots'' to be filled with raw input or data. These terminals carry with them a set of rules (which are frames themselves) which specify the necessary conditions for assignment that terminal. 
+The RBC Theory puts forward a highly structured representation of a given input $O$ as described in Equation \ref{eq:1}. It then suggests that this representation is then procedurally matched with a preexisting notion in memory towards recognition. To understand how this matching occurs, we turn to Minsky's framework for representing knowledge \cite{minsky1975framework}. Minsky thinks of memory as a collection of \textbf{frames}, which is a data structure that represents a stereotyped situation, space or object \cite{minsky1975framework}. In particular, a frame is a hierarchical network of nodes and relations which correspond to that which the frame represents. In particular, the ``top levels'' of the network are fixed. They represent entities and relations that are always true about the frame's content. The lower lever has \textbf{terminals}, empty ``slots'' to be filled with raw input or data. These terminals carry with them a set of rules (which are frames themselves) which specify the necessary conditions for assignment that terminal. 
 
 Large collections of these frames are aggregated into structures called \textbf{frame-systems}, where related frames are proximal. In particular, actions in the world correspond to \textbf{transformations} in the frame-system, whereby similar objects have a smooth transformation between them. For example, different frames might correspond to observing a room at different angles, and the transformation between adjacent frames corresponds to the observer moving to change their vantage point \cite{minsky1975framework}. These frame-systems are further connected into a \textbf{information retrieval network}. 
 
-After the raw sensory input of a stimulus percolates through the RBC processing system outlined in Figure 2, it finally reaches a component representation that must be matched with a frame. This process is done as follows. For a given frame $F^i$ with top levels $f^i$ and terminals $t^i$, the features of the representation are assigned to the frame's terminals, $t_i$. In the assignment sufficiently conforms for the specifications of the terminals (i.e. their corresponding frames $F_{t_i}$, and the top level nodes $f_i$), the object is identified as in the last stage of Figure 2.1. However if the proposed frame cannot conform to the terminal specifications, then the information retrieval system repeatedly puts forward another frame until a candidate fits the condition.
+After the raw sensory input of a stimulus percolates through the RBC processing system outlined in Figure 2, it finally reaches a component representation that must be matched with a frame. This process is done as follows: for a given frame $F^i$ with top levels $f^i$ and terminals $t^i$, the features of the representation are assigned to the frame's terminals, $t_i$. In the assignment sufficiently conforms for the specifications of the terminals (i.e. their corresponding frames $F_{t_i}$, and the top level nodes $f_i$), the object is identified as in the last stage of Figure 2.1. However if the proposed frame cannot conform to the terminal specifications, then the information retrieval system repeatedly puts forward another frame until a candidate fits the condition.
 
 This process of selecting an optimal frame for representation is parallel to the optimization component of the algorithms we will discuss.  
 \section{The hierarchical structure of perception}
-Biederman puts forward an atomic unit of visual perception \cite{biederman1987recognition}, and Minksy extends that notion with a generalized framework for representing this atomic units \cite{minsky1975framework}. However neither of these formulations describe explicitly how raw sensory data can be accumulated into something as sophisticated as the high-level recognition of an object. Palmer puts forward a structural schematic for hierarchical perceptual representation involving structural units, values on global properties and structural relationships (see Figure \ref{fig:palmer}) \cite{palmer1977hierarchical}. 
+Biederman puts forward an atomic unit of visual perception \cite{biederman1987recognition}, and Minksy extends that notion with a generalized framework for representing these atomic units \cite{minsky1975framework}. However neither of these formulations describe explicitly how raw sensory data can be accumulated into something as sophisticated as the high-level recognition of an object. Palmer puts forward a structural schematic for hierarchical perceptual representation involving structural units, values on global properties and structural relationships (see Figure \ref{fig:palmer}) \cite{palmer1977hierarchical}. 
 \begin{figure}[h]
 	\label{fig:palmer}
 	\centering
@@ -270,9 +270,9 @@ Biederman puts forward an atomic unit of visual perception \cite{biederman1987re
 	\caption{The hierarchical relationship network used to represent perceptual information. At each level of the hierarchy, a structural unit (SU) is a combination of values (V) on global properties (P) and structural relationships to other structural units.  Adapted from \cite{palmer1977hierarchical}}
 \end{figure}
 The values of the global properties at each node of the network are a real-valued vector ``along perceptual dimensions relative to some referent.'' \cite{palmer1977hierarchical}. During the process of pattern recognition, these numeric values are used to evaluate the goodness-of-fit between some raw sensory input (that is to be identified) and some pre-existing information encoded in the network. The task of matching the sensory input to the encoded information is analogous to Minsk'y frame retrieval discussed above \cite{minsky1975framework}.
-\section{Interpretations for Algorithmic Formulation}
+\section{Algorithmically formalizing cognitive mechanism}
 \label{interp}
-The theories put forward above have several key formulations of the Representation Problem that I will leverage and formalize throughout this thesis. 
+There are several notions of these cognitive theories put forward above that I will focus on in this thesis. In particular, I will take several of these notions from the visual perception literature, formalize them with mathematical language, and then relate them to the algorithmic formulation of NNMF.
 
 \subsection*{Object Classification as Supervised Manifold Learning}
 \label{manifold}
@@ -280,7 +280,7 @@ The theories put forward above have several key formulations of the Representati
 As we have seen, the hierarchies proposed above aim to match high-order labels to a series of raw retinal activations. For example, let $(r_1,r_2,\cdots, r_n)$ be the retinal activation of observing Figure \ref{cup}. Previous to observing the image, there exists somewhere in the perceptual hierarchy of your brain the label of cup $\ell_i$. Thus the task of object classification  can be formulated as the supervised learning of a manifold $f$, whereby $f(r_1,r_2,\cdots,r_n) = \ell_i$. We discuss this formalism and its implications further in Chaper \ref{supervised}.
 
 \subsection*{Geons as Topics}
-Biederman claims there exist a small number $d$ of atomic units that can be combined in various ways to represent complex visual stimuli \cite{biederman1987recognition}. This notion is formalied by Equation \ref{eq:1}, which claims an object $O$ is simply a linear combination of these $d$ geons. In the context of matricial algebra, we can formalize this even further as an embedding in $\mathbb{R}^m$. Figure \ref{fig:geonLC} shows how a given complex visual simulus can be represented as a linear combination of  a small number of these atomic units. 
+Biederman claims there exist a small number $d$ of atomic units that can be combined in various ways to represent complex visual stimuli \cite{biederman1987recognition}. This notion is formalied by Equation \ref{eq:1}, which claims an object $O$ is simply a linear combination of these $d$ geons. In the context of matricial algebra, we can formalize this even further as an embedding in $\mathbb{R}^m$. Figure \ref{fig:geonLC} shows a toy example for how a given complex visual simulus can be represented as a linear combination of  a small number of these atomic units. 
 
 
 \begin{figure}[h]
@@ -293,12 +293,12 @@ Biederman claims there exist a small number $d$ of atomic units that can be comb
 
 
 \subsection*{Hierarchical Organization of Topics}
-As can be see from Figure \ref{fig:geonLC}, the geon vectors have some relation to each other that the scalars $\alpha_i$ are designed to capture. However in concatenating all the units into an elephant, these scalar coefficients must be very specifically defined. It is clear that $\alpha_i \in \mathbb{R}$ does not give information  to reconstruct the elephant in Figure \ref{fig:geonLC}, because there are multiple dimensions of variations on which the geons are agglomerated. In addition, since both the elephant and the perspective from which one is viewing it can change,  the scalars do not only take into account spatial (x/y/z) information, but also semantic information similar to that proposed in Figure \ref{fig:palmer}. So, a information processing system sophisticated enough to perform visual perception unconstrained by movement or perspective is hierarchically organized. So a more robust characterization of the elephant in Figure \ref{fig:geonLC} would actually be a tree, as shown in Figure \ref{fig:geonLCTree}.
+Many of the theories discussed above rely on a hierarchical structure of information. Indeed as can be see from Figure \ref{fig:geonLC}, the geon vectors have some relation to each other that the scalars $\alpha_i$ are designed to capture. However in concatenating all the units into an elephant, these scalar coefficients must be very specifically defined. It is clear that $\alpha_i \in \mathbb{R}$ does not give information  to reconstruct the elephant in Figure \ref{fig:geonLC}, because there are multiple dimensions of variations on which the geons are agglomerated. In addition, since both the elephant and the perspective from which one is viewing it can change,  the scalars do not only take into account spatial (x/y/z) information, but also semantic information similar to that proposed in Figure \ref{fig:palmer}. So, a information processing system sophisticated enough to perform visual perception unconstrained by movement or perspective is hierarchically organized. So a more robust characterization of the elephant in Figure \ref{fig:geonLC} would actually be a tree, as shown in Figure 2.5.
 \begin{figure}[h]
-	\label{fig:geonLC}
+\label{tree}
 	\centering
 	\includegraphics[width=15cm]{geonLCTree}
-	\caption{An image can be represented as a linear combination of geons. Elephant adapted from \cite{biederman1987recognition}.}
+	\caption{The elephant from Figure \ref{fig:geonLC} is better represented as a tree of topics.}
 \end{figure}
 \end{chapter}
 
@@ -453,7 +453,7 @@ $$X_{i,} = \sum_{j= 1}^k A_{i,j} \times S_{j,}$$
 This interpretation is directly applicable to the notion of ``geons as topics'' put forward in Section \ref{interp}. In this thesis, we will focus on NNMF as the central algorithm and we will explore how NNMF can be used to build a theory of visual perception.
 
 \section{Comparison of NNMF and SVD}
-Both SVD and NNMF as discussed above can yield a matrix factorization, which can be interpreted as a ``topic model'' (see Chapter \label{natlang} for a more in depth explanation of this). Since NNMF already learns a matrix factorization, it is clear how this can be interpreted as a topic modelling scheme. 
+Both SVD and NNMF as discussed above can yield a matrix factorization, which can be interpreted as a ``topic model'' (see Chapter \ref{natlang} for a more in depth explanation of this). Since NNMF already learns a matrix factorization, it is clear how this can be interpreted as a topic modelling scheme. 
 
 Recall that SVD factorizes a matrix into the product of a unitary matrix, a singular values matrix and another unitary matrix
 $$X \approx U \Sigma_k V^T$$
@@ -476,11 +476,10 @@ To compare the semantic coherence of the topics learned by SVD and NNMF, I compu
 \begin{figure}[h]
 	\label{fig:svdnnmf}
 	\centering
-	\includegraphics[width=.75\textwidth]{nnmf-news}
-		\includegraphics[width=.75\textwidth]{nnmf-afghan}
-			%\includegraphics[width=6.2cm]{svd-news}
-				\includegraphics[width=.75\textwidth]{svd-afghan}
-	\caption{The top words for NNMF and compact SVD factorizations of two data sets.}
+	\hspace*{-1.5in}
+	\includegraphics[width=1.4\textwidth]{imps/imps}
+	
+	\caption{The top words for NNMF  (left column in blue) and compact SVD (right column in red) factorizations of two data sets, Afghan (top) and News (bottom).}
 \end{figure}
 By inspection, one can see that the topics learned by NNMF correspond to semantically cohesive topics, while the topics learned by SVD do not. This is partially due to the fact that the SVD contains negative entries, and there is no direct intepretation to negative entries in a topic vector. This provides experimental evidence that NNMF is the correct factorization for tasks that care about semantically coherent topics.
 \end{chapter}
@@ -572,7 +571,7 @@ To gain some visual intuition into the interpretations of $A$ and $S$, consider 
 	1 & \textrm{ if $x_i \in N_p(x_j)$ or $x_j \in N_p(x_i)$} \\
 	0 & \text{otherwise} \\
 	\end{cases} $$
-	where $N_p(x_j)$ is the set of the $p$ nearest points to $x_j$. Next let $L$ be the graph Laplacian defined as $L=D-W$, where $D$ is the diagonal matrix of column sums of $W$ (i.e. $D_{ii} = \sum_j W_{ij}$). \cite{chung1997spectral}. We leverage $L$ to form a discrete approximation for $||f_\ell||^2_M$, since the graph Laplacian $L$ is a discrete approximation of the Laplace-Beltrami operator $\Delta_\mathcal{M}$ on the underlying data manifold \cite{belkin2003problems}. Following Cai et al's derivation \cite{cai2008non}, we get the following closed for $\mathcal{R}_\ell$, the discrete approximation for $||f_\ell||^2_M$:
+	where $N_p(x_j)$ is the set of the $p$ nearest points to $x_j$. Next let $L$ be the graph Laplacian defined as $L=D-W$, where $D$ is the diagonal matrix of column sums of $W$ (i.e. $D_{ii} = \sum_j W_{ij}$). \cite{chung1997spectral}. We leverage $L$ to form a discrete approximation for $||f_\ell||^2_M$, since the graph Laplacian $L$ is a discrete approximation of the Laplace-Beltrami operator $\Delta_\mathcal{M}$ on the underlying data manifold \cite{belkin2003problems}. Following Cai et al's derivation \cite{cai2008non}, we get the following closed form for $\mathcal{R}_\ell$, the discrete approximation for $||f_\ell||^2_M$:
 	\begin{align*}
 \mathcal{R}_\ell &= \frac{1}{2} \sum_{i,j=1}^N (f_\ell(x_i)-f_\ell(x_j))^2W_{ij}\\
 &=\sum_{i=1}^N f_\ell(x_i)^2 D_{ii}  - \sum_{i,j=1}^N f_\ell(x_i)f_\ell(x_j)W_{ij} \\
@@ -597,9 +596,9 @@ The authors also put forward a multiplicative update algorithm that is non-decre
 		}
 		\caption{Multiplicative Update for Graph Regularized NNMF}
 	\end{algorithm}
-	It's important to note that $W$ can be any matricial representation of the structure of the data. Here, Cai et al use $p$-nearest neighbor edge weight matrix, but are explicit in stating that this choice is in some ways arbitrary. If for whatever reason the data is known to exhibit structure in the form of some matrix $W'$, then the results above generalize to that matrix as well.
+	It's important to note that $W$ can be any matricial representation of the structure of the data. Here, Cai et al use $p$-nearest neighbor edge weight matrix, but are explicit in stating that this choice is arbitrary. If for whatever reason the data is known to exhibit structure in the form of some matrix $W'$, then the results above generalize to that matrix as well.
 	\subsection*{Supervision}
-	Canonical NNMF is unsupervised, which means the algorithm is designed to reveal latent structure from the unlabeled data. Many times however, data is accompanied with labels and the alternative algorithmic objective is to assign new unobserved data into appropriate labels.
+	Canonical NNMF is unsupervised, which means the algorithm is designed to reveal latent structure from unlabeled data. Many times however, data is accompanied with labels. In this case, the alternative algorithmic objective is to assign new unobserved data into appropriate labels.
 	
 	As I briefly discussed in Section \ref{manifold}, the supervised formulation is inherently related to the problem of visual object recognition \cite{biederman1987recognition}. Objects can be thought of as both their class labels and their retinal activations (see Figure \ref{manifold}).
 \begin{figure}[h]
@@ -610,7 +609,7 @@ The authors also put forward a multiplicative update algorithm that is non-decre
 	\caption{A: Supervised representation of object recognition; B: seperating hyperplane via ventral stream transform. Image adapted from \cite{dicarlo2012does}.}
 \end{figure}	
 
-	A core task in the object recognition problem is to understand how the brain creates a separating hyperplane in this high dimensional retinal representation of objects. A growing body of literature suggests that the primate ventral visual processing steam -- a region of cortical segments in the temporal and occipital lobes -- contains import circuits for objection recognition \cite{gross1994inferior, dicarlo2012does, miyashita1993inferior, orban2008higher, rolls2000functions}. 
+	A core task in the object recognition problem is to understand how the brain creates a separating hyperplane in this high dimensional retinal representation of objects. A growing body of literature suggests that the primate ventral visual processing steam -- a region of cortical segments in the temporal and occipital lobes -- contains import circuits for object recognition \cite{gross1994inferior, dicarlo2012does, miyashita1993inferior, orban2008higher, rolls2000functions}. 
 	
 	Although the explicit algorithmic mechanisms of this ventral stream transform are still not yet known, in this section we will explore several analogies in the domain of NNMF. In particular, we will explore  the semi-supervised case, where only some of the data is labeled.  For semi-supervised NNMF (ssNNMF), the objective is similar to the unsupervised case. However, the known class labels can be incorporated into the model to improve classification performance \cite{lee2010semi}. We will explore an extension of NNMF where some of the class labels are known, and this information is used to enhance the performance of the NNMF. This ssNNMF  learns a one-versus all separating hyperplane for the observations \cite{lee2010semi} as follows.
 	
@@ -645,14 +644,15 @@ The authors also put forward a multiplicative update algorithm that is non-decre
 	\end{figure}
 	
 	\section{Manifold NNMF}
-	I conclude this section by proposing a new NNMF that directly  combines the two methods disuccsed above, gNNMF and ssNNMF, to learn a supervised, locally smooth model. Inheriting from the energy functions \ref{O:gNNMF} and \ref{O:ssMMMF}, the energy function for Manifold NNMF is
+	\label{mNNMF}
+	I conclude this section by proposing a new NNMF that directly  combines the two methods discussed above, gNNMF and ssNNMF, to learn a supervised, locally smooth model. Inheriting from the energy functions \ref{O:gNNMF} and \ref{O:ssMMMF}, the energy function for Manifold NNMF is
 	\begin{align}
 	\mathcal{O}_{\text{manifold}} =  ||(X-AS)||^2 + \lambda_1 ||L \circ (Y-BS)||^2 +  + \lambda_2 \operatorname{Tr}(S^TLS)
 	\end{align}
-	\todo{what else is there to do here?}
+The formal analysis of this schema is beyond the scope of this thesis, but I hope its conclusion motivates future work in the development of a cognitively sound NNMF.
 \end{chapter}
 \begin{chapter}{Hierarchical Representation}
-Many times, the data we wish to represent exhibits hierarchical structure. One such example is with the topics found in text data. Since topics correspond to semantic ideas, it makes sense that they would be organized in hierarchicaly. For example, in the 20 News Group data set, there are two separate topics for the Cincinnati Reds and Toronto Blue Jays, two baseball teams. Thus one could think about a supertopic, baseball, that branches into the two topics the standard NNMF finds.
+Many times, the data we wish to represent exhibits hierarchical structure. One such example is with the topics found in text data. Since topics correspond to semantic ideas, it makes sense that they would be organized into a hierarchy. For example, in the 20 News Group data set, there are two separate topics for the Cincinnati Reds and Toronto Blue Jays, two baseball teams. Thus one could think about a supertopic, baseball, that branches into the two topics the standard NNMF finds.
 \section{Approach}
 For a given document matrix $V$, we use the python library \texttt{scikitlearn} to decompose $V$ into document/topic matrix $W$ and topic/word matrix $H$ such that $$V \approx WH.$$ The  \texttt{scikitlearn} library contains a function \texttt{NMF} that performs the factorization: 
 
@@ -678,8 +678,8 @@ $$c(A^{(j)})=\{c^j_1, c^j_2,\cdots,c^j_i,\cdots,c^j_N\}$$
 where $c_i =k$ means that the $i$th vertex is in the $k$th order component, we can formulate a tree structure (see Figure 1).
 \begin{figure}
 	\centering
-	\includegraphics[width=.5\textwidth]{tree}
-	\caption{How the tree structure is formed for the connected componenet vectors}
+	\includegraphics[width=.5\textwidth]{agglomeration}
+	\caption{How the tree structure is formed for the connected component vectors}
 \end{figure}
 For example, say $N=8$ and we have
 \begin{align*}
@@ -710,18 +710,18 @@ where $c_i=1$ corresponds to yellow and $c_i=0$ corresponds to blue (see Figure 
 \end{figure}
 \end{chapter}
 
-\begin{chapter}{Deep Models}
-\section{Motivation}
+\section{Deep Models}
+\subsection{Motivation}
 We next explore the importance of extending the notion of hierarchy from the previous chapter to deep models. This exploration is motivated by the fact that a hierachical organization of information tends to outperform flat schemas in their plasticity and ability to recognize high level concepts.  
 
-Suppose we are trying to learn the function $f$ with $n$ parametersL $f(x_1,x_2,\cdots,x_n)$ with a neural network. As shown in Figure \ref{poggio}, the network can either be shallow (left) or deep (right). \begin{figure}
+Suppose we are trying to learn the function $f$ with $n$ parameters $f(x_1,x_2,\cdots,x_n)$ with a neural network. As shown in Figure \ref{poggio}, the network can either be shallow (left) or deep (right). \begin{figure}
 	\label{poggio}
 	\centering
 	\includegraphics[width=7in]{poggio}
-	\caption{A network}
+	\caption{A shallow versus deep neural network. The number of parameters a shallow network estimates is exponential in the number of inputs, whereas the number of parameters a deep model estimates is linear in the number of inputs. Image adapted from \cite{mhaskar2016learning}.}
 \end{figure}
-Both of these networks are \emph{universal}, which is to say that they can both approximate $f$ arbitrarily well. However deep networks with compositional structure -- such that a function specifically of the form $f(x_1, \cdots, x_n) = g_1(g_2\cdots (g_j(g_{i1}(x1,x_2),h_{i2}(x_3,x_4)),\cdots ))$ is learned -- yields the same level of accuracy, while having a substantially smaller number of paramters to estimate, VC-dimension, and fat-shatting dimension \cite{mhaskar2016learning}. Expounding on these ideas, Mhaskar et al. argue that the ``basic properties of scalability and shift invariance in many natural signals such as images and text require compositional algorithms that can be well approximated by \emph{Deep} Convolutional Networks.'' 
-\section{A Deep NNMF Model}
+Both of these networks are \emph{universal}, which is to say that they can both approximate $f$ arbitrarily well. However deep networks with compositional structure -- such that a function specifically of the form $f(x_1, \cdots, x_n) = g_1(g_2\cdots (g_j(g_{i1}(x1,x_2),h_{i2}(x_3,x_4)),\cdots ))$ is learned -- yields the same level of accuracy, while having a substantially smaller number of parameters to estimate, VC-dimension, and fat-shattering dimension \cite{mhaskar2016learning}. Expounding on these ideas, Mhaskar et al. argue that the ``basic properties of scalability and shift invariance in many natural signals such as images and text require compositional algorithms that can be well approximated by \emph{Deep} Convolutional Networks.'' \cite{mhaskar2016learning}
+\subsection{A Deep NNMF Model}
 Semi-Supervised NNMF as discussed above can be thought of as representing $A$ in a low dimensional representation as $S$. In this framework, $A$ is the function that maps the low dimensional representation to the original high dimensional representation. However, as the data becomes increasingly complex, it may have many hierarchy of attributes, each of which requires its own mappings. With the motivation in mind, Trigeorgis et al put forward the notion of a Demi-Semi NNMF \cite{trigeorgis2014deep}.
 $$X \approx A_1A_2 \cdots A_m S_m$$
 This representation of the data can be achieved by recursively factorizing the low-dimensional representation at each level \cite{trigeorgis2014deep}.
@@ -738,16 +738,18 @@ By recursively factoring, the deep NNMF model learns a hierarchical structure of
 	\includegraphics[width=7in]{deep}
 	\caption{Recursive factoring results in a hierarchy of attributes. Image adapted from  \cite{trigeorgis2014deep}.}
 \end{figure}
-\section{Deep Neural Models}
-	The formulation of recursive matrix factorization above invites a comparison with Deep Neural Networks. As discussed in Chapter \label{NN}, a neural network can be thought of as a series of matrix multiplicaitons, with a elementwise nonlinear function application between each matrix multiplication. Thus Trigeorgis et al's recursive formulation is in fact more than halfway to a deep neural network. Flenner and Hunter formalize this intuition with their so called Deep NNMF \cite{deepNonNeg}. In particular, they take advantage of the fact that the most well used non-linearity function in Deep Neural Networks is the rectifyer activation function $g(z)=\max(0,z)$. This is relevant because this function is equivalent to NNMF's restriction of positive entries in the learned matrices.  
-	\end{chapter}
+
+
+\subsection{Deep Neural Models}
+	The formulation of recursive matrix factorization above invites a comparison with Deep Neural Networks. As discussed in Chapter \ref{NN}, a neural network can be thought of as a series of matrix multiplications, with a elementwise nonlinear function application between each matrix multiplication. Thus Trigeorgis et al's recursive formulation is in fact more than halfway to a deep neural network. Flenner and Hunter formalize this intuition with their so called Deep NNMF \cite{deepNonNeg}. In particular, they take advantage of the fact that the most well used non-linearity function in Deep Neural Networks is the rectifyer activation function $g(z)=\max(0,z)$. This is relevant because this function is equivalent to NNMF's restriction of positive entries in the learned matrices.  
 \begin{chapter}{Discussion}
 	In this thesis, I explored a suite of non-negative matrix factorization algorithms. In recent years, NNMF has emerged as a powerful new way to perform dimensionality reduction, topic modelling, and data visualization, among others. Because of its broad applications, there are many variants of traditional NNMF that have made their way to the main stream, such as graph regularized, supervised, hiearchical, deep, etc. Many of these variants explore the same functionality that the visual perceptual literature is interested in.  A central tenant of this thesis was to use many of the NNMF variants that relate to the cognitive underpinnings to underscore the plasticity and power of this suite of algorithms. It is important to note that I am not directly claiming that for image recognition, our brain actually implements non-negative matrix factorization. In that sense, the analogy fails. However, the regularizers for manifold and supervised learning, coupled with the arbitrary amounts of complexity that can introduced via hierarchy and deep NNMF suggest that key cognitive elements of the human understanding machine can be formalized as algorithmic models. 
 	
 	There are several next steps for this inquiry, along different axes. The first is applying the canonical visualization techniques of NNMF to deep (neural) models. As deep models such as neural networks become more pervasive in industry and the academy, gaining windows to understand mechanism becomes increasingly important. In the future, I hope deep models can adopt the suite of visualization and interpretation tactics that the NNMF literature uses to gain understanding about their inner workings. 
 	
-	Another domain for exploration is the space of hierarchy. In this thesis, I explored a bottom-up, agglomerative hierarchical clustering algorithm. While this technique yields reasonable results, it is unclear whether this method is optimal. I also touch on the idea of a deep implementation. While this was not the central focus of this document, I think those ideas are on the cutting edge of novel NNMF discoveries, and warrants conclusion. In the future, I hope advances in the technical understanding of the hierarchical nature of human perception will lead to an hierarchical clustering algorithm that can be implemented in this domain.
+	Another domain for exploration is the space of hierarchy. In this thesis, I explored a bottom-up, agglomerative hierarchical clustering algorithm. While this technique yields reasonable results, it is unclear if this method is optimal. I also touch on the idea of a deep implementation. While this was not the central focus of this document, I think those ideas are on the cutting edge of novel NNMF discoveries, and warrants conclusion. In the future, I hope advances in the technical understanding of the hierarchical nature of human perception will lead to an hierarchical clustering algorithm that can be implemented in this domain.
 	
+	A final area of inquiry that extends the ideas of this thesis would be the formalization of the Manifold NNMF put forward in Chapter \ref{mNNMF}, with an added hierarchical component. By mirroring the architecture necessary to learn continuous manifolds, coupled with the representation complexity achieved via a hierarchy of models, the class of representations that can be described will increase. 
 	\end{chapter}
 \section*{Acknowledgments}
 I would like the thank the Pomona College Math Department for their tireless support and guidance.  I would like to thank Professor Blake Hunter, Leo Selker, Dima Smirnov, Professor Shlomi Sher, Neo Mohsenvand for invaluable comments, ideas, inspiration and discussion. 

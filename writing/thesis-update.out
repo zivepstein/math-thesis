@@ -3,7 +3,7 @@
 \BOOKMARK [1][-]{section.2.1}{Part-based recognition and visual perception}{chapter.2}% 3
 \BOOKMARK [1][-]{section.2.2}{Knowledge representation as information retrieval}{chapter.2}% 4
 \BOOKMARK [1][-]{section.2.3}{The hierarchical structure of perception}{chapter.2}% 5
-\BOOKMARK [1][-]{section.2.4}{Interpretations for Algorithmic Formulation}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.4}{Algorithmically formalizing cognitive mechanism}{chapter.2}% 6
 \BOOKMARK [0][-]{chapter.3}{Algorithms for Representing Data}{}% 7
 \BOOKMARK [1][-]{section.3.1}{Singular Value Decomposition}{chapter.3}% 8
 \BOOKMARK [1][-]{section.3.2}{Neural Network Representation}{chapter.3}% 9
@@ -20,8 +20,8 @@
 \BOOKMARK [0][-]{chapter.6}{Hierarchical Representation}{}% 20
 \BOOKMARK [1][-]{section.6.1}{Approach}{chapter.6}% 21
 \BOOKMARK [1][-]{section.6.2}{Visualization}{chapter.6}% 22
-\BOOKMARK [0][-]{chapter.7}{Deep Models}{}% 23
-\BOOKMARK [1][-]{section.7.1}{Motivation}{chapter.7}% 24
-\BOOKMARK [1][-]{section.7.2}{A Deep NNMF Model}{chapter.7}% 25
-\BOOKMARK [1][-]{section.7.3}{Deep Neural Models}{chapter.7}% 26
-\BOOKMARK [0][-]{chapter.8}{Discussion}{}% 27
+\BOOKMARK [1][-]{section.6.3}{Deep Models}{chapter.6}% 23
+\BOOKMARK [2][-]{subsection.6.3.1}{Motivation}{section.6.3}% 24
+\BOOKMARK [2][-]{subsection.6.3.2}{A Deep NNMF Model}{section.6.3}% 25
+\BOOKMARK [2][-]{subsection.6.3.3}{Deep Neural Models}{section.6.3}% 26
+\BOOKMARK [0][-]{chapter.7}{Discussion}{}% 27
